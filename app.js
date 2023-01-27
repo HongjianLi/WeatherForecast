@@ -27,7 +27,7 @@ const tensorArr = await Promise.all(cityArr.map(async (city) => {
 	});
 	if (response.ok()) {
 		return tf.node.decodePng(await page.screenshot({
-			path: `${city}.png`,
+//			path: `${city}.png`,
 			clip: {
 				x: 1431,
 				y: 242,
