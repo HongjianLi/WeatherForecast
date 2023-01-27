@@ -1,0 +1,17 @@
+{
+	"name": "WeatherForecaster",
+	"version": "1.0.0",
+	"description": "Jacky's JavaScript client for browsing and snapshoting weather.com.cn",
+	"author": "Hongjian Li",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HongjianLi/WeatherForecaster.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"puppeteer-core": "^19.6.1",
+		"@tensorflow/tfjs-node": "^4.2.0"
+	},
+	"main": "app.js"
+}
