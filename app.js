@@ -26,7 +26,7 @@ const tensorArr = await Promise.all(cityArr.map(async (city) => {
 	const page = await browser.newPage();
 	const response = await page.goto(`http://www.weather.com.cn/weather/${city}.shtml`, {
 		waitUntil: 'domcontentloaded',
-		timeout: 8000,
+		timeout: 12000,
 	});
 	if (response.ok()) {
 		return tf.node.decodePng(await page.screenshot({
