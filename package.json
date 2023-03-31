@@ -11,7 +11,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@tensorflow/tfjs-node": "^4.2.0",
-		"puppeteer-core": "^19.8.0"
+		"puppeteer-core": "^19.8.1"
 	},
 	"main": "app.js"
 }
