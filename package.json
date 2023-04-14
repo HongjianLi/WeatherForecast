@@ -10,8 +10,8 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@tensorflow/tfjs-node": "^4.2.0",
-		"puppeteer-core": "^19.8.1"
+		"@tensorflow/tfjs-node": "^4.4.0",
+		"puppeteer-core": "^19.9.0"
 	},
 	"main": "app.js"
 }
