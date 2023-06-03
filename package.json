@@ -1,7 +1,7 @@
 {
 	"name": "WeatherForecaster",
 	"version": "1.0.0",
-	"description": "Jacky's JavaScript client for browsing and snapshoting weather.com.cn",
+	"description": "Jacky's JavaScript client for browsing weather.com.cn and extracting forecast for 7 days",
 	"author": "Hongjian Li",
 	"type": "module",
 	"repository": {
@@ -10,7 +10,6 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@tensorflow/tfjs-node": "^4.6.0",
 		"puppeteer-core": "^20.5.0"
 	},
 	"main": "app.js"
