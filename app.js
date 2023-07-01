@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
+import ProgressBar from 'progress';
 const cityArr = [
 	'101281103', // 开平
 	'101281104', // 新会
@@ -19,8 +20,10 @@ const browser = await puppeteer.launch({
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
 const leftDivs = [];
+const bar = new ProgressBar('[:bar] :code :current/:total=:percent :elapseds :etas', { total: cityArr.length });
 for (let i = 0; i < cityArr.length; ++i) {
 	const city = cityArr[i];
+	bar.tick({ code: city });
 	const page = await browser.newPage();
 	const response = await page.goto(`http://www.weather.com.cn/weather/${city}.shtml`, {
 		waitUntil: 'domcontentloaded',
