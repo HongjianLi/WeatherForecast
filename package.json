@@ -10,7 +10,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"puppeteer-core": "^20.5.0"
+		"puppeteer-core": "^20.9.0"
 	},
 	"main": "app.js"
 }
