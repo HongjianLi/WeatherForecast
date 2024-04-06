@@ -3,6 +3,9 @@ import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const cityArr = [
+	'101300602', // 藤县
+	'101300608', // 龙圩
+	'101281405', // 云城
 	'101281103', // 开平
 	'101281104', // 新会
 	'101281109', // 江海
