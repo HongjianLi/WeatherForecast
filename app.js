@@ -37,7 +37,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	const city = cityArr[i];
 	bar.tick({ code: city });
 	const page = await browser.newPage();
-	const response = await page.goto(`http://www.weather.com.cn/weather/${city}.shtml`, {
+	const response = await page.goto(`http://www.weather.com.cn/weather/${city}.shtml`, { // Updates occur at 5:30, 7:30, 11:30, 18:00 everyday.
 		waitUntil: 'domcontentloaded',
 		timeout: 12000,
 	});
