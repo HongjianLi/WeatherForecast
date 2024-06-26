@@ -56,7 +56,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	await page.close();
 };
 await browser.close();
-await fs.writeFile('7d.html', [
+await fs.writeFile('weather.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<body>',
