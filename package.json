@@ -1,7 +1,7 @@
 {
 	"name": "WeatherForecaster",
 	"version": "1.0.0",
-	"description": "Jacky's JavaScript client for browsing weather.com.cn and extracting forecast for 7 days",
+	"description": "Jacky's JavaScript client for browsing www.tianqi.com or www.weather.com.cn and extracting forecast for 7 days",
 	"author": "Hongjian Li",
 	"type": "module",
 	"repository": {
@@ -12,5 +12,5 @@
 	"dependencies": {
 		"puppeteer-core": "^22.12.0"
 	},
-	"main": "app.js"
+	"main": "tianqi.js"
 }
