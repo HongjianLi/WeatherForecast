@@ -3,29 +3,29 @@ import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const cityArr = [
-/*	'101300602', // 藤县
-	'101300608', // 龙圩
-	'101281405', // 云城
-	'101281103', // 开平
-	'101281104', // 新会
-	'101281109', // 江海
-	'101280704', // 香洲
-	'101280908', // 高要
-	'101280805', // 禅城
-	'101280803', // 南海
-	'101280110', // 白云
-	'101280108', // 海珠
-	'101280111', // 黄埔
-	'101280102', // 番禺
-	'101280112', // 南沙
-	'101281601', // 东莞
-	'101280304', // 惠东
-	'101281309', // 清城
-	'101280211', // 武江
-	'101280502', // 潮阳
-	'101280506', // 金平
-	'101250304', // 荷塘
-	'101250107', // 芙蓉*/
+	'tengxian', // 藤县
+	'longweiqu', // 龙圩
+	'yunchengqu', // 云城
+	'gaoyao', // 高要
+	'kaiping', // 开平
+	'xinhui', // 新会
+	'jianghai', // 江海
+	'xiangzhouqu', // 香洲
+	'chanchengqu', // 禅城
+	'nanhai', // 南海
+	'baiyun', // 白云
+	'haizhuqu', // 海珠
+	'huangpuqu', // 黄埔
+	'panyu', // 番禺
+	'nanshaqu', // 南沙
+	'dongguan', // 东莞
+	'huidong1', // 惠东
+	'qingchengqu', // 清城
+	'wujiang1', // 武江
+	'chaoyang2', // 潮阳
+	'jinpingqu', // 金平
+	'hetangqu', // 荷塘
+	'furongqu', // 芙蓉
 ];
 const browser = await puppeteer.launch({
 	headless: 'new',
@@ -37,13 +37,14 @@ for (let i = 0; i < cityArr.length; ++i) {
 	const city = cityArr[i];
 	bar.tick({ code: city });
 	const page = await browser.newPage();
-	const response = await page.goto(`https://m.tianqi.com/${city}/?tq`, {
+	const response = await page.goto(`https://www.tianqi.com/${city}/7/`, {
 		waitUntil: 'domcontentloaded',
 		timeout: 12000,
 	});
 	if (response.ok()) {
 		cityDivArr.push([
-
+			await page.$eval('div.inleft_place a.place_b', el => el.innerHTML),
+			(await page.$eval('ul.weaul', el => el.outerHTML)).replace(/\/\/static.tianqistatic.com\/static\/tianqi2018\/ico2\//g, '').replace(/\<\!\-\- /g, '').replace(/ \-\-\>/g, ''),
 		].join('\n'));
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`);
@@ -54,15 +55,25 @@ await browser.close();
 await fs.writeFile('tianqi.html', [
 	'<!DOCTYPE html>',
 	'<html>',
+	'<head>',
+	'<link href="tianqi.css" rel="stylesheet">',
+	'<link href="tianyubao.css" rel="stylesheet">',
+	'</head>',
 	'<body>',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg">',
-	'<img src="https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg">',
+	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg" width="671">',
+	'<img src="https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg" width="671">',
+	'<div class="w1100 newday40_top">',
+	'<div class="inleft">',
 	...cityDivArr,
+	'</div>',
+	'</div>',
 	'</body>',
 	'</html>',
 ].join('\n'));
