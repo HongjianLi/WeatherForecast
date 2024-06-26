@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const cityArr = [
+	'gangbei', // 港北
 	'tengxian', // 藤县
 	'longweiqu', // 龙圩
 	'yunchengqu', // 云城
@@ -24,6 +25,8 @@ const cityArr = [
 	'jinpingqu', // 金平
 	'qingchengqu', // 清城
 	'wujiang1', // 武江
+	'beihuqu', // 北湖
+	'zhuhuiqu', // 珠晖
 	'hetangqu', // 荷塘
 	'furongqu', // 芙蓉
 ];
