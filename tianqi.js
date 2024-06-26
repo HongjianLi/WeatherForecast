@@ -20,10 +20,10 @@ const cityArr = [
 	'nanshaqu', // 南沙
 	'dongguan', // 东莞
 	'huidong1', // 惠东
-	'qingchengqu', // 清城
-	'wujiang1', // 武江
 	'chaoyang2', // 潮阳
 	'jinpingqu', // 金平
+	'qingchengqu', // 清城
+	'wujiang1', // 武江
 	'hetangqu', // 荷塘
 	'furongqu', // 芙蓉
 ];
