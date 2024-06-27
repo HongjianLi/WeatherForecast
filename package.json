@@ -10,7 +10,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"puppeteer-core": "^22.12.0"
+		"puppeteer-core": "^22.12.1"
 	},
 	"main": "tianqi.js"
 }
