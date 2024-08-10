@@ -63,7 +63,6 @@ const today = new Date();
 const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {
 	return component.toString().padStart(2, '0');
 }).join('');
-console.log(localeDateString);
 await fs.writeFile('weather.html', [
 	'<!DOCTYPE html>',
 	'<html>',
