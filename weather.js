@@ -59,20 +59,28 @@ for (let i = 0; i < cityArr.length; ++i) {
 	await page.close();
 };
 await browser.close();
-const today = new Date();
-const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {
-	return component.toString().padStart(2, '0');
-}).join('');
 await fs.writeFile('weather.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<body>',
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000002400.jpg" width="671">`,
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000004800.jpg" width="671">`,
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000007200.jpg" width="671">`,
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_00000-02400_1920.png" width="671">`,
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_02400-04800_1920.png" width="671">`,
-	`<img src="https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_04800-07200_1920.png" width="671">`,
+	'<img id="sevp24" width="671">',
+	'<img id="sevp48" width="671">',
+	'<img id="sevp72" width="671">',
+	'<img id="cwcc24" width="671">',
+	'<img id="cwcc48" width="671">',
+	'<img id="cwcc72" width="671">',
+	'<script type="text/javascript">',
+	'	const today = new Date();',
+	'	const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {',
+	'		return component.toString().padStart(2, "0");',
+	'	}).join("");',
+	'	document.getElementById("sevp24").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000002400.jpg`;',
+	'	document.getElementById("sevp48").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000004800.jpg`;',
+	'	document.getElementById("sevp72").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}000007200.jpg`;',
+	'	document.getElementById("cwcc24").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_00000-02400_1920.png`;',
+	'	document.getElementById("cwcc48").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_02400-04800_1920.png`;',
+	'	document.getElementById("cwcc72").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}080000_04800-07200_1920.png`;',
+	'</script>',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2017/headStyle_1.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/common.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/bluesky/c_7d.css">',
