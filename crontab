@@ -1,0 +1,1 @@
+50 5,7,11,18 * * * cd ~/FutuOpenDClient/WeatherForecast; ./weather.js; ./tianqi.js
