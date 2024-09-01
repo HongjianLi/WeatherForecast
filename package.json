@@ -1,16 +1,19 @@
 {
-	"name": "WeatherForecaster",
+	"name": "WeatherForecast",
 	"version": "1.0.0",
-	"description": "Jacky's JavaScript client for browsing www.tianqi.com or www.weather.com.cn and extracting forecast for 7 days",
+	"description": "Browse www.weather.com.cn and www.tianqi.com to extract forecast for 7 days",
 	"author": "Hongjian Li",
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HongjianLi/WeatherForecaster.git"
+		"url": "https://github.com/HongjianLi/WeatherForecast.git"
 	},
 	"license": "MIT",
 	"dependencies": {
 		"puppeteer-core": "^23.2.1"
 	},
-	"main": "tianqi.js"
+	"main": "weather.js",
+	"scripts": {
+		"start": "node weather.js && node tianqi.js"
+	}
 }
