@@ -21,6 +21,7 @@ const cityArr = [
 	'gangbei', // 贵港港北
 	'tengxian', // 梧州藤县
 	'longweiqu', // 梧州龙圩
+	'wanxiu', // 梧州万秀
 	'yunchengqu', // 云浮云城
 	'gaoyao', // 肇庆高要
 	'xinhui', // 江门新会
