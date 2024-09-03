@@ -1,7 +1,22 @@
 #!/usr/bin/env node
-import fs from 'fs/promises';
+import fs from 'fs';
+import { Readable } from 'stream';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
+await Promise.all([
+	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg',
+	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg',
+	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg',
+	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg',
+	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg',
+	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg',
+	'https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg',
+	'https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg',
+	'https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg',
+].map(async (url) => {
+	const response = await fetch(url);
+	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
+}));
 const cityArr = [
 	'gangbei', // 港北
 	'tengxian', // 藤县
@@ -55,7 +70,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	await page.close();
 };
 await browser.close();
-await fs.writeFile('tianqi.html', [
+await fs.promises.writeFile('tianqi.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<head>',
@@ -63,15 +78,15 @@ await fs.writeFile('tianqi.html', [
 	'<link href="tianyubao.css" rel="stylesheet">',
 	'</head>',
 	'<body>',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg" width="671">',
-	'<img src="https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg" width="671">',
+	'<img src="jiangshui1.jpg" width="671">',
+	'<img src="jiangshui2.jpg" width="671">',
+	'<img src="jiangshui3.jpg" width="671">',
+	'<img src="gaowen24.jpg" width="671">',
+	'<img src="gaowen48.jpg" width="671">',
+	'<img src="gaowen72.jpg" width="671">',
+	'<img src="jiaotongkongqiwuran.jpg" width="671">',
+	'<img src="wumaiwu.jpg" width="671">',
+	'<img src="wumaimai.jpg" width="671">',
 	'<div class="w1100 newday40_top">',
 	'<div class="inleft">',
 	...cityDivArr,
