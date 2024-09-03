@@ -18,32 +18,30 @@ await Promise.all([
 	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
 }));
 const cityArr = [
-	'gangbei', // 港北
-	'tengxian', // 藤县
-	'longweiqu', // 龙圩
-	'yunchengqu', // 云城
-	'gaoyao', // 高要
-	'kaiping', // 开平
-	'xinhui', // 新会
-	'jianghai', // 江海
-	'xiangzhouqu', // 香洲
-	'chanchengqu', // 禅城
-	'nanhai', // 南海
-	'baiyun', // 白云
-	'haizhuqu', // 海珠
-	'huangpuqu', // 黄埔
-	'panyu', // 番禺
-	'nanshaqu', // 南沙
+	'gangbei', // 贵港港北
+	'tengxian', // 梧州藤县
+	'longweiqu', // 梧州龙圩
+	'yunchengqu', // 云浮云城
+	'gaoyao', // 肇庆高要
+	'xinhui', // 江门新会
+	'jianghai', // 江门江海
+	'xiangzhouqu', // 珠海香洲
+	'chanchengqu', // 佛山禅城
+	'nanhai', // 佛山南海
+	'baiyun', // 广州白云
+	'huangpuqu', // 广州黄埔
+	'panyu', // 广州番禺
+	'nanshaqu', // 广州南沙
 	'dongguan', // 东莞
-	'huidong1', // 惠东
-	'chaoyang2', // 潮阳
-	'jinpingqu', // 金平
-	'qingchengqu', // 清城
-	'wujiang1', // 武江
-	'beihuqu', // 北湖
-	'zhuhuiqu', // 珠晖
-	'hetangqu', // 荷塘
-	'furongqu', // 芙蓉
+	'huidong1', // 惠州惠东
+	'chaoyang2', // 汕头潮阳
+	'jinpingqu', // 汕头金平
+	'qingchengqu', // 清远清城
+	'wujiang1', // 韶关武江
+	'beihuqu', // 郴州北湖
+	'zhuhuiqu', // 衡阳珠晖
+	'hetangqu', // 株洲荷塘
+	'furongqu', // 长沙芙蓉
 ];
 const browser = await puppeteer.launch({
 	headless: 'new',
