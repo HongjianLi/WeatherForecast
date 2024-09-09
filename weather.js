@@ -1,7 +1,26 @@
 #!/usr/bin/env node
-import fs from 'fs/promises';
+import fs from 'fs';
+import { Readable } from 'stream';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
+const today = new Date();
+const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {
+	return component.toString().padStart(2, "0");
+}).join("");
+const hours = today.getHours();
+for (var hourIndex = 0; !(hours <  [18, 24][hourIndex]); ++hourIndex);
+await Promise.all([
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0002400.jpg',
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0004800.jpg',
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0007200.jpg',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png',
+].map(async (url, urlIndex) => {
+	const response = await fetch(url.replace('{}', localeDateString + (urlIndex < 3 ? ["00","12"] : ["08","20"])[hourIndex]));
+	if (!response.ok) return;
+	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
+}));
 const cityArr = [
 	'101300804', // 贵港港北
 	'101300602', // 梧州藤县
@@ -58,30 +77,16 @@ for (let i = 0; i < cityArr.length; ++i) {
 	await page.close();
 };
 await browser.close();
-await fs.writeFile('weather.html', [
+await fs.promises.writeFile('weather.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<body>',
-	'<img id="sevp24" width="671">',
-	'<img id="sevp48" width="671">',
-	'<img id="sevp72" width="671">',
-	'<img id="cwcc24" width="671">',
-	'<img id="cwcc48" width="671">',
-	'<img id="cwcc72" width="671">',
-	'<script type="text/javascript">',
-	'	const today = new Date();',
-	'	const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {',
-	'		return component.toString().padStart(2, "0");',
-	'	}).join("");',
-	'	const hours = today.getHours();',
-	'	for (var index = 0; !(hours <  [18, 24][index]); ++index);',
-	'	document.getElementById("sevp24").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}${["00","12"][index]}0002400.jpg`;',
-	'	document.getElementById("sevp48").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}${["00","12"][index]}0004800.jpg`;',
-	'	document.getElementById("sevp72").src = `https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_stfc_sfer_er24_achn_l88_p9_${localeDateString}${["00","12"][index]}0007200.jpg`;',
-	'	document.getElementById("cwcc24").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}${["08","20"][index]}0000_00000-02400_1920.png`;',
-	'	document.getElementById("cwcc48").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}${["08","20"][index]}0000_02400-04800_1920.png`;',
-	'	document.getElementById("cwcc72").src = `https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_${localeDateString}${["08","20"][index]}0000_04800-07200_1920.png`;',
-	'</script>',
+	'<img src="sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0002400.jpg" width="671">',
+	'<img src="sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0004800.jpg" width="671">',
+	'<img src="sevp_nmc_stfc_sfer_er24_achn_l88_p9_{}0007200.jpg" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png" width="671">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2017/headStyle_1.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/common.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/bluesky/c_7d.css">',
