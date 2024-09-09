@@ -15,6 +15,7 @@ await Promise.all([
 	'https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg',
 ].map(async (url) => {
 	const response = await fetch(url);
+	if (!response.ok) return;
 	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
 }));
 const cityArr = [
