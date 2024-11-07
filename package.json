@@ -10,7 +10,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"puppeteer-core": "^23.7.0"
+		"puppeteer-core": "^23.7.1"
 	},
 	"main": "weather.js",
 	"scripts": {
