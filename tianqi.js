@@ -55,6 +55,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	const city = cityArr[i];
 	bar.tick({ code: city });
 	const page = await browser.newPage();
+	await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
 	const response = await page.goto(`https://www.tianqi.com/${city}/7/`, {
 		waitUntil: 'domcontentloaded',
 		timeout: 12000,
