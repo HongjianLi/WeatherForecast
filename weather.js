@@ -11,12 +11,12 @@ const hours = today.getHours();
 for (var hourIndex = 0; !(hours < [18, 24][hourIndex]); ++hourIndex);
 const urlReplaceValue = localeDateString + ["08","20"][hourIndex];
 await Promise.all([
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_00000-02400_1920.jpg',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_02400-04800_1920.jpg',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_04800-07200_1920.jpg',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png',
 ].map(async (url, urlIndex) => {
 	const response = await fetch(url.replace('{}', urlReplaceValue));
 	if (!response.ok) return;
@@ -83,12 +83,12 @@ await fs.promises.writeFile('weather.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<body>',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png" width="671">',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png" width="671">',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png" width="671">',
 	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_00000-02400_1920.jpg" width="671">',
 	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_02400-04800_1920.jpg" width="671">',
 	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_04800-07200_1920.jpg" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png" width="671">',
+	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png" width="671">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2017/headStyle_1.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/common.css">',
 	'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/bluesky/c_7d.css">',
