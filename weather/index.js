@@ -79,7 +79,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	await page.close();
 };
 await browser.close();
-await fs.promises.writeFile('weather.html', [
+await fs.promises.writeFile('index.html', [
 	'<!DOCTYPE html>',
 	'<html>',
 	'<body>',

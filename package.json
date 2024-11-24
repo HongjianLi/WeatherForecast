@@ -1,6 +1,6 @@
 {
 	"name": "WeatherForecast",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Browse www.weather.com.cn and www.tianqi.com to extract forecast for 7 days",
 	"author": "Hongjian Li",
 	"type": "module",
@@ -12,8 +12,8 @@
 	"dependencies": {
 		"puppeteer-core": "^23.9.0"
 	},
-	"main": "weather.js",
+	"main": "weather/index.js",
 	"scripts": {
-		"start": "node weather.js && node tianqi.js"
+		"start": "cd weather; node index.js; cd ..; cd tianqi; node index.js; cd ..;"
 	}
 }
