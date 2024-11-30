@@ -63,7 +63,7 @@ for (let i = 0; i < cityArr.length; ++i) {
 	if (response.ok()) {
 		cityDivArr.push([
 			await page.$eval('div.inleft_place a.place_b', el => el.innerHTML),
-			(await page.$eval('ul.weaul', el => el.outerHTML)).replace(/\/\/static.tianqistatic.com\/static\/tianqi2018\/ico2\//g, '').replace(/\<\!\-\- /g, '').replace(/ \-\-\>/g, ''),
+			(await page.$eval('ul.weaul', el => el.outerHTML)).replace(/\/\/static.tianqistatic.com\/static\/tianqi2018\/ico2\//g, '').replace(/\<\!\-\- /g, '').replace(/\-\-\>/g, ''),
 		].join('\n'));
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`);
