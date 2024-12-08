@@ -18,66 +18,9 @@ await Promise.all([
 	if (!response.ok) return;
 	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
 }));
-const cityArr = [
-	'gangbei', // 贵港港北
-	'tengxian', // 梧州藤县
-	'longweiqu', // 梧州龙圩
-	'wanxiu', // 梧州万秀
-	'yunchengqu', // 云浮云城
-	'gaoyao', // 肇庆高要
-	'xinhui', // 江门新会
-	'jianghai', // 江门江海
-	'xiangzhouqu', // 珠海香洲
-	'chanchengqu', // 佛山禅城
-	'nanhai', // 佛山南海
-	'baiyun', // 广州白云
-	'huangpuqu', // 广州黄埔
-	'panyu', // 广州番禺
-	'nanshaqu', // 广州南沙
-	'dongguan', // 东莞
-	'huidong1', // 惠州惠东
-	'chaoyang2', // 汕头潮阳
-	'jinpingqu', // 汕头金平
-	'qingchengqu', // 清远清城
-	'wujiang1', // 韶关武江
-	'beihuqu', // 郴州北湖
-	'zhuhuiqu', // 衡阳珠晖
-	'hetangqu', // 株洲荷塘
-	'furongqu', // 长沙芙蓉
-];
-const browser = await puppeteer.launch({
-	headless: 'new',
-	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-});
-const cityDivArr = [];
-const bar = new ProgressBar('[:bar] :code :current/:total=:percent :elapseds :etas', { total: cityArr.length });
-for (let i = 0; i < cityArr.length; ++i) {
-	const city = cityArr[i];
-	bar.tick({ code: city });
-	const page = await browser.newPage();
-	await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
-	const response = await page.goto(`https://www.tianqi.com/${city}/7/`, {
-		waitUntil: 'domcontentloaded',
-		timeout: 12000,
-	});
-	if (response.ok()) {
-		cityDivArr.push([
-			await page.$eval('div.inleft_place a.place_b', el => el.innerHTML),
-			(await page.$eval('ul.weaul', el => el.outerHTML)).replace(/\/\/static.tianqistatic.com\/static\/tianqi2018\/ico2\//g, '').replace(/\<\!\-\- /g, '').replace(/\-\-\>/g, ''),
-		].join('\n'));
-	} else {
-		console.error(`${city}: HTTP response status code ${response.status()}`);
-	}
-	await page.close();
-};
-await browser.close();
 await fs.promises.writeFile('index.html', [
 	'<!DOCTYPE html>',
 	'<html>',
-	'<head>',
-	'<link href="tianqi.css" rel="stylesheet">',
-	'<link href="tianyubao.css" rel="stylesheet">',
-	'</head>',
 	'<body>',
 	'<img src="jiangshui1.jpg" width="671">',
 	'<img src="jiangshui2.jpg" width="671">',
@@ -88,11 +31,55 @@ await fs.promises.writeFile('index.html', [
 	'<img src="jiaotongkongqiwuran.jpg" width="671">',
 	'<img src="wumaiwu.jpg" width="671">',
 	'<img src="wumaimai.jpg" width="671">',
-	'<div class="w1100 newday40_top">',
-	'<div class="inleft">',
-	...cityDivArr,
-	'</div>',
-	'</div>',
 	'</body>',
 	'</html>',
 ].join('\n'));
+const browser = await puppeteer.launch({
+	headless: 'new',
+	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
+	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+});
+const page = (await browser.pages())[0];
+await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
+const cityDir = process.argv.length > 2 ? process.argv[2] : 'city';
+const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
+const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
+const uncomfortableDaysArr = [];
+for (let i = 0; i < codeArr.length; ++i) {
+	if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
+	const { parent, city, code } = codeArr[i];
+	bar.tick({ city });
+	let response;
+	try {
+		response = await page.goto(`https://www.tianqi.com/${code}/7/`, {
+			waitUntil: 'load',
+			timeout: 9000,
+		});
+	} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
+		console.error(`${city}: page.goto() error ${error}`);
+		continue;
+	}
+	if (response.ok()) {
+		const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
+		console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`); // In most cases city === cityFromPage, the only exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西
+		const c7dul = await page.$('ul.weaul');
+		const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
+			const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
+			if (weather.includes('雨')) return 1;
+			const [ lowTemperature, highTemperature ] = temperature.replaceAll('℃', '').split('~'); // The temperatures are strings, not numbers.
+			if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
+			return 0;
+		}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
+			return acc + cur;
+		}, 0));
+		console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
+		uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
+		await c7dul.dispose();
+	} else {
+		console.error(`${city}: HTTP response status code ${response.status()}`); // Status code 403 is usually returned.
+	}
+};
+await browser.close();
+console.assert(uncomfortableDaysArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${uncomfortableDaysArr.length} were fetched.`);
+await fs.promises.writeFile(`${cityDir}/uncomfortableDays.json`, JSON.stringify(uncomfortableDaysArr, null, '	'));

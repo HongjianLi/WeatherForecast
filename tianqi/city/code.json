@@ -1,0 +1,278 @@
+[
+	{
+		"city": "潮州",
+		"code": "chaozhou"
+	},
+	{
+		"city": "东莞",
+		"code": "dongguan"
+	},
+	{
+		"city": "佛山",
+		"code": "foshan"
+	},
+	{
+		"city": "广州",
+		"code": "guangzhou"
+	},
+	{
+		"city": "河源",
+		"code": "heyuan"
+	},
+	{
+		"city": "惠州",
+		"code": "huizhou"
+	},
+	{
+		"city": "江门",
+		"code": "jiangmen"
+	},
+	{
+		"city": "揭阳",
+		"code": "jieyang"
+	},
+	{
+		"city": "茂名",
+		"code": "maoming"
+	},
+	{
+		"city": "梅州",
+		"code": "meizhou"
+	},
+	{
+		"city": "清远",
+		"code": "qingyuan3"
+	},
+	{
+		"city": "汕头",
+		"code": "shantou"
+	},
+	{
+		"city": "汕尾",
+		"code": "shanwei"
+	},
+	{
+		"city": "韶关",
+		"code": "shaoguan"
+	},
+	{
+		"city": "深圳",
+		"code": "shenzhen"
+	},
+	{
+		"city": "阳江",
+		"code": "yangjiang"
+	},
+	{
+		"city": "云浮",
+		"code": "yunfu"
+	},
+	{
+		"city": "湛江",
+		"code": "zhanjiang"
+	},
+	{
+		"city": "肇庆",
+		"code": "zhaoqing"
+	},
+	{
+		"city": "中山",
+		"code": "zhongshan"
+	},
+	{
+		"city": "珠海",
+		"code": "zhuhai"
+	},
+	{
+		"city": "百色",
+		"code": "baise"
+	},
+	{
+		"city": "北海",
+		"code": "beihai"
+	},
+	{
+		"city": "崇左",
+		"code": "chongzuo"
+	},
+	{
+		"city": "防城港",
+		"code": "fangchenggang"
+	},
+	{
+		"city": "贵港",
+		"code": "guigang"
+	},
+	{
+		"city": "桂林",
+		"code": "guilin"
+	},
+	{
+		"city": "河池",
+		"code": "hechi"
+	},
+	{
+		"city": "贺州",
+		"code": "hezhou"
+	},
+	{
+		"city": "来宾",
+		"code": "laibin"
+	},
+	{
+		"city": "柳州",
+		"code": "liuzhou"
+	},
+	{
+		"city": "南宁",
+		"code": "nanning"
+	},
+	{
+		"city": "钦州",
+		"code": "qinzhou"
+	},
+	{
+		"city": "梧州",
+		"code": "wuzhou"
+	},
+	{
+		"city": "玉林",
+		"code": "yulin1"
+	},
+	{
+		"city": "常德",
+		"code": "changde"
+	},
+	{
+		"city": "长沙",
+		"code": "changsha"
+	},
+	{
+		"city": "郴州",
+		"code": "chenzhou"
+	},
+	{
+		"city": "衡阳",
+		"code": "hengyang"
+	},
+	{
+		"city": "怀化",
+		"code": "huaihua"
+	},
+	{
+		"city": "娄底",
+		"code": "loudi"
+	},
+	{
+		"city": "邵阳",
+		"code": "shaoyang"
+	},
+	{
+		"city": "湘潭",
+		"code": "xiangtan"
+	},
+	{
+		"city": "湘西土家族苗族自治州",
+		"code": "xiangxi"
+	},
+	{
+		"city": "益阳",
+		"code": "yiyang1"
+	},
+	{
+		"city": "永州",
+		"code": "yongzhou"
+	},
+	{
+		"city": "岳阳",
+		"code": "yueyang"
+	},
+	{
+		"city": "张家界",
+		"code": "zhangjiajie"
+	},
+	{
+		"city": "株洲",
+		"code": "zhuzhou"
+	},
+	{
+		"city": "抚州",
+		"code": "fuzhou1"
+	},
+	{
+		"city": "赣州",
+		"code": "ganzhou"
+	},
+	{
+		"city": "吉安",
+		"code": "jian1"
+	},
+	{
+		"city": "景德镇",
+		"code": "jingdezhen"
+	},
+	{
+		"city": "九江",
+		"code": "jiujiang"
+	},
+	{
+		"city": "南昌",
+		"code": "nanchang"
+	},
+	{
+		"city": "萍乡",
+		"code": "pingxiang1"
+	},
+	{
+		"city": "上饶",
+		"code": "shangrao"
+	},
+	{
+		"city": "新余",
+		"code": "xinyu"
+	},
+	{
+		"city": "宜春",
+		"code": "yichun1"
+	},
+	{
+		"city": "鹰潭",
+		"code": "yingtan"
+	},
+	{
+		"city": "福州",
+		"code": "fuzhou"
+	},
+	{
+		"city": "龙岩",
+		"code": "longyan"
+	},
+	{
+		"city": "南平",
+		"code": "nanping"
+	},
+	{
+		"city": "宁德",
+		"code": "ningde"
+	},
+	{
+		"city": "莆田",
+		"code": "putian"
+	},
+	{
+		"city": "泉州",
+		"code": "quanzhou"
+	},
+	{
+		"city": "三明",
+		"code": "sanming"
+	},
+	{
+		"city": "厦门",
+		"code": "xiamen"
+	},
+	{
+		"city": "漳州",
+		"code": "zhangzhou"
+	}
+]

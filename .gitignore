@@ -1,4 +1,7 @@
 node_modules
-*/index.html
+weather/index.html
+tianqi/index.html
 *.jpg
 *.png
+*.webp
+uncomfortableDays.json

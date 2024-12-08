@@ -10,7 +10,10 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"puppeteer-core": "^23.9.0"
+		"puppeteer-core": "^23.10.1"
+	},
+	"devDependencies": {
+		"pinyin-pro": "^3.26.0"
 	},
 	"main": "weather/index.js",
 	"scripts": {
