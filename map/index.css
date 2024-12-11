@@ -1,6 +1,39 @@
-.chartContainer {
-	text-align: center;
-	display: inline-block;
-	width: 2544px;
-	height: 1294px;
+/* For resolution 2560 x 1600 and zoom 125%, e.g. LAPTOP-O511PV03 */
+@media (min-width: 2040px) and (min-height: 1162px) {
+    .mainChart {
+        width: 2032px;
+        height: 1146px;
+    }
+}
+
+/* For resolution 2880 x 1800 and zoom 125%, e.g. LAPTOP-8DRAKJJF */
+@media (min-width: 2296px) and (min-height: 1314px) {
+	.mainChart {
+		width: 2288px;
+		height: 1294px;
+	}
+}
+
+/* For resolution 3840 x 2160 and zoom 150%, e.g. LAPTOP-8DRAKJJF projected on a 4K monitor */
+@media (min-width: 2552px) and (min-height: 1314px) {
+	.mainChart {
+		width: 2544px;
+		height: 1294px;
+	}
+}
+
+/* For resolution 3840 x 2160 and zoom 150%, e.g. jacky-B650I-AORUS-ULTRA */
+@media (min-width: 2560px) and (min-height: 1247px) {
+	.mainChart {
+		width: 2552px;
+		height: 1227px;
+	}
+}
+
+/* For resolution 3840 x 2160 and zoom 125%, e.g. jacky-B650I-AORUS-ULTRA */
+@media (min-width: 3072px) and (min-height: 1535px) {
+	.mainChart {
+		width: 3064px;
+		height: 1515px;
+	}
 }

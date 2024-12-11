@@ -13,7 +13,7 @@ const uncomfortableDaysArr = weather.map(wcity => { // Calculate the average of 
 	const tcity = tianqi.find(tcity => tcity.city === wcity.city); // tcity could be undefined if tianqi.length <= cityCodeArrLength
 	return { city: wcity.city, uncomfortableDays: tcity ? (wcity.uncomfortableDays + tcity.uncomfortableDays) * 0.5 : wcity.uncomfortableDays};
 });
-echarts.init(document.getElementById('chartContainer'), 'dark').setOption({
+echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
 			const { name, value } = params;
