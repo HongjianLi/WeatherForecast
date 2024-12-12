@@ -1,3 +1,7 @@
+.mainChart {
+	text-align: center;
+}
+
 /* For resolution 2560 x 1600 and zoom 125%, e.g. LAPTOP-O511PV03 */
 @media (min-width: 2040px) and (min-height: 1162px) {
     .mainChart {
@@ -10,7 +14,7 @@
 @media (min-width: 2296px) and (min-height: 1314px) {
 	.mainChart {
 		width: 2288px;
-		height: 1294px;
+		height: 1298px;
 	}
 }
 
@@ -18,7 +22,7 @@
 @media (min-width: 2552px) and (min-height: 1314px) {
 	.mainChart {
 		width: 2544px;
-		height: 1294px;
+		height: 1298px;
 	}
 }
 
@@ -26,7 +30,7 @@
 @media (min-width: 2560px) and (min-height: 1247px) {
 	.mainChart {
 		width: 2552px;
-		height: 1227px;
+		height: 1231px;
 	}
 }
 
@@ -34,6 +38,6 @@
 @media (min-width: 3072px) and (min-height: 1535px) {
 	.mainChart {
 		width: 3064px;
-		height: 1515px;
+		height: 1519px;
 	}
 }
