@@ -26,7 +26,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		text: ['不舒适', '舒适'],
 		calculable: true,
 		inRange: {
-			color: ['orangered', 'yellow', 'lightskyblue']
+			color: ['green', 'lightgreen', 'lightskyblue', 'yellow', 'orangered']
 		},
 	},
 	series: {
