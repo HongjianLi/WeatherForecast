@@ -4,10 +4,13 @@
 
 /* For resolution 2560 x 1600 and zoom 125%, e.g. LAPTOP-O511PV03 */
 @media (min-width: 2040px) and (min-height: 1162px) {
-    .mainChart {
-        width: 2032px;
-        height: 1146px;
-    }
+	.mainChart {
+		width: 2032px;
+		height: 1146px;
+	}
+	.side {
+		height: 387px;
+	}
 }
 
 /* For resolution 2880 x 1800 and zoom 125%, e.g. LAPTOP-8DRAKJJF */
@@ -15,6 +18,9 @@
 	.mainChart {
 		width: 2288px;
 		height: 1298px;
+	}
+	.side {
+		height: 438px;
 	}
 }
 
@@ -24,6 +30,9 @@
 		width: 2544px;
 		height: 1298px;
 	}
+	.side {
+		height: 438px;
+	}
 }
 
 /* For resolution 3840 x 2160 and zoom 150%, e.g. jacky-B650I-AORUS-ULTRA */
@@ -31,6 +40,9 @@
 	.mainChart {
 		width: 2552px;
 		height: 1231px;
+	}
+	.side {
+		height: 415px;
 	}
 }
 
@@ -40,4 +52,43 @@
 		width: 3064px;
 		height: 1519px;
 	}
+	.side {
+		height: 511px;
+	}
+}
+
+.topLeft {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.middleLeft {
+	position: absolute;
+	top: 33.33%;
+	left: 0px;
+}
+
+.bottomLeft {
+	position: absolute;
+	top: 66.67%;
+	left: 0px;
+}
+
+.topRight {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.middleRight {
+	position: absolute;
+	top: 33.33%;
+	right: 0px;
+}
+
+.bottomRight {
+	position: absolute;
+	top: 66.67%;
+	right: 0px;
 }
