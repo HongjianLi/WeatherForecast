@@ -16,7 +16,8 @@
 	},
 	{
 		"parent": "东莞",
-		"city": "东莞市"
+		"city": "东莞市",
+		"code": "dongguan"
 	},
 	{
 		"parent": "佛山",
@@ -85,55 +86,68 @@
 	},
 	{
 		"parent": "广州",
-		"city": "花都区"
+		"city": "花都区",
+		"code": "huadu"
 	},
 	{
 		"parent": "广州",
-		"city": "从化区"
+		"city": "从化区",
+		"code": "conghuaqu"
 	},
 	{
 		"parent": "广州",
-		"city": "增城区"
+		"city": "增城区",
+		"code": "zengchengqu"
 	},
 	{
 		"parent": "河源",
-		"city": "源城区"
+		"city": "源城区",
+		"code": "yuanchengqu"
 	},
 	{
 		"parent": "河源",
-		"city": "连平县"
+		"city": "连平县",
+		"code": "lianpingxian"
 	},
 	{
 		"parent": "河源",
-		"city": "紫金县"
+		"city": "紫金县",
+		"code": "zijinxian"
 	},
 	{
 		"parent": "河源",
-		"city": "龙川县"
+		"city": "龙川县",
+		"code": "longchuan"
 	},
 	{
 		"parent": "河源",
-		"city": "和平县"
+		"city": "和平县",
+		"code": "hepingxian"
 	},
 	{
 		"parent": "河源",
-		"city": "东源县"
+		"city": "东源县",
+		"code": "dongyuanxian"
 	},
 	{
 		"parent": "惠州",
-		"city": "惠城区"
+		"city": "惠城区",
+		"code": "huichengqu"
 	},
 	{
 		"parent": "惠州",
-		"city": "博罗县"
+		"city": "博罗县",
+		"code": "boluoxian"
 	},
 	{
 		"parent": "惠州",
-		"city": "惠阳区"
+		"city": "惠阳区",
+		"code": "huiyangqu"
 	},
 	{
 		"parent": "惠州",
-		"city": "惠东县"
+		"city": "惠东县",
+		"code": "huidongxian1"
 	},
 	{
 		"parent": "惠州",
@@ -167,7 +181,8 @@
 	},
 	{
 		"parent": "江门",
-		"city": "鹤山市"
+		"city": "鹤山市",
+		"code": "heshan"
 	},
 	{
 		"parent": "江门",
@@ -211,51 +226,63 @@
 	},
 	{
 		"parent": "茂名",
-		"city": "高州市"
+		"city": "高州市",
+		"code": "gaozhoushi"
 	},
 	{
 		"parent": "茂名",
-		"city": "化州市"
+		"city": "化州市",
+		"code": "huazhoushi"
 	},
 	{
 		"parent": "茂名",
-		"city": "信宜市"
+		"city": "信宜市",
+		"code": "xinyishi"
 	},
 	{
 		"parent": "梅州",
-		"city": "梅江区"
+		"city": "梅江区",
+		"code": "meijiangqu"
 	},
 	{
 		"parent": "梅州",
-		"city": "大埔县"
+		"city": "大埔县",
+		"code": "dabuxian"
 	},
 	{
 		"parent": "梅州",
-		"city": "梅县区"
+		"city": "梅县区",
+		"code": "meixian1"
 	},
 	{
 		"parent": "梅州",
-		"city": "丰顺县"
+		"city": "丰顺县",
+		"code": "fengshunxian"
 	},
 	{
 		"parent": "梅州",
-		"city": "五华县"
+		"city": "五华县",
+		"code": "wuhuaxian"
 	},
 	{
 		"parent": "梅州",
-		"city": "平远县"
+		"city": "平远县",
+		"code": "pingyuanxian"
 	},
 	{
 		"parent": "梅州",
-		"city": "蕉岭县"
+		"city": "蕉岭县",
+		"code": "jiaolingxian"
 	},
 	{
 		"parent": "梅州",
-		"city": "兴宁市"
+		"city": "兴宁市",
+		"code": "xingningshi"
 	},
 	{
 		"parent": "清远",
-		"city": "清城区"
+		"city": "清城区",
+		"code": "qingchengqu"
 	},
 	{
 		"parent": "清远",
@@ -334,55 +361,68 @@
 	},
 	{
 		"parent": "汕尾",
-		"city": "陆河县"
+		"city": "陆河县",
+		"code": "luhe"
 	},
 	{
 		"parent": "汕尾",
-		"city": "陆丰市"
+		"city": "陆丰市",
+		"code": "lufengshi"
 	},
 	{
 		"parent": "汕尾",
-		"city": "海丰县"
+		"city": "海丰县",
+		"code": "haifengxian"
 	},
 	{
 		"parent": "韶关",
-		"city": "武江区"
+		"city": "武江区",
+		"code": "wujiangqu1"
 	},
 	{
 		"parent": "韶关",
-		"city": "浈江区"
+		"city": "浈江区",
+		"code": "zhenjiangqu1"
 	},
 	{
 		"parent": "韶关",
-		"city": "曲江区"
+		"city": "曲江区",
+		"code": "qujiang"
 	},
 	{
 		"parent": "韶关",
-		"city": "始兴县"
+		"city": "始兴县",
+		"code": "shixing"
 	},
 	{
 		"parent": "韶关",
-		"city": "翁源县"
+		"city": "翁源县",
+		"code": "wengyuanxian"
 	},
 	{
 		"parent": "韶关",
-		"city": "仁化县"
+		"city": "仁化县",
+		"code": "renhuaxian"
 	},
 	{
 		"parent": "韶关",
-		"city": "新丰县"
+		"city": "新丰县",
+		"code": "xinfengxian"
 	},
 	{
 		"parent": "韶关",
-		"city": "乳源瑶族自治县"
+		"city": "乳源瑶族自治县",
+		"code": "ruyuan"
 	},
 	{
 		"parent": "韶关",
-		"city": "乐昌市"
+		"city": "乐昌市",
+		"code": "lechangshi"
 	},
 	{
 		"parent": "韶关",
-		"city": "南雄市"
+		"city": "南雄市",
+		"code": "nanxiongshi"
 	},
 	{
 		"parent": "深圳",
@@ -406,7 +446,8 @@
 	},
 	{
 		"parent": "深圳",
-		"city": "龙岗区"
+		"city": "龙岗区",
+		"code": "longgang"
 	},
 	{
 		"parent": "深圳",
@@ -440,47 +481,58 @@
 	},
 	{
 		"parent": "阳江",
-		"city": "阳春市"
+		"city": "阳春市",
+		"code": "yangchunshi"
 	},
 	{
 		"parent": "云浮",
-		"city": "云城区"
+		"city": "云城区",
+		"code": "yunchengqu"
 	},
 	{
 		"parent": "云浮",
-		"city": "郁南县"
+		"city": "郁南县",
+		"code": "yunanxian"
 	},
 	{
 		"parent": "云浮",
-		"city": "云安区"
+		"city": "云安区",
+		"code": "yunanqu1"
 	},
 	{
 		"parent": "云浮",
-		"city": "新兴县"
+		"city": "新兴县",
+		"code": "xinxingxian"
 	},
 	{
 		"parent": "云浮",
-		"city": "罗定市"
+		"city": "罗定市",
+		"code": "luodingshi"
 	},
 	{
 		"parent": "湛江",
-		"city": "赤坎区"
+		"city": "赤坎区",
+		"code": "chikanqu"
 	},
 	{
 		"parent": "湛江",
-		"city": "霞山区"
+		"city": "霞山区",
+		"code": "xiashanqu"
 	},
 	{
 		"parent": "湛江",
-		"city": "坡头区"
+		"city": "坡头区",
+		"code": "potouqu"
 	},
 	{
 		"parent": "湛江",
-		"city": "麻章区"
+		"city": "麻章区",
+		"code": "mazhangqu"
 	},
 	{
 		"parent": "湛江",
-		"city": "徐闻县"
+		"city": "徐闻县",
+		"code": "xuwenxian"
 	},
 	{
 		"parent": "湛江",
@@ -524,175 +576,218 @@
 	},
 	{
 		"parent": "肇庆",
-		"city": "怀集县"
+		"city": "怀集县",
+		"code": "huaijixian"
 	},
 	{
 		"parent": "肇庆",
-		"city": "封开县"
+		"city": "封开县",
+		"code": "fengkaixian"
 	},
 	{
 		"parent": "肇庆",
-		"city": "德庆县"
+		"city": "德庆县",
+		"code": "deqingxian"
 	},
 	{
 		"parent": "肇庆",
-		"city": "四会市"
+		"city": "四会市",
+		"code": "sihuishi"
 	},
 	{
 		"parent": "中山",
-		"city": "中山市"
+		"city": "中山市",
+		"code": "zhongshan"
 	},
 	{
 		"parent": "珠海",
-		"city": "香洲区"
+		"city": "香洲区",
+		"code": "xiangzhouqu"
 	},
 	{
 		"parent": "珠海",
-		"city": "金湾区"
+		"city": "金湾区",
+		"code": "jinwanqu"
 	},
 	{
 		"parent": "珠海",
-		"city": "斗门区"
+		"city": "斗门区",
+		"code": "doumenqu"
 	},
 	{
 		"parent": "百色",
-		"city": "右江区"
+		"city": "右江区",
+		"code": "youjiangqu"
 	},
 	{
 		"parent": "百色",
-		"city": "田东县"
+		"city": "田东县",
+		"code": "tiandongxian"
 	},
 	{
 		"parent": "百色",
-		"city": "田阳县"
+		"city": "田阳县",
+		"code": "tianyangxian"
 	},
 	{
 		"parent": "百色",
-		"city": "平果县"
+		"city": "平果县",
+		"code": "pingguoxian"
 	},
 	{
 		"parent": "百色",
-		"city": "那坡县"
+		"city": "那坡县",
+		"code": "napoxian"
 	},
 	{
 		"parent": "百色",
-		"city": "德保县"
+		"city": "德保县",
+		"code": "debaoxian"
 	},
 	{
 		"parent": "百色",
-		"city": "凌云县"
+		"city": "凌云县",
+		"code": "lingyunxian"
 	},
 	{
 		"parent": "百色",
-		"city": "乐业县"
+		"city": "乐业县",
+		"code": "leyexian"
 	},
 	{
 		"parent": "百色",
-		"city": "西林县"
+		"city": "西林县",
+		"code": "xilinxian"
 	},
 	{
 		"parent": "百色",
-		"city": "隆林各族自治县"
+		"city": "隆林各族自治县",
+		"code": "longlin"
 	},
 	{
 		"parent": "百色",
-		"city": "田林县"
+		"city": "田林县",
+		"code": "tianlinxian"
 	},
 	{
 		"parent": "百色",
-		"city": "靖西市"
+		"city": "靖西市",
+		"code": "jingxishi"
 	},
 	{
 		"parent": "北海",
-		"city": "海城区"
+		"city": "海城区",
+		"code": "haichengqu"
 	},
 	{
 		"parent": "北海",
-		"city": "银海区"
+		"city": "银海区",
+		"code": "yinhaiqu"
 	},
 	{
 		"parent": "北海",
-		"city": "铁山港区"
+		"city": "铁山港区",
+		"code": "tieshangangqu"
 	},
 	{
 		"parent": "北海",
-		"city": "合浦县"
+		"city": "合浦县",
+		"code": "hepuxian"
 	},
 	{
 		"parent": "崇左",
-		"city": "江州区"
+		"city": "江州区",
+		"code": "jiangzhouqu"
 	},
 	{
 		"parent": "崇左",
-		"city": "扶绥县"
+		"city": "扶绥县",
+		"code": "fusuixian"
 	},
 	{
 		"parent": "崇左",
-		"city": "龙州县"
+		"city": "龙州县",
+		"code": "longzhouxian"
 	},
 	{
 		"parent": "崇左",
-		"city": "宁明县"
+		"city": "宁明县",
+		"code": "ningmingxian"
 	},
 	{
 		"parent": "崇左",
-		"city": "凭祥市"
+		"city": "凭祥市",
+		"code": "pingxiangshi"
 	},
 	{
 		"parent": "崇左",
-		"city": "天等县"
+		"city": "天等县",
+		"code": "tiandengxian"
 	},
 	{
 		"parent": "崇左",
-		"city": "大新县"
+		"city": "大新县",
+		"code": "daxinxian"
 	},
 	{
 		"parent": "防城港",
-		"city": "港口区"
+		"city": "港口区",
+		"code": "gangkouqu"
 	},
 	{
 		"parent": "防城港",
-		"city": "东兴市"
+		"city": "东兴市",
+		"code": "dongxingshi"
 	},
 	{
 		"parent": "防城港",
-		"city": "防城区"
+		"city": "防城区",
+		"code": "fangchengqu"
 	},
 	{
 		"parent": "防城港",
-		"city": "上思县"
+		"city": "上思县",
+		"code": "shangsixian"
 	},
 	{
 		"parent": "贵港",
-		"city": "港北区"
+		"city": "港北区",
+		"code": "gangbeiqu"
 	},
 	{
 		"parent": "贵港",
-		"city": "港南区"
+		"city": "港南区",
+		"code": "gangnanqu"
 	},
 	{
 		"parent": "贵港",
-		"city": "覃塘区"
+		"city": "覃塘区",
+		"code": "tantangqu"
 	},
 	{
 		"parent": "贵港",
-		"city": "平南县"
+		"city": "平南县",
+		"code": "pingnanxian1"
 	},
 	{
 		"parent": "贵港",
-		"city": "桂平市"
+		"city": "桂平市",
+		"code": "guipingshi"
 	},
 	{
 		"parent": "桂林",
-		"city": "秀峰区"
+		"city": "秀峰区",
+		"code": "xiufengqu"
 	},
 	{
 		"parent": "桂林",
-		"city": "七星区"
+		"city": "七星区",
+		"code": "qixingqu"
 	},
 	{
 		"parent": "桂林",
-		"city": "叠彩区"
+		"city": "叠彩区",
+		"code": "diecaiqu"
 	},
 	{
 		"parent": "桂林",
@@ -700,135 +795,168 @@
 	},
 	{
 		"parent": "桂林",
-		"city": "雁山区"
+		"city": "雁山区",
+		"code": "yanshanqu"
 	},
 	{
 		"parent": "桂林",
-		"city": "阳朔县"
+		"city": "阳朔县",
+		"code": "yangshuoxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "灵川县"
+		"city": "灵川县",
+		"code": "lingchuanxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "临桂区"
+		"city": "临桂区",
+		"code": "linguiqu"
 	},
 	{
 		"parent": "桂林",
-		"city": "全州县"
+		"city": "全州县",
+		"code": "quanzhou3"
 	},
 	{
 		"parent": "桂林",
-		"city": "兴安县"
+		"city": "兴安县",
+		"code": "xinganxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "永福县"
+		"city": "永福县",
+		"code": "yongfuxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "灌阳县"
+		"city": "灌阳县",
+		"code": "guanyangxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "龙胜各族自治县"
+		"city": "龙胜各族自治县",
+		"code": "longshenggezuzizhixian"
 	},
 	{
 		"parent": "桂林",
-		"city": "资源县"
+		"city": "资源县",
+		"code": "ziyuanxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "荔浦县"
+		"city": "荔浦县",
+		"code": "lipuxian"
 	},
 	{
 		"parent": "桂林",
-		"city": "平乐县"
+		"city": "平乐县",
+		"code": "pinglexian"
 	},
 	{
 		"parent": "桂林",
-		"city": "恭城瑶族自治县"
+		"city": "恭城瑶族自治县",
+		"code": "gongcheng"
 	},
 	{
 		"parent": "河池",
-		"city": "金城江区"
+		"city": "金城江区",
+		"code": "jinchengjiangqu"
 	},
 	{
 		"parent": "河池",
-		"city": "南丹县"
+		"city": "南丹县",
+		"code": "nandanxian"
 	},
 	{
 		"parent": "河池",
-		"city": "天峨县"
+		"city": "天峨县",
+		"code": "tianexian"
 	},
 	{
 		"parent": "河池",
-		"city": "凤山县"
+		"city": "凤山县",
+		"code": "fengshanxian"
 	},
 	{
 		"parent": "河池",
-		"city": "环江毛南族自治县"
+		"city": "环江毛南族自治县",
+		"code": "huanjiang"
 	},
 	{
 		"parent": "河池",
-		"city": "罗城仫佬族自治县"
+		"city": "罗城仫佬族自治县",
+		"code": "luocheng"
 	},
 	{
 		"parent": "河池",
-		"city": "东兰县"
+		"city": "东兰县",
+		"code": "donglanxian"
 	},
 	{
 		"parent": "河池",
-		"city": "巴马瑶族自治县"
+		"city": "巴马瑶族自治县",
+		"code": "bama"
 	},
 	{
 		"parent": "河池",
-		"city": "都安瑶族自治县"
+		"city": "都安瑶族自治县",
+		"code": "duanxian"
 	},
 	{
 		"parent": "河池",
-		"city": "大化瑶族自治县"
+		"city": "大化瑶族自治县",
+		"code": "dahua"
 	},
 	{
 		"parent": "河池",
-		"city": "宜州市"
+		"city": "宜州市",
+		"code": "yizhoushi"
 	},
 	{
 		"parent": "贺州",
-		"city": "八步区"
+		"city": "八步区",
+		"code": "babuqu"
 	},
 	{
 		"parent": "贺州",
-		"city": "平桂区"
+		"city": "平桂区",
+		"code": "pingguiqu"
 	},
 	{
 		"parent": "贺州",
-		"city": "钟山县"
+		"city": "钟山县",
+		"code": "zhongshanxian"
 	},
 	{
 		"parent": "贺州",
-		"city": "昭平县"
+		"city": "昭平县",
+		"code": "zhaopingxian"
 	},
 	{
 		"parent": "贺州",
-		"city": "富川瑶族自治县"
+		"city": "富川瑶族自治县",
+		"code": "fuchuan"
 	},
 	{
 		"parent": "来宾",
-		"city": "忻城县"
+		"city": "忻城县",
+		"code": "xichengxian"
 	},
 	{
 		"parent": "来宾",
-		"city": "象州县"
+		"city": "象州县",
+		"code": "xiangzhou"
 	},
 	{
 		"parent": "来宾",
-		"city": "兴宾区"
+		"city": "兴宾区",
+		"code": "xingbinqu"
 	},
 	{
 		"parent": "来宾",
-		"city": "武宣县"
+		"city": "武宣县",
+		"code": "wuxuanxian"
 	},
 	{
 		"parent": "来宾",
@@ -837,39 +965,48 @@
 	},
 	{
 		"parent": "来宾",
-		"city": "金秀瑶族自治县"
+		"city": "金秀瑶族自治县",
+		"code": "jinxiu"
 	},
 	{
 		"parent": "柳州",
-		"city": "城中区"
+		"city": "城中区",
+		"code": "chengzhong"
 	},
 	{
 		"parent": "柳州",
-		"city": "柳南区"
+		"city": "柳南区",
+		"code": "liunanqu"
 	},
 	{
 		"parent": "柳州",
-		"city": "柳北区"
+		"city": "柳北区",
+		"code": "liubeiqu"
 	},
 	{
 		"parent": "柳州",
-		"city": "鱼峰区"
+		"city": "鱼峰区",
+		"code": "yufengqu"
 	},
 	{
 		"parent": "柳州",
-		"city": "柳江区"
+		"city": "柳江区",
+		"code": "liujiangqu"
 	},
 	{
 		"parent": "柳州",
-		"city": "柳城县"
+		"city": "柳城县",
+		"code": "liuchengxian"
 	},
 	{
 		"parent": "柳州",
-		"city": "融安县"
+		"city": "融安县",
+		"code": "ronganxian"
 	},
 	{
 		"parent": "柳州",
-		"city": "鹿寨县"
+		"city": "鹿寨县",
+		"code": "luzhaixian"
 	},
 	{
 		"parent": "柳州",
@@ -938,55 +1075,68 @@
 	},
 	{
 		"parent": "南宁",
-		"city": "横州市"
+		"city": "横州市",
+		"code": "hengxian"
 	},
 	{
 		"parent": "钦州",
-		"city": "钦南区"
+		"city": "钦南区",
+		"code": "qinnanqu"
 	},
 	{
 		"parent": "钦州",
-		"city": "钦北区"
+		"city": "钦北区",
+		"code": "qinbeiqu"
 	},
 	{
 		"parent": "钦州",
-		"city": "灵山县"
+		"city": "灵山县",
+		"code": "lingshanxian"
 	},
 	{
 		"parent": "钦州",
-		"city": "浦北县"
+		"city": "浦北县",
+		"code": "pubeixian"
 	},
 	{
 		"parent": "梧州",
-		"city": "万秀区"
+		"city": "万秀区",
+		"code": "wanxiuqu"
 	},
 	{
 		"parent": "梧州",
-		"city": "长洲区"
+		"city": "长洲区",
+		"code": "changzhouqu"
 	},
 	{
 		"parent": "梧州",
-		"city": "龙圩区"
+		"city": "龙圩区",
+		"code": "longweiqu"
 	},
 	{
 		"parent": "梧州",
-		"city": "苍梧县"
+		"city": "苍梧县",
+		"code": "cangwuxian"
 	},
 	{
 		"parent": "梧州",
-		"city": "岑溪市"
+		"city": "岑溪市",
+		"code": "cenxishi"
 	},
 	{
 		"parent": "梧州",
-		"city": "蒙山县"
+		"city": "蒙山县",
+		"code": "mengshanxian"
 	},
 	{
 		"parent": "梧州",
-		"city": "藤县"
+		"city": "藤县",
+		"code": "tengxian"
 	},
 	{
 		"parent": "玉林",
-		"city": "玉州区"
+		"city": "玉州区",
+		"code": "yuzhouqu"
 	},
 	{
 		"parent": "玉林",
@@ -1025,7 +1175,8 @@
 	},
 	{
 		"parent": "常德",
-		"city": "安乡县"
+		"city": "安乡县",
+		"code": "anxiang"
 	},
 	{
 		"parent": "常德",
@@ -1049,7 +1200,8 @@
 	},
 	{
 		"parent": "常德",
-		"city": "桃源县"
+		"city": "桃源县",
+		"code": "taoyuanxian"
 	},
 	{
 		"parent": "常德",
