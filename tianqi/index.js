@@ -35,7 +35,6 @@ await fs.promises.writeFile('index.html', [
 	'</html>',
 ].join('\n'));
 const browser = await puppeteer.launch({
-	headless: 'new',
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });

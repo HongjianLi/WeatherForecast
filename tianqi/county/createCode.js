@@ -6,7 +6,6 @@ import ProgressBar from 'progress';
 import { pinyin } from 'pinyin-pro';
 const cityArr = JSON.parse(await fs.promises.readFile(fs.existsSync('code.json') ? 'code.json' : '../../map/echarts-china-cities-js/geojson/shape-with-internal-borders/city.json'));
 const browser = await puppeteer.launch({
-	headless: 'new',
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
 const page = (await browser.pages())[0];

@@ -5,7 +5,6 @@ import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const cityArr = JSON.parse(await fs.readFile('../../map/echarts-china-cities-js/geojson/shape-only/city.json'));
 const browser = await puppeteer.launch({
-	headless: 'new',
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
 const page = (await browser.pages())[0];
