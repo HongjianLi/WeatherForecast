@@ -1,1 +1,1 @@
-50 5,7,11,18 * * * cd ~/FutuOpenDClient/WeatherForecast; export PUPPETEER_EXECUTABLE_PATH=/opt/google/chrome/chrome; npm start
+50 5,7,11,18 * * * cd ~/FutuOpenDClient/WeatherForecast; ./start.sh > start.txt 2>&1
