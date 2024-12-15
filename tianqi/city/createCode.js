@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // This script creates code.json from ../../map/echarts-china-cities-js/geojson/shape-only/city.json. It has to be run once only.
-import fs from 'fs/promises';
+import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 import { pinyin } from 'pinyin-pro';
-const cityArr = JSON.parse(await fs.readFile('../../map/echarts-china-cities-js/geojson/shape-only/city.json'));
+const cityArr = JSON.parse(await fs.promises.readFile(fs.existsSync('code.json') ? 'code.json' : '../../map/echarts-china-cities-js/geojson/shape-only/city.json'));
 const browser = await puppeteer.launch({
 	headless: 'new',
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
@@ -16,7 +16,7 @@ const code1Arr = ['', '1', '2', '3'];
 for (let j = 0; j < cityArr.length; ++j) {
 	const city = cityArr[j];
 	bar.tick({ city: city.city });
-	const code0 = pinyin(city.city.length <= 4 ? city.city : city.city.slice(0, 2), { toneType: 'none', type: 'array' }).join(''); // The only city whose length > 4 is 湘西土家族苗族自治州.
+	const code0 = pinyin(city.city.length <= 4 ? city.city : city.city.slice(0, 2), { toneType: 'none', separator: '' }); // The only city whose length > 4 is 湘西土家族苗族自治州.
 	for (let i = 0; i < code1Arr.length; ++i) {
 		if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
 		const code1 = code1Arr[i];
@@ -41,4 +41,4 @@ for (let j = 0; j < cityArr.length; ++j) {
 }
 await browser.close();
 cityArr.forEach(city => console.assert(city.code, `${city.city}: code is undefined`));
-await fs.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));
+await fs.promises.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));

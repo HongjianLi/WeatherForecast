@@ -27,7 +27,7 @@ for (let k = 0; k < cityArr.length; ++k) {
     }
 	for (let j = 0, found = false; j < city0Arr.length && !found; ++j) {
 		const city0 = city0Arr[j];
-		const code0 = pinyin(city0, { toneType: 'none', type: 'array' }).join('');
+		const code0 = pinyin(city0, { toneType: 'none', separator: '' });
 		for (let i = 0; i < code1Arr.length; ++i) {
 			if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
 			const code1 = code1Arr[i];
@@ -37,7 +37,7 @@ for (let k = 0; k < cityArr.length; ++k) {
 				timeout: 6000,
 			});
 			if (response.ok()) {
-				const parentSNFromPage = (await page.$eval('head>meta[name="keywords"]', el => el.content)).split(',')[2].slice(0, -(city0.length + 6)); // e.g. el.content returns 潮州湘桥区天气预报一周, 湘西吉首市天气预报一周. Do not use page.title() or <meta name="description"> because they are sometimes not prepended with the parent city name.
+				const parentSNFromPage = (await page.$eval('head>meta[name="keywords"]', el => el.content)).split(',')[2].slice(0, -(city.city.length + 6)); // e.g. el.content returns 潮州湘桥区天气预报一周, 湘西吉首市天气预报一周. Do not use page.title() or <meta name="description"> because they are sometimes not prepended with the parent city name.
 				const citySNFromPage = (await page.$eval('div.inleft_place>a.place_a[title]', el => el.innerText)).slice(0, -3); // City's short name, e.g. 湘桥, 连南. Do not use 'div.weaone h1' or 'div.inleft_place>a.place_b' because they are sometimes prepended with the parent city name.
 				const cityLNFromPage = (await page.$eval('div.weaone div.weaone_ba', el => el.innerText)).split('，')[0].split('：')[1]; // City's long name, e.g. 湘桥区, 连南瑶族自治县
 				console.log(city.parent, parentSNFromPage, city.parent.startsWith(parentSNFromPage), citySNFromPage, city.city.startsWith(citySNFromPage), cityLNFromPage, cityLNFromPage.startsWith(city.city), cityLNFromPage === city.city);
