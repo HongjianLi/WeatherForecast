@@ -48,6 +48,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
 	const { parent, city, code } = codeArr[i];
 	bar.tick({ city });
+	if (!code) continue; // Skip the city if it has no code.
 	let response;
 	try {
 		response = await page.goto(`https://www.tianqi.com/${code}/7/`, {
