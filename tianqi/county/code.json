@@ -1209,7 +1209,8 @@
 	},
 	{
 		"parent": "常德",
-		"city": "石门县"
+		"city": "石门县",
+		"code": "shimen"
 	},
 	{
 		"parent": "长沙",
@@ -1233,15 +1234,18 @@
 	},
 	{
 		"parent": "长沙",
-		"city": "雨花区"
+		"city": "雨花区",
+		"code": "changshayuhua"
 	},
 	{
 		"parent": "长沙",
-		"city": "望城区"
+		"city": "望城区",
+		"code": "wangchengqu"
 	},
 	{
 		"parent": "长沙",
-		"city": "长沙县"
+		"city": "长沙县",
+		"code": "changshaxian"
 	},
 	{
 		"parent": "长沙",
@@ -1249,7 +1253,8 @@
 	},
 	{
 		"parent": "长沙",
-		"city": "浏阳市"
+		"city": "浏阳市",
+		"code": "liuyangshi"
 	},
 	{
 		"parent": "郴州",
@@ -1258,7 +1263,8 @@
 	},
 	{
 		"parent": "郴州",
-		"city": "苏仙区"
+		"city": "苏仙区",
+		"code": "suxian"
 	},
 	{
 		"parent": "郴州",
@@ -1322,7 +1328,8 @@
 	},
 	{
 		"parent": "衡阳",
-		"city": "蒸湘区"
+		"city": "蒸湘区",
+		"code": "zhengxiangqu"
 	},
 	{
 		"parent": "衡阳",
@@ -1486,15 +1493,18 @@
 	},
 	{
 		"parent": "邵阳",
-		"city": "隆回县"
+		"city": "隆回县",
+		"code": "longhuixian"
 	},
 	{
 		"parent": "邵阳",
-		"city": "绥宁县"
+		"city": "绥宁县",
+		"code": "suiningxian"
 	},
 	{
 		"parent": "邵阳",
-		"city": "城步苗族自治县"
+		"city": "城步苗族自治县",
+		"code": "chengbuxian"
 	},
 	{
 		"parent": "邵阳",
@@ -1563,15 +1573,18 @@
 	},
 	{
 		"parent": "湘西土家族苗族自治州",
-		"city": "永顺县"
+		"city": "永顺县",
+		"code": "yongshunxian"
 	},
 	{
 		"parent": "湘西土家族苗族自治州",
-		"city": "龙山县"
+		"city": "龙山县",
+		"code": "longshanxian"
 	},
 	{
 		"parent": "益阳",
-		"city": "资阳区"
+		"city": "资阳区",
+		"code": "ziyangqu"
 	},
 	{
 		"parent": "益阳",
@@ -1650,15 +1663,18 @@
 	},
 	{
 		"parent": "永州",
-		"city": "江华瑶族自治县"
+		"city": "江华瑶族自治县",
+		"code": "jianghuaxian"
 	},
 	{
 		"parent": "岳阳",
-		"city": "岳阳楼区"
+		"city": "岳阳楼区",
+		"code": "yueyanglouqu"
 	},
 	{
 		"parent": "岳阳",
-		"city": "云溪区"
+		"city": "云溪区",
+		"code": "yunxiqu"
 	},
 	{
 		"parent": "岳阳",
@@ -1712,15 +1728,18 @@
 	},
 	{
 		"parent": "张家界",
-		"city": "永定区"
+		"city": "永定区",
+		"code": "yongdingqu"
 	},
 	{
 		"parent": "株洲",
-		"city": "荷塘区"
+		"city": "荷塘区",
+		"code": "hetangqu"
 	},
 	{
 		"parent": "株洲",
-		"city": "芦淞区"
+		"city": "芦淞区",
+		"code": "lusongqu"
 	},
 	{
 		"parent": "株洲",
@@ -1738,15 +1757,18 @@
 	},
 	{
 		"parent": "株洲",
-		"city": "攸县"
+		"city": "攸县",
+		"code": "youxian"
 	},
 	{
 		"parent": "株洲",
-		"city": "茶陵县"
+		"city": "茶陵县",
+		"code": "chalingxian"
 	},
 	{
 		"parent": "株洲",
-		"city": "炎陵县"
+		"city": "炎陵县",
+		"code": "yanlingxian1"
 	},
 	{
 		"parent": "株洲",
@@ -1824,11 +1846,13 @@
 	},
 	{
 		"parent": "赣州",
-		"city": "信丰县"
+		"city": "信丰县",
+		"code": "xinfeng"
 	},
 	{
 		"parent": "赣州",
-		"city": "大余县"
+		"city": "大余县",
+		"code": "dayuxian"
 	},
 	{
 		"parent": "赣州",
@@ -1862,15 +1886,18 @@
 	},
 	{
 		"parent": "赣州",
-		"city": "于都县"
+		"city": "于都县",
+		"code": "yuduxian"
 	},
 	{
 		"parent": "赣州",
-		"city": "宁都县"
+		"city": "宁都县",
+		"code": "ningduxian"
 	},
 	{
 		"parent": "赣州",
-		"city": "兴国县"
+		"city": "兴国县",
+		"code": "xingguoxian"
 	},
 	{
 		"parent": "赣州",
@@ -1929,15 +1956,18 @@
 	},
 	{
 		"parent": "吉安",
-		"city": "泰和县"
+		"city": "泰和县",
+		"code": "taihexian1"
 	},
 	{
 		"parent": "吉安",
-		"city": "永新县"
+		"city": "永新县",
+		"code": "yongxinxian"
 	},
 	{
 		"parent": "吉安",
-		"city": "遂川县"
+		"city": "遂川县",
+		"code": "suichuanxian"
 	},
 	{
 		"parent": "吉安",
@@ -1946,7 +1976,8 @@
 	},
 	{
 		"parent": "吉安",
-		"city": "万安县"
+		"city": "万安县",
+		"code": "wananxian"
 	},
 	{
 		"parent": "吉安",
@@ -2014,7 +2045,8 @@
 	},
 	{
 		"parent": "九江",
-		"city": "都昌县"
+		"city": "都昌县",
+		"code": "duchangxian"
 	},
 	{
 		"parent": "九江",
@@ -2047,11 +2079,13 @@
 	},
 	{
 		"parent": "南昌",
-		"city": "青云谱区"
+		"city": "青云谱区",
+		"code": "qingyunpuqu"
 	},
 	{
 		"parent": "南昌",
-		"city": "青山湖区"
+		"city": "青山湖区",
+		"code": "qingshanhuqu"
 	},
 	{
 		"parent": "南昌",
@@ -2302,7 +2336,8 @@
 	},
 	{
 		"parent": "龙岩",
-		"city": "新罗区"
+		"city": "新罗区",
+		"code": "xinluoqu"
 	},
 	{
 		"parent": "龙岩",
@@ -2311,7 +2346,8 @@
 	},
 	{
 		"parent": "龙岩",
-		"city": "永定区"
+		"city": "永定区",
+		"code": "yongding"
 	},
 	{
 		"parent": "龙岩",
@@ -2435,15 +2471,18 @@
 	},
 	{
 		"parent": "莆田",
-		"city": "涵江区"
+		"city": "涵江区",
+		"code": "hanjiang"
 	},
 	{
 		"parent": "莆田",
-		"city": "荔城区"
+		"city": "荔城区",
+		"code": "lichengqu1"
 	},
 	{
 		"parent": "莆田",
-		"city": "秀屿区"
+		"city": "秀屿区",
+		"code": "xiuyuqu"
 	},
 	{
 		"parent": "莆田",
@@ -2542,15 +2581,18 @@
 	},
 	{
 		"parent": "三明",
-		"city": "尤溪县"
+		"city": "尤溪县",
+		"code": "youxixian"
 	},
 	{
 		"parent": "三明",
-		"city": "沙县"
+		"city": "沙县",
+		"code": "shaxian1"
 	},
 	{
 		"parent": "三明",
-		"city": "将乐县"
+		"city": "将乐县",
+		"code": "jianglexian"
 	},
 	{
 		"parent": "三明",
@@ -2599,7 +2641,8 @@
 	},
 	{
 		"parent": "漳州",
-		"city": "芗城区"
+		"city": "芗城区",
+		"code": "zhangzhouxiangcheng"
 	},
 	{
 		"parent": "漳州",
@@ -2613,11 +2656,13 @@
 	},
 	{
 		"parent": "漳州",
-		"city": "漳浦县"
+		"city": "漳浦县",
+		"code": "zhangpuxian"
 	},
 	{
 		"parent": "漳州",
-		"city": "诏安县"
+		"city": "诏安县",
+		"code": "zhaoanxian"
 	},
 	{
 		"parent": "漳州",
