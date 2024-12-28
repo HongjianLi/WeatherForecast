@@ -2,6 +2,17 @@
 	text-align: center;
 }
 
+/* For resolution 848 x 1555, e.g. vivo iQOO Neo8 Pro */
+@media (max-width: 1555px) {
+	.mainChart {
+		width: 840px;
+		height: 1539px;
+	}
+	.side {
+		visibility: hidden;
+	}
+}
+
 /* For resolution 2560 x 1600 and zoom 125%, e.g. LAPTOP-O511PV03 */
 @media (min-width: 2040px) and (min-height: 1162px) {
 	.mainChart {
