@@ -40,7 +40,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	try {
 		response = await page.goto(`http://www.weather.com.cn/weather/${code}.shtml`, { // Updates occur at 5:30, 7:30, 11:30, 18:00 everyday.
 			waitUntil: 'load', // Wait for the images and stylesheets to be loaded.
-			timeout: 9000,
+			timeout: 12000,
 		});
 	} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
 		console.error(`${city}: page.goto() error ${error}`);
@@ -59,7 +59,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 		}
 		const c7dul = await page.$('.c7d ul');
 		if (await c7dul.isHidden()) {
-			console.assert(parent === '株洲' && city === '渌口区'); // The page for 渌口, http://www.weather.com.cn/weather/101250310.shtml, does not contain 7-day weather forecast, so c7dul is hidden.
+			console.assert(parent === '株洲' && city === '渌口区'); // The page for county-level city 渌口, http://www.weather.com.cn/weather/101250310.shtml, does not contain 7-day weather forecast, so c7dul is hidden.
 			continue;
 		}
 		await c7dul.evaluate(ul => {
