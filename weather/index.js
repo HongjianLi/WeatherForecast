@@ -22,19 +22,6 @@ await Promise.all([
 	if (!response.ok) return;
 	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
 }));
-await fs.promises.writeFile('index.html', [
-	'<!DOCTYPE html>',
-	'<html>',
-	'<body>',
-	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_00000-02400_1920.jpg" width="671">',
-	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_02400-04800_1920.jpg" width="671">',
-	'<img src="cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_04800-07200_1920.jpg" width="671">',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png" width="671">',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png" width="671">',
-	'<img src="cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png" width="671">',
-	'</body>',
-	'</html>',
-].join('\n'));
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1.2 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,

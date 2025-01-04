@@ -18,22 +18,6 @@ await Promise.all([
 	if (!response.ok) return;
 	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
 }));
-await fs.promises.writeFile('index.html', [
-	'<!DOCTYPE html>',
-	'<html>',
-	'<body>',
-	'<img src="jiangshui1.jpg" width="671">',
-	'<img src="jiangshui2.jpg" width="671">',
-	'<img src="jiangshui3.jpg" width="671">',
-	'<img src="gaowen24.jpg" width="671">',
-	'<img src="gaowen48.jpg" width="671">',
-	'<img src="gaowen72.jpg" width="671">',
-	'<img src="jiaotongkongqiwuran.jpg" width="671">',
-	'<img src="wumaiwu.jpg" width="671">',
-	'<img src="wumaimai.jpg" width="671">',
-	'</body>',
-	'</html>',
-].join('\n'));
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
