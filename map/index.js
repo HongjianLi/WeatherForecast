@@ -1,4 +1,4 @@
-import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.esm.min.js'
+import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
 const cityDir = 'city'; // Can be eiher 'city' or 'county'
 const mapName = '广东广西湖南江西福建';
 const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/${mapName}.geojson`).then(res => res.json());
