@@ -40,7 +40,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	try {
 		response = await page.goto(`http://www.weather.com.cn/weather/${code}.shtml`, { // Updates occur at 5:30, 7:30, 11:30, 18:00 everyday.
 			waitUntil: 'load', // Wait for the images and stylesheets to be loaded.
-			timeout: 12000,
+			timeout: 20000,
 		});
 	} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
 		console.error(`${city}: page.goto() error ${error}`);
