@@ -17,6 +17,6 @@
 	},
 	"main": "weather/index.js",
 	"scripts": {
-		"start": "cd weather; node index.js; cd ..; cd tianqi; node index.js; cd ..;"
+		"start": "cd weather; node index.js city; node index.js county; cd ..;"
 	}
 }
