@@ -36,7 +36,7 @@ const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
 const uncomfortableDaysArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
-	if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
+	if (i) await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 5 seconds between requests.
 	const { parent, city, code } = codeArr[i];
 	bar.tick({ city });
 	if (!code) continue; // Skip the city if it has no code.
