@@ -47,13 +47,13 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 	if (response.ok()) {
 		const cityFromPage = await page.evaluate((selector) => ($(selector).text()), citySelector); // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'. The only exception is '城区'.
-		if (!city.startsWith(cityFromPage)) { // In most cases city === cityFromPage. An exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西. Another exceptions are city === ['东莞市', '中山市', '湘潭县', '岳阳县'] and cityFromPage === '城区'.
+		if (!city.startsWith(cityFromPage)) { // In most cases city === cityFromPage. An exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西. Another exceptions are city === ['香港', '澳门', '东莞市', '中山市', '湘潭县', '岳阳县'] and cityFromPage === '城区'.
 			if (cityDir === 'city') {
 				console.error(`${city} !== ${cityFromPage}`);
 				continue;
 			} else {
 				console.assert(cityFromPage === '城区');
-				console.assert(['东莞市', '中山市', '湘潭县', '岳阳县'].includes(city)); // These counties are not found in www.weather.com.cn, therefore their parent city's code are used instead.
+				console.assert(['香港', '澳门', '东莞市', '中山市', '湘潭县', '岳阳县'].includes(city)); // These counties are not found in www.weather.com.cn, therefore their parent city's code are used instead.
 			}
 		}
 		const c7dul = await page.$('.c7d ul');

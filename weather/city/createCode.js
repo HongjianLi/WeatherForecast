@@ -9,7 +9,7 @@ const browser = await puppeteer.launch({
 });
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
-const code0Arr = ['10128', '10130', '10125', '10124', '10123' ]; // They are the codes of provinces [ '广东', '广西', '湖南', '江西', '福建' ]
+const code0Arr = ['10132', '10133', '10128', '10130', '10125', '10124', '10123' ]; // They are the codes of provinces [ '香港', '澳门', '广东', '广西', '湖南', '江西', '福建' ]
 const maxNumCities = 21; // Assuming each province has at most 21 cities.
 const bar = new ProgressBar('[:bar] :code :current/:total=:percent :elapseds :etas', { total: maxNumCities * code0Arr.length });
 for (let k = 0; k < code0Arr.length; ++k) {

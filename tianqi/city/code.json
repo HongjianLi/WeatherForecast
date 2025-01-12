@@ -1,5 +1,13 @@
 [
 	{
+		"city": "香港",
+		"code": "hongkong"
+	},
+	{
+		"city": "澳门",
+		"code": "aomen"
+	},
+	{
 		"city": "潮州",
 		"code": "chaozhou"
 	},
