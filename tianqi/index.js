@@ -44,7 +44,6 @@ for (let i = 0; i < codeArr.length; ++i) {
 	try {
 		response = await page.goto(`https://www.tianqi.com/${code}/7/`, {
 			waitUntil: 'load',
-			timeout: 9000,
 		});
 	} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
 		console.error(`${city}: page.goto() error ${error}`);
