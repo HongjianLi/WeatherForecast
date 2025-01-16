@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 echo "$(date +"%F %T.%N") Script started"
+echo "$(date +"%F %T.%N") node index.js"
+node index.js
 export PUPPETEER_EXECUTABLE_PATH=/opt/google/chrome/chrome
 cd weather
 echo "$(date +"%F %T.%N") node index.js city"

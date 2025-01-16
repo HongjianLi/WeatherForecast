@@ -1,27 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import { Readable } from 'stream';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
-const today = new Date();
-const localeDateString = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map((component) => {
-	return component.toString().padStart(2, '0');
-}).join("");
-const hours = today.getHours();
-for (var hourIndex = 0; !(hours < [18, 24][hourIndex]); ++hourIndex);
-const urlReplaceValue = localeDateString + ['08','20'][hourIndex];
-await Promise.all([
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_00000-02400_1920.jpg',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_02400-04800_1920.jpg',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_newspure_mi_er_h000_cn_{}0000_04800-07200_1920.jpg',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_00000-02400_1920.png',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_02400-04800_1920.png',
-	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{}0000_04800-07200_1920.png',
-].map(async (url, urlIndex) => {
-	const response = await fetch(url.replace('{}', urlReplaceValue));
-	if (!response.ok) return;
-	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
-}));
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1.2 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,

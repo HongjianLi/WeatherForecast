@@ -1,23 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import { Readable } from 'stream';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
-await Promise.all([
-	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg',
-	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg',
-	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg',
-	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg',
-	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg',
-	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg',
-	'https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg',
-	'https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg',
-	'https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg',
-].map(async (url) => {
-	const response = await fetch(url);
-	if (!response.ok) return;
-	Readable.fromWeb(response.body).pipe(fs.createWriteStream(url.split('/').pop()));
-}));
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
