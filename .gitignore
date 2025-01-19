@@ -1,6 +1,7 @@
 node_modules
 *.jpg
 *.png
+*.gif
 *.webp
 uncomfortableDays.json
 start.txt
