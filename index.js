@@ -10,9 +10,11 @@ async function fetchImages(site, urlArr, replacements) {
 	}));	
 }
 /*await fetchImages('tianqi', [
+	// 全国降水量预报图
 	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui1.jpg',
 	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui2.jpg',
 	'https://content.pic.tianqistatic.com/jiangshui/static/images/jiangshui3.jpg',
+	// 全国最高气温预报
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen24.jpg',
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen48.jpg',
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen72.jpg',
@@ -20,8 +22,11 @@ async function fetchImages(site, urlArr, replacements) {
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen120.jpg',
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen144.jpg',
 	'https://content.pic.tianqistatic.com/gaowen/static/images/gaowen168.jpg',
+	// 全国空气污染气象条件预报图
 	'https://content.pic.tianqistatic.com/kongqiwuran/static/images/jiaotongkongqiwuran.jpg',
+	// 全国雾预报图
 	'https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg',
+	// 全国霾预报图
 	'https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg',
 ]);*/
 const today = new Date();
@@ -57,7 +62,16 @@ const hh0113 = ['01','13'][hourIndex];
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{date}{hh0820}0000_09600-12000_1920.png',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{date}{hh0820}0000_12000-14400_1920.png',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_grid_etm_h000_cn_{date}{hh0820}0000_14400-16800_1920.png',
-], { date, hh0820 } );*/
+	// 全国沙尘天气预报图
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_dust_h000_cn_{date}{hh0820}0000_00000-02400_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_wtfc_sfer_edust_achn_l88_p9_{date}{hh0012}0002400.jpg',
+	// 全国雾预报图
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_wtfc_sfer_efg_achn_l88_p9_{date}{hh0012}0002412.jpg',
+	// 全国空气污染气象条件预报图
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_kw_h000_cn_{date}{hh0820}0000_00000-02400_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_kw_h000_cn_{date}{hh0820}0000_02400-04800_1920.png',
+	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_kw_h000_cn_{date}{hh0820}0000_04800-07200_1920.png',
+], { date, hh0820, hh0012 } );*/
 await fetchImages('nmc', [
 	// 全国降水量预报图。06时发布01和00，18时发布13和12
 	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0113}0002400.jpg',
