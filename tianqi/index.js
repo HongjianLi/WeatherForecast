@@ -39,7 +39,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 		const c7dul = await page.$('ul.weaul');
 		const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
 			const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
-			if (weather.includes('雨')) return 1;
+			if (['雨', '雾', '霾'].some(keyword => weather.includes(keyword))) return 1;
 			const [ lowTemperature, highTemperature ] = temperature.replaceAll('℃', '').split('~'); // The temperatures are strings, not numbers.
 			if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
 			return 0;

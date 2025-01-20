@@ -45,7 +45,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 			$('li:first-of-type', ul).removeClass('on'); // jQuery is used by www.weather.com.cn
 		}, c7dul);
 		const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
-			console.log(li.innerText);
+			if (li.classList.contains('lv4')) return 1; // lv1: 天空蔚蓝, lv2: 天空淡蓝, lv3: 天空阴沉, lv4: 天空灰霾
 			const [ date, weather, temperature ] = li.innerText.split('\n\n'); // The li.innerText looks like '30日（今天）\n\n多云\n\n12℃\n\n<3级' or '1日（明天）\n\n晴\n\n24℃/14℃\n\n \n<3级'
 			if (weather.includes('雨')) return 1;
 			const temperatureArr = temperature.replaceAll('℃', '').split('/'); // The temperatures are strings, not numbers.
