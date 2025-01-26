@@ -7,7 +7,7 @@ async function fetchImages(site, urlArr, replacements) {
 		const response = await fetch(url.replace(/{(\w+)}/g, (match, p1) => replacements[p1] || match));
 		if (!response.ok) return;
 		Readable.fromWeb(response.body).pipe(fs.createWriteStream(`${site}/${url.split('/').pop().replace(/{\w+}/g, '')}`));
-	}));	
+	}));
 }
 /*await fetchImages('tianqi', [
 	// 全国降水量预报图
