@@ -19,7 +19,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
 			const { name, value } = params;
-			return `${name}<br><img src="../weather/${cityDir}/${name}.webp"><br><img src="../tianqi/${cityDir}/${name}.webp"><br>不舒适天数 ${value}`;
+			return `${name}<br><img src="../nmc/${cityDir}/${name}.webp"><br><img src="../weather/${cityDir}/${name}.webp"><br><img src="../tianqi/${cityDir}/${name}.webp"><br>不舒适天数 ${value}`;
 		},
 	},
 	visualMap: {
