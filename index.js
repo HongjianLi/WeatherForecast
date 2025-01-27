@@ -83,6 +83,8 @@ const hh0113 = ['01','13'][hourIndex];
 	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_wtfc_sfer_edust_achn_l88_p9_{date}{hh0012}0002400.jpg',
 	// 全国雾预报图
 	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_wtfc_sfer_efg_achn_l88_p9_{date}{hh0012}0002412.jpg',
+	// 全国霾预报图
+	'https://pi.weather.com.cn/i/product/pic/l/sevp_nmc_wtfc_sfer_ehz_achn_l88_p9_{date}{hh0012}0002412.jpg',
 	// 全国空气污染气象条件预报图
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_kw_h000_cn_{date}{hh0820}0000_00000-02400_1920.png',
 	'https://pi.weather.com.cn/i/product/pic/l/cwcc_nmc_fst_web_mi_kw_h000_cn_{date}{hh0820}0000_02400-04800_1920.png',
