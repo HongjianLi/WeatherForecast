@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // This script creates code.json from ../city/code.json. It has to be run once only.
-import fs from 'fs/promises';
+import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
-const cityArr = JSON.parse(await fs.readFile('../../map/echarts-china-cities-js/geojson/shape-with-internal-borders/city.json'));
+const cityArr = JSON.parse(await fs.promises.readFile(fs.existsSync('code.json') ? 'code.json' : '../../map/echarts-china-cities-js/geojson/shape-with-internal-borders/city.json'));
 const browser = await puppeteer.launch({
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
-const parentCodeArr = JSON.parse(await fs.readFile(`../city/code.json`));
+const parentCodeArr = JSON.parse(await fs.promises.readFile(`../city/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: parentCodeArr.length });
 for (let j = 0; j < parentCodeArr.length; ++j) {
 	const parent = parentCodeArr[j];
@@ -50,4 +50,4 @@ await browser.close();
 	city.code = parentCodeArr.find(parent => parent.city === county.slice(0, -1)).code; // Use their parent city's code instead.
 });
 cityArr.forEach(city => console.assert(city.code, `${city.parent}/${city.city}: code is undefined`));
-await fs.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));
+await fs.promises.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));

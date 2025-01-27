@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // This script creates code.json from ../../map/echarts-china-cities-js/geojson/shape-only/city.json. It has to be run once only.
-import fs from 'fs/promises';
+import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
-const cityArr = JSON.parse(await fs.readFile('../../map/echarts-china-cities-js/geojson/shape-only/city.json'));
+const cityArr = JSON.parse(await fs.promises.readFile(fs.existsSync('code.json') ? 'code.json' : '../../map/echarts-china-cities-js/geojson/shape-only/city.json'));
 const browser = await puppeteer.launch({
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
@@ -44,4 +44,4 @@ for (let k = 0; k < code0Arr.length; ++k) {
 };
 await browser.close();
 cityArr.forEach(city => console.assert(city.code, `${city.city}: code is undefined`));
-await fs.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));
+await fs.promises.writeFile(`code.json`, JSON.stringify(cityArr, null, '	'));
