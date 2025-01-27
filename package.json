@@ -17,6 +17,6 @@
 	},
 	"main": "weather/index.js",
 	"scripts": {
-		"start": "cd weather; node index.js city; node index.js county; cd ..;"
+		"start": "node index.js; cd nmc; node index.js; cd ..; cd weather; node index.js city; node index.js county; cd ..;"
 	}
 }
