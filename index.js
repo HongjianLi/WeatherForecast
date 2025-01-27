@@ -28,6 +28,12 @@ async function fetchImages(site, urlArr, replacements) {
 	'https://content.pic.tianqistatic.com/wumai/static/images/wumaiwu.jpg',
 	// 全国霾预报图
 	'https://content.pic.tianqistatic.com/wumai/static/images/wumaimai.jpg',
+	// 全国公路气象预报
+	'https://content.pic.tianqistatic.com/jiaotong/static/images/jiaotong0.jpg',
+	// 责任海区6级以上风力预报图
+	'https://content.pic.tianqistatic.com/haiyang/static/images/haiyang0.jpg',
+	'https://content.pic.tianqistatic.com/haiyang/static/images/haiyang1.jpg',
+	'https://content.pic.tianqistatic.com/haiyang/static/images/haiyang2.jpg',
 ]);*/
 const today = new Date();
 const [ YYYY, MM, DD ] = [ today.getFullYear(), today.getMonth() + 1, today.getDate() ].map(component => component.toString().padStart(2, '0'));
