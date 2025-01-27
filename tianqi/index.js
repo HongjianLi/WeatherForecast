@@ -27,29 +27,56 @@ for (let i = 0; i < codeArr.length; ++i) {
 	let response;
 	try {
 		response = await page.goto(`https://www.tianqi.com/${code}/7/`, {
-			waitUntil: 'load',
+			waitUntil: 'domcontentloaded',
 		});
 	} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
 		console.error(`${city}: page.goto() error ${error}`);
 		continue;
 	}
 	if (response.ok()) {
-		const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
-		console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`); // In most cases city === cityFromPage, the only exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西
-		const c7dul = await page.$('ul.weaul');
-		const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
-			const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
-			if (['雨', '雾', '霾'].some(keyword => weather.includes(keyword))) return 1;
-			const [ lowTemperature, highTemperature ] = temperature.replaceAll('℃', '').split('~'); // The temperatures are strings, not numbers.
-			if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-			return 0;
-		}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
-			return acc + cur;
-		}, 0));
-		console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
-		uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
-		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
-		await c7dul.dispose();
+		if (code.includes('-')) {
+			const cityFromPage = (await page.$eval('dd.name>h2', el => el.innerText));
+			console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`);
+			const divday7 = await page.$('div.day7');
+			const txtArr = await divday7.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
+			console.assert(txtArr.length === 7);
+			const highTemperatureArr = await divday7.$$eval('div.zxt_shuju>ul>li>span', spanArr => spanArr.map(span => span.innerText));
+			console.assert(highTemperatureArr.length === 7);
+			const lowTemperatureArr = await divday7.$$eval('div.zxt_shuju>ul>li>b', bArr => bArr.map(b => b.innerText));
+			console.assert(lowTemperatureArr.length === 7);
+			const uncomfortableDays = [...Array(7).keys()].map(i => {
+				const txt = txtArr[i];
+				if (['雨', '雾', '霾'].some(keyword => txt.includes(keyword))) return 1;
+				const highTemperature = highTemperatureArr[i];
+				if (highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
+				const lowTemperature = lowTemperatureArr[i];
+				if (lowTemperature < 10) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
+				return 0;
+			}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
+				return acc + cur;
+			}, 0);
+			console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
+			uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+			await divday7.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
+			await divday7.dispose();
+		} else {
+			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
+			console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`); // In most cases city === cityFromPage, the only exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西
+			const c7dul = await page.$('ul.weaul');
+			const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
+				const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
+				if (['雨', '雾', '霾'].some(keyword => weather.includes(keyword))) return 1;
+				const [ lowTemperature, highTemperature ] = temperature.replaceAll('℃', '').split('~'); // The temperatures are strings, not numbers.
+				if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
+				return 0;
+			}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
+				return acc + cur;
+			}, 0));
+			console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
+			uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+			await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
+			await c7dul.dispose();
+		}
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`); // Status code 403 is usually returned.
 	}

@@ -791,7 +791,8 @@
 	},
 	{
 		"parent": "桂林",
-		"city": "象山区"
+		"city": "象山区",
+		"code": "guangxi-xiangshan"
 	},
 	{
 		"parent": "桂林",
@@ -1205,7 +1206,8 @@
 	},
 	{
 		"parent": "常德",
-		"city": "津市市"
+		"city": "津市市",
+		"code": "hunan-jinshi"
 	},
 	{
 		"parent": "常德",
@@ -1249,7 +1251,8 @@
 	},
 	{
 		"parent": "长沙",
-		"city": "宁乡县"
+		"city": "宁乡县",
+		"code": "hunan-ningxiang"
 	},
 	{
 		"parent": "长沙",
@@ -1753,7 +1756,8 @@
 	},
 	{
 		"parent": "株洲",
-		"city": "渌口区"
+		"city": "渌口区",
+		"code": "hunan-lukou"
 	},
 	{
 		"parent": "株洲",
@@ -1842,7 +1846,8 @@
 	},
 	{
 		"parent": "赣州",
-		"city": "赣县区"
+		"city": "赣县区",
+		"code": "jiangxi-ganxian"
 	},
 	{
 		"parent": "赣州",
@@ -2016,7 +2021,8 @@
 	},
 	{
 		"parent": "九江",
-		"city": "柴桑区"
+		"city": "柴桑区",
+		"code": "jiangxi-chaisang"
 	},
 	{
 		"parent": "九江",
@@ -2075,7 +2081,8 @@
 	},
 	{
 		"parent": "南昌",
-		"city": "西湖区"
+		"city": "西湖区",
+		"code": "jiangxi-xihu"
 	},
 	{
 		"parent": "南昌",
@@ -2149,7 +2156,8 @@
 	},
 	{
 		"parent": "上饶",
-		"city": "广信区"
+		"city": "广信区",
+		"code": "jiangxi-guangxin"
 	},
 	{
 		"parent": "上饶",
@@ -2332,7 +2340,8 @@
 	},
 	{
 		"parent": "福州",
-		"city": "长乐市"
+		"city": "长乐市",
+		"code": "fujian-changle"
 	},
 	{
 		"parent": "龙岩",
