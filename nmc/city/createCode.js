@@ -15,6 +15,7 @@ const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :et
 for (let i = 0; i < cityArr.length; ++i) {
 	const city = cityArr[i];
 	bar.tick({ city: city.city });
+	if (city.code) continue; // Skip cities that already have their codes.
 	const code = pinyin(city.city.length <= 4 ? city.city : city.city.slice(0, 2), { toneType: 'none', separator: '' }); // The only city whose length > 4 is 湘西土家族苗族自治州.
 	for (var parentIndex = 0; !(i < [1, 2, 23, 37, 51, 62, 71][parentIndex]); ++parentIndex);
 	const parentCode = pinyin(['香港', '澳门', '广东', '广西', '湖南', '江西', '福建'][parentIndex], { pattern: 'first', toneType: 'none', separator: '' }).toUpperCase();

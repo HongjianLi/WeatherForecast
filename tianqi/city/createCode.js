@@ -15,6 +15,7 @@ const code1Arr = ['', '1', '2', '3'];
 for (let j = 0; j < cityArr.length; ++j) {
 	const city = cityArr[j];
 	bar.tick({ city: city.city });
+	if (city.code) continue; // Skip cities that already have their codes.
 	const code0 = pinyin(city.city.length <= 4 ? city.city : city.city.slice(0, 2), { toneType: 'none', separator: '' }); // The only city whose length > 4 is 湘西土家族苗族自治州.
 	for (let i = 0; i < code1Arr.length; ++i) {
 		if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
