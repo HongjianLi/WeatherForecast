@@ -34,7 +34,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	},
 	series: {
 		type: 'map',
-		mapType: mapName, // 自定义扩展图表类型
+		map: mapName, // Map name registered in echarts.registerMap().
 		label: {
 			show: cityDir === 'city',
 		},
