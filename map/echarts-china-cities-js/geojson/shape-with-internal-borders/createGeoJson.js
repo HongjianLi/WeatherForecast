@@ -30,6 +30,6 @@ const cityArr = featuresArr.reduce((cityArr, features, index) => {
 	return cityArr;
 }, []);
 console.assert(cityArr.length === 543); // 合共543县 = 香港1市 + 澳门1市 + 广东123县 + 广西111县 + 湖南122县 + 江西100县 + 福建85县
-await fs.writeFile(`香港澳门广东广西湖南江西福建.geojson`, JSON.stringify({ type: "FeatureCollection", features: cityArr.map(city => city.feature) }));
+await fs.writeFile(`map.geojson`, JSON.stringify({ type: "FeatureCollection", features: cityArr.map(city => city.feature) }));
 cityArr.forEach(city => delete city.feature);
 await fs.writeFile('city.json', JSON.stringify(cityArr, null, '	')); // Both 张家界 and 龙岩 have 永定区

@@ -8,4 +8,4 @@ const features = [].concat(...await Promise.all((await fs.readdir('.')).reduce((
 }, []).sort((city0, city1) => (city0.provinceIndex - city1.provinceIndex)).map(async city => (JSON.parse(await fs.readFile(city.city)).features)))); // pinyin: city.city.split('.')[0].split('_').slice(2).join(' ')
 console.assert(features.length === 69); // 合共69市 = 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市
 await fs.writeFile('city.json', JSON.stringify(features.map(feature => ({ city: feature.properties.name })), null, '	'));
-await fs.writeFile(`广东广西湖南江西福建.geojson`, JSON.stringify({ type: "FeatureCollection", features }));
+await fs.writeFile(`map.geojson`, JSON.stringify({ type: "FeatureCollection", features }));
