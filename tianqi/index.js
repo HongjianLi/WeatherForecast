@@ -36,7 +36,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	if (response.ok()) {
 		if (code.includes('-')) {
 			const cityFromPage = (await page.$eval('dd.name>h2', el => el.innerText));
-			console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`);
+			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
 			const divday7 = await page.$('div.day7');
 			const txtArr = await divday7.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
 			console.assert(txtArr.length === 7);
@@ -61,7 +61,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 			await divday7.dispose();
 		} else {
 			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
-			console.assert(city.startsWith(cityFromPage), `${city} != ${cityFromPage}`); // In most cases city === cityFromPage, the only exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西
+			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
 			const c7dul = await page.$('ul.weaul');
 			const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
 				const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'

@@ -30,7 +30,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		inRange: {
 			color: ['green', 'lightgreen', 'lightskyblue', 'yellow', 'orangered']
 		},
-		left: 'center',
+		left: '40%',
 	},
 	series: {
 		type: 'map',

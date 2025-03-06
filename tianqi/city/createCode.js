@@ -16,9 +16,9 @@ for (let j = 0; j < cityArr.length; ++j) {
 	const city = cityArr[j];
 	bar.tick({ city: city.city });
 	if (city.code) continue; // Skip cities that already have their codes.
-	const code0 = pinyin(city.city.length <= 4 ? city.city : city.city.slice(0, 2), { toneType: 'none', separator: '' }); // The only city whose length > 4 is 湘西土家族苗族自治州.
+	const code0 = pinyin(city.city, { toneType: 'none', separator: '' });
 	for (let i = 0; i < code1Arr.length; ++i) {
-		if (i) await new Promise(resolve => setTimeout(resolve, 1200)); // Wait for 1.2 seconds.
+		if (i) await new Promise(resolve => setTimeout(resolve, 5100)); // Wait for some seconds.
 		const code1 = code1Arr[i];
 		const code = `${code0}${code1}`;
 		const response = await page.goto(`https://www.tianqi.com/${code}/7/`, {
@@ -27,10 +27,10 @@ for (let j = 0; j < cityArr.length; ++j) {
 		});
 		if (response.ok()) {
 			const weaone = await page.$('div.weaone');
-			const citySNFromPage = (await weaone.$eval('h1', el => el.innerText)).split(' ')[0]; // City's short name, e.g. 广州, 湘西
-//			const cityLNFromPage = (await weaone.$eval('div.weaone_ba', el => el.innerText)).split('，')[0].split('：')[1]; // City's long name, e.g. 广州市, 湘西土家苗族自治州, which is wrong because it lacks a 族 and should be 湘西土家族苗族自治州. The city's long name retrieved from the page is not reliable.
+			const citySNFromPage = (await weaone.$eval('h1', el => el.innerText)).split(' ')[0]; // City's short name, e.g. 广州, 白沙黎族, 阿坝, 湘西
+//			const cityLNFromPage = (await weaone.$eval('div.weaone_ba', el => el.innerText)).split('，')[0].split('：')[1]; // City's long name, e.g. 广州市, 白沙黎族自治县, 阿坝县, 湘西土家苗族自治州, which is wrong because it lacks a 族 and should be 湘西土家族苗族自治州. The city's long name retrieved from the page is not reliable.
 			await weaone.dispose();
-			if (city.city.startsWith(citySNFromPage)/* && cityLNFromPage.startsWith(city.city)*/) {
+			if (citySNFromPage.startsWith(city.city)/* && cityLNFromPage.startsWith(city.city)*/) {
 				city.code = code;
 				break;
 			}

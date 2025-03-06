@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// This scripts only supports prefecture-level cities, because nmc does not provide forecast for every county.
+// This script only supports prefecture-level cities, because nmc does not provide forecast for every county.
 import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
@@ -27,7 +27,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 	if (response.ok()) {
 		const cityFromPage = (await page.$eval('head>title', el => el.innerText)).split('-')[0]; // City's short name, e.g. 广州, 湘西
-		console.assert(city.startsWith(cityFromPage));
+		console.assert(city === cityFromPage);
 		const day7div = await page.$('div#day7');
 		await day7div.evaluate(div => {
 			$('div:first-of-type', div).removeClass('selected'); // jQuery is used by www.nmc.cn

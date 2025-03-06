@@ -9,7 +9,6 @@ const browser = await puppeteer.launch({
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
 const cityDir = process.argv.length > 2 ? process.argv[2] : 'city';
-const citySelector = `.left-div .ctop ${cityDir === 'city' ? 'a:last-of-type' : 'span:not(:contains(>)):not(:contains(|))'}` // The prefecture-level city is located in the last <a>, whereas the count-level city is located in the <span> whose content is not > and |.
 const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
 const uncomfortableDaysArr = [];
@@ -26,19 +25,23 @@ for (let i = 0; i < codeArr.length; ++i) {
 		continue;
 	}
 	if (response.ok()) {
-		const cityFromPage = await page.evaluate((selector) => ($(selector).text()), citySelector); // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'. The only exception is '城区'.
-		if (!city.startsWith(cityFromPage)) { // In most cases city === cityFromPage. An exception is city === 湘西土家族苗族自治州 and cityFromPage === 湘西. Another exceptions are city === ['香港', '澳门', '东莞市', '中山市', '湘潭县', '岳阳县'] and cityFromPage === '城区'.
-			if (cityDir === 'city') {
-				console.error(`${city} !== ${cityFromPage}`);
-				continue;
-			} else {
-				console.assert(cityFromPage === '城区');
-				console.assert(['香港', '澳门', '东莞市', '中山市', '湘潭县', '岳阳县'].includes(city)); // These counties are not found in www.weather.com.cn, therefore their parent city's code are used instead.
-			}
+		const levelArr = (await page.$eval('div.crumbs.fl', el => el.innerText)).replaceAll('\n', '').split('>');
+		console.assert([3, 4].includes(levelArr.length));
+		if (cityDir === 'city') {
+			const cityFromPage = ['香港', '澳门', '重庆'].includes(levelArr[1]) ? levelArr[1] : levelArr[2]; // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'.
+			if (levelArr.length === 4) console.assert(levelArr[3] === '城区');
+			console.assert(city === cityFromPage, `${city} !== ${cityFromPage}`);
+		} else {
+			const cityFromPage = levelArr[levelArr.length - 1];
+			console.assert(
+				(cityFromPage.startsWith(city)) || // This is the majority case.
+				(cityFromPage === '城区' && ['香港', '澳门', '东莞', '中山', '湘潭', '岳阳', '楚雄', '大理', '红河', '文山', '阿坝', '甘孜', '广安', '恩施', '荆州', '潜江', '天门', '神农架', '仙桃'].includes(city)) || // These counties are not found in www.weather.com.cn, therefore their parent city's code are used instead.
+				(cityFromPage === '宜宾县' && city === '叙州') // 宜宾县 was renamed to 叙州区
+			, `${city} !== ${cityFromPage}`);
 		}
 		const c7dul = await page.$('.c7d ul');
 		if (await c7dul.isHidden()) {
-			console.assert(parent === '株洲' && city === '渌口区', `c7dul.isHidden() returned true for ${city}`); // The page for county-level city 渌口, http://www.weather.com.cn/weather/101250310.shtml, does not contain 7-day weather forecast, so c7dul is hidden.
+			console.assert(parent === '株洲' && city === '渌口', `c7dul.isHidden() returned true for ${city}`); // The page for county-level city 渌口, http://www.weather.com.cn/weather/101250310.shtml, does not contain 7-day weather forecast, so c7dul is hidden.
 			continue;
 		}
 		await c7dul.evaluate(ul => {
@@ -64,27 +67,6 @@ for (let i = 0; i < codeArr.length; ++i) {
 		uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
 		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
 		await c7dul.dispose();
-/*		await fs.promises.writeFile(`${cityDir}/${parent ?? ''}${city}.html`, [
-			'<!DOCTYPE html>',
-			'<html>',
-			'<body>',
-			'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2017/headStyle_1.css">',
-			'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/common.css">',
-			'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2015/bluesky/c_7d.css">',
-			'<link rel="stylesheet" type="text/css" href="http://i.tq121.com.cn/c/weather2019/weather1d.css">',
-			'<div class="con today clearfix">',
-			'<div class="left fl">',
-			'<div class="left-div">',
-			await page.$eval('.left-div .ctop', el => el.outerHTML),
-			'<div id="7d" class="c7d">',
-			await page.$eval('.left-div .c7d .t', el => el.outerHTML),
-			'</div>',
-			'</div>',
-			'</div>',
-			'</div>',
-			'</body>',
-			'</html>',
-		].join('\n'));*/
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`);
 	}

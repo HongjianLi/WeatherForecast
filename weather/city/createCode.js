@@ -9,7 +9,7 @@ const browser = await puppeteer.launch({
 });
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
-const code0Arr = ['10132', '10133', '10128', '10130', '10125', '10124', '10123' ]; // They are the codes of provinces [ '香港', '澳门', '广东', '广西', '湖南', '江西', '福建' ]
+const code0Arr = ['10132', '10133', '10128', '10130', '10125', '10124', '10123', '10131', '10126', '10129', '10104', '10127', '10120' ]; // They are the codes of provinces [ '香港', '澳门', '广东', '广西', '湖南', '江西', '福建', '海南', '贵州', '云南', '重庆', '四川', '湖北' ]
 const maxNumCities = 21; // Assuming each province has at most 21 cities.
 const bar = new ProgressBar('[:bar] :code :current/:total=:percent :elapseds :etas', { total: maxNumCities * code0Arr.length });
 for (let k = 0; k < code0Arr.length; ++k) {
@@ -26,13 +26,10 @@ for (let k = 0; k < code0Arr.length; ++k) {
 			});
 			if (response.ok()) {
 				if ((await page.content()).length === 53) continue; // When the code becomes invalid, the returned page content becomes '<!-- empty --><html><head></head><body></body></html>', whose length is 53.
-				const ctop = await page.$('.left-div .ctop');
-				const countyFromPage = await ctop.evaluate(ctop => ($('span:not(:contains(>)):not(:contains(|))', ctop).text()), ctop);// The :contains selector is available in jQuery but not in puppeteer's querySelectorAll().
-//				const [ countyFromPage ] = await ctop.$$eval('span', spans => spans.map(span => span.innerText).filter(text => !['>', '|'].includes(text))); // Use this alternative statement if jQuery is unavailable.
-				if (countyFromPage !== '城区') continue;
-				const cityFromPage = await ctop.$eval('a:last-of-type', el => el.innerText);
-				await ctop.dispose();
-				const city = cityArr.find(city => city.city.startsWith(cityFromPage)); // In most cases they are equal. The only exception is 湘西土家族苗族自治州 versus 湘西.
+				const levelArr = (await page.$eval('div.crumbs.fl', el => el.innerText)).replaceAll('\n', '').split('>');
+				if (levelArr.length === 4 && levelArr[3] !== '城区') continue;
+				const cityFromPage = levelArr[2];
+				const city = cityArr.find(city => city.city === cityFromPage);
 				if (!city) continue; // Fetching code 101231001 returns 福建>钓鱼岛>城区, which should be skipped.
 				city.code = code;
 				break;
