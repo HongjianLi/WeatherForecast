@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 cd map/echarts-china-cities-js/geojson/shape-only
-node createGeoJson.js # This script creates `city.json` and `广东广西湖南江西福建.geojson`.
+node createGeoJson.js # This script creates `city.json` and `map.geojson`.
 cd ../../../..
 
 cd map/echarts-china-cities-js/geojson/shape-with-internal-borders
-node createGeoJson.js # This script creates `city.json` and `广东广西湖南江西福建.geojson`.
+node createGeoJson.js # This script creates `city.json` and `map.geojson`.
 cd ../../../..
 
 cd nmc/city
