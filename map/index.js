@@ -9,7 +9,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
 			const { name, value } = params;
-			return `${name} 不舒适天数 ${value}<br><img src="../nmc/${cityDir}/${name}.webp"><br><img src="../weather/${cityDir}/${name}.webp"><br><img src="../tianqi/${cityDir}/${name}.webp">`;
+			return `${name} 不舒适天数 ${value}<br><img src="../nmc/${cityDir}/${name}.webp"><br><img src="../weather/${cityDir}/${name}.webp">`;
 		},
 	},
 	visualMap: {

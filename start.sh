@@ -17,10 +17,4 @@ echo "$(date +"%F %T.%N") node index.js county"
 node index.js county # This script creates screenshots in the `county` directory.
 echo "$(date +"%F %T.%N") cd .."
 cd ..
-echo "$(date +"%F %T.%N") cd tianqi"
-cd tianqi
-echo "$(date +"%F %T.%N") node index.js"
-node index.js
-echo "$(date +"%F %T.%N") cd .."
-cd ..
 echo "$(date +"%F %T.%N") Script completed"
