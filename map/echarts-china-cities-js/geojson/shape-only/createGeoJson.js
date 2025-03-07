@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// This script creates city.json and 广东广西湖南江西福建.geojson. It has to be run once only.
+// This script creates city.json and map.geojson. It has to be run once only.
 import fs from 'fs/promises';
 const minorities = JSON.parse(await fs.readFile('../../../minorities.json'));
 const features = [].concat(...await Promise.all((await fs.readdir('.')).reduce((cityArr, city) => { // The current directory was cloned from https://github.com/echarts-maps/echarts-china-cityArr-js/tree/master/geojson

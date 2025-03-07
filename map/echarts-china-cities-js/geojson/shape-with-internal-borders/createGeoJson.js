@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// This script creates city.json and provinces.geojson. It has to be run once only, after ../shape-only/createGeoJson.js.
+// This script creates city.json and map.geojson. It has to be run once only, after ../shape-only/createGeoJson.js.
 import fs from 'fs/promises';
 const cityArr0 = JSON.parse(await fs.readFile('../shape-only/city.json'));
 console.assert(cityArr0.length === 153); // 合共71市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市
