@@ -3,7 +3,7 @@ import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const browser = await puppeteer.launch({
-	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 1.0141 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
+	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 0.862 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
 });
 const page = (await browser.pages())[0];
