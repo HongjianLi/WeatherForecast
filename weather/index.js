@@ -60,10 +60,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 				if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
 			}
 			return 0;
-		}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
-			return acc + cur;
-		}, 0));
-		console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
+		}));
 		uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
 		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
 		await c7dul.dispose();

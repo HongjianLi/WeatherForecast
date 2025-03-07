@@ -43,10 +43,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 				if (highTemperature < 18 || highTemperature > 24) return 1;
 			}
 			return 0;
-		}).reduce((acc, cur) => { // Sum the number of uncomfortable days.
-			return acc + cur;
-		}, 0));
-		console.assert(uncomfortableDays >= 0 && uncomfortableDays <= 7); // It falls within [0, 7]. A value of 0 means no days are uncomfortable. A value of 7 means all days are uncomfortable.
+		}));
 		uncomfortableDaysArr.push({ city: `${city}`, uncomfortableDays });
 		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
 		await day7div.dispose();

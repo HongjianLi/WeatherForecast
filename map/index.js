@@ -9,7 +9,8 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
 			const { name, value } = params;
-			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><img src="../weather/${cityDir}/${name}.webp">`;
+			const { uncomfortableDays } = uncomfortableDaysArr.find(city => city.city === name);
+			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px"><tr>${uncomfortableDays.map(b => `<td style="width: 14%; background-color: ${['green', 'orangered'][b]}"></td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
 		},
 	},
 	visualMap: {
@@ -30,7 +31,9 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		},
 		data: uncomfortableDaysArr.map(city => ({
 			name: `${city.parent ?? ''}${city.city}`,
-			value: city.uncomfortableDays,
+			value: city.uncomfortableDays.reduce((acc, cur) => { // Sum the number of uncomfortable days.
+				return acc + cur;
+			}, 0),
 		})),
 	},
 });
