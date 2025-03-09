@@ -46,7 +46,7 @@ for (let dstIdx = 0; dstIdx < dstArr.length; ++dstIdx) {
 		console.log(`${src}-${dst}`);
 		let response;
 		try {
-			response = await page.goto(`https://flights.ctrip.com/online/list/oneway-${src}-${dst}?depdate=${depDate}`);
+			response = await page.goto(`https://flights.ctrip.com/online/list/oneway-${src}-${dst}?depdate=${depDate}`, { waitUntil: 'networkidle0'} );
 			// https://flight.qunar.com/site/oneway_list.htm?searchDepartureAirport=海口&searchArrivalAirport=广州&searchDepartureTime=2025-02-21
 			//https://www.ly.com/flights/itinerary/oneway/CAN-SYX?date=2025-02-05
 		} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
@@ -54,8 +54,8 @@ for (let dstIdx = 0; dstIdx < dstArr.length; ++dstIdx) {
 			continue;
 		}
 		if (response.ok()) {
-			if (await page.$('div.no-flights') !== null) continue; // If no flights from src to dst, skip it.
-			await page.waitForSelector('span.price');
+			const noFlights = await page.$('div.no-flights');
+			if (noFlights !== null) { await noFlights.dispose(); continue }; // If no flights from src to dst, skip it.
 			let prevHeight = 0;
 			while (true) {
 				await page.evaluate(() => {
