@@ -54,6 +54,7 @@ for (let dstIdx = 0; dstIdx < dstArr.length; ++dstIdx) {
 			continue;
 		}
 		if (response.ok()) {
+			if (await page.$('div.no-flights') !== null) continue; // If no flights from src to dst, skip it.
 			await page.waitForSelector('span.price');
 			let prevHeight = 0;
 			while (true) {
