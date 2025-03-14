@@ -45,8 +45,7 @@ for (const dst of dstArr) {
 		if (response.ok()) {
 			const noFlights = await page.$('div.flight-no-data');
 			if (noFlights !== null) { await noFlights.dispose(); continue }; // If no flights from src to dst, skip it.
-			let prevHeight = 0;
-			while (true) {
+			for (let prevHeight = 0; true;) {
 				await page.evaluate(() => {
 					window.scrollTo(0, document.body.scrollHeight);
 				});
@@ -62,8 +61,6 @@ for (const dst of dstArr) {
 				const departTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 08:35
 				const departHour = departTime.slice(0, 2); // e.g. 08
 				console.log(price, price < 500, departTime, 10 <= departHour && departHour <= 16);
-			}
-			for (const flight of flightList) {
 				await flight.dispose();
 			}
 		} else {
