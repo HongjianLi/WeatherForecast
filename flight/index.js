@@ -6,14 +6,14 @@ const monday = new Date();
 for (var nDaysAhead = 0; monday.getDay() !== 1; ++nDaysAhead) monday.setDate(monday.getDate() + 1); // Find the nearest Monday.
 const depDate = monday.toISOString().slice(0, 10);
 console.log(`Departing on ${depDate}, i.e. ${nDaysAhead} days ahead`);
-const airportsCityCode = JSON.parse(await fs.readFile('airportsCityCode.json'));
+const airports = await Promise.all(['CityCode', 'CodeCity'].map(m => fs.readFile(`airports${m}.json`).then(JSON.parse)));
 const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomfortableDays.json`)).slice(23).filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
 	const uncomfortableDays = city.uncomfortableDays.slice(nDaysAhead); // Skip dates before departure.
 	if (uncomfortableDays[0]) return false; // If the departure date is uncomfortable, skip it.
 	return uncomfortableDays.slice(1).reduce((acc, cur) => { // Sum the number of uncomfortable days after departure, and restrict the sum equal to or below 1.
 		return acc + cur;
 	}, 0) <= 2;
-}).map(city => airportsCityCode[city.city]).filter(airport => airport)).reduce((acc, cur) => { if (!acc.includes(cur)) acc.push(cur); return acc; }, []);
+}).map(city => airports[0][city.city]).filter(airport => airport)).reduce((acc, cur) => { if (!acc.includes(cur)) acc.push(cur); return acc; }, []);
 console.log(dstArr);
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
@@ -33,7 +33,7 @@ const bar = new ProgressBar('[:bar] :dst :current/:total=:percent :elapseds :eta
 for (const dst of dstArr) {
 	bar.tick({ dst });
 	for (const src of srcArr) {
-		console.log(`${depDate}: ${src}-${dst}`);
+		console.log(`${depDate}: ${src}-${dst} ${airports[1][src]}-${airports[1][dst]}`);
 		let response;
 		try {
 			response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${depDate}`, { waitUntil: 'networkidle0'} );
