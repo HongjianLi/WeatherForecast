@@ -37,7 +37,7 @@ for (const dst of dstArr) {
 		let response;
 		try {
 			response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${depDate}`, { waitUntil: 'networkidle0'} );
-		} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
+		} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next dst.
 			console.error(`${depDate}: ${src}-${dst}: page.goto() error ${error}`);
 			continue;
 		}
@@ -51,7 +51,7 @@ for (const dst of dstArr) {
 				await new Promise(resolve => setTimeout(resolve, 2120)); // Wait for some seconds for new contents to load.
 //				await page.waitForNetworkIdle({ idleTime: 2000 }); // Time (in milliseconds) the network should be idle.
 				const newHeight = await page.evaluate(() => document.body.scrollHeight);
-				if (newHeight === prevHeight) break; // Breaking the loop if no new content is loaded.
+				if (newHeight === prevHeight) break; // Break the loop if no new content is loaded.
 				prevHeight = newHeight;
 			}
 			const flightList = await page.$$('div.flight-lists-container>div.flight-item');
@@ -63,7 +63,7 @@ for (const dst of dstArr) {
 				await flight.dispose();
 			}
 		} else {
-			console.error(`${city}: HTTP response status code ${response.status()}`);
+			console.error(`${depDate}: ${src}-${dst}: HTTP response status code ${response.status()}`);
 		}
 	}		
 }
