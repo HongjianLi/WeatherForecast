@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// This script only supports prefecture-level cities, because nmc does not provide forecast for every county.
 import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
@@ -16,22 +15,6 @@ const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomf
 	}, 0) <= 2;
 }).map(city => airports[city.city]).filter(airport => airport));
 console.log(dstArr);
-const siteArr = [{
-	provider: 'ly',
-	url: 'https://www.ly.com/flights/itinerary/oneway/{src}-{dst}?date={depDate}', // It shows direct flights only.
-	selector: {
-		'no-flight': 'div.flight-no-data',
-		'flight-list': 'div.flight-lists-container>div.flight-item',
-	},
-	extract: async flightList => {
-		for (const flight of flightList) {
-			const price = (await flight.$eval('div.head-prices>strong>em', el => el.innerText)).slice(1); // .slice(1) to filter out the currency symbol ￥.
-			const departTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 08:35
-			const departHour = departTime.slice(0, 2); // e.g. 08
-			console.log('ly', price, price < 500, departTime, 10 <= departHour && departHour <= 16);
-		}
-	},
-}];
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
@@ -52,16 +35,15 @@ for (const dst of dstArr) {
 	for (const src of srcArr) {
 		console.log(`${depDate}: ${src}-${dst}`);
 		const replacements = { src, dst, depDate };
-		const site = siteArr[0];
 		let response;
 		try {
-			response = await page.goto(site.url.replace(/{(\w+)}/g, (match, p1) => replacements[p1] || match), { waitUntil: 'networkidle0'} );
+			response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${depDate}`, { waitUntil: 'networkidle0'} );
 		} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next city.
-			console.error(`${site.provider}@${depDate}: ${src}-${dst}: page.goto() error ${error}`);
+			console.error(`${depDate}: ${src}-${dst}: page.goto() error ${error}`);
 			continue;
 		}
 		if (response.ok()) {
-			const noFlights = await page.$(site.selector['no-flight']);
+			const noFlights = await page.$('div.flight-no-data');
 			if (noFlights !== null) { await noFlights.dispose(); continue }; // If no flights from src to dst, skip it.
 			let prevHeight = 0;
 			while (true) {
@@ -74,9 +56,13 @@ for (const dst of dstArr) {
 				if (newHeight === prevHeight) break; // Breaking the loop if no new content is loaded.
 				prevHeight = newHeight;
 			}
-			const flightList = await page.$$(site.selector['flight-list']);
-			if (!flightList.length) continue;
-			await site.extract(flightList);
+			const flightList = await page.$$('div.flight-lists-container>div.flight-item');
+			for (const flight of flightList) {
+				const price = (await flight.$eval('div.head-prices>strong>em', el => el.innerText)).slice(1); // .slice(1) to filter out the currency symbol ￥.
+				const departTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 08:35
+				const departHour = departTime.slice(0, 2); // e.g. 08
+				console.log(price, price < 500, departTime, 10 <= departHour && departHour <= 16);
+			}
 			for (const flight of flightList) {
 				await flight.dispose();
 			}
