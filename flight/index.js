@@ -34,7 +34,6 @@ for (const dst of dstArr) {
 	bar.tick({ dst });
 	for (const src of srcArr) {
 		console.log(`${depDate}: ${src}-${dst}`);
-		const replacements = { src, dst, depDate };
 		let response;
 		try {
 			response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${depDate}`, { waitUntil: 'networkidle0'} );
