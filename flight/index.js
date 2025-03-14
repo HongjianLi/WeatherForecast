@@ -7,8 +7,8 @@ const monday = new Date();
 for (var nDaysAhead = 0; monday.getDay() !== 1; ++nDaysAhead) monday.setDate(monday.getDate() + 1); // Find the nearest Monday.
 const depDate = monday.toISOString().slice(0, 10);
 console.log(`Departing on ${depDate}, i.e. ${nDaysAhead} days ahead`);
-const airports = JSON.parse(await fs.readFile('../airports.json'));
-const dstArr = [].concat(...JSON.parse(await fs.readFile(`../../weather/city/uncomfortableDays.json`))/*.slice(23)*/.filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
+const airports = JSON.parse(await fs.readFile('airports.json'));
+const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomfortableDays.json`))/*.slice(23)*/.filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
 	const uncomfortableDays = city.uncomfortableDays.slice(nDaysAhead); // Skip dates before departure.
 	if (uncomfortableDays[0]) return false; // If the departure date is uncomfortable, skip it.
 	return uncomfortableDays.slice(1).reduce((acc, cur) => { // Sum the number of uncomfortable days after departure, and restrict the sum equal to or below 1.
