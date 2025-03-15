@@ -14,11 +14,10 @@ const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomf
 		return acc + cur;
 	}, 0) <= 2;
 }).map(city => airports[0][city.city]).filter(airport => airport).map(codeArr => codeArr.slice(0, 1))).reduce((acc, cur) => { if (!acc.includes(cur)) acc.push(cur); return acc; }, []); // codeArr.slice(0, 1) retains the first code for the same city, e.g. CTU for 成都, because ly will return the flights for all airports of the same city, e.g. including TFU.
-console.log(dstArr);
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-	headless: false,
+//	headless: false,
 });
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36');
@@ -33,7 +32,6 @@ const bar = new ProgressBar('[:bar] :dst :current/:total=:percent :elapseds :eta
 for (const dst of dstArr) {
 	bar.tick({ dst });
 	for (const src of srcArr) {
-		console.log(`${depDate}: ${src}-${dst} ${airports[1][src]}-${airports[1][dst]}`);
 		let response;
 		try {
 			response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${depDate}`, { waitUntil: 'networkidle0'} );
@@ -59,7 +57,9 @@ for (const dst of dstArr) {
 				const price = (await flight.$eval('div.head-prices>strong>em', el => el.innerText)).slice(1); // .slice(1) to filter out the currency symbol ￥.
 				const departTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 08:35
 				const departHour = departTime.slice(0, 2); // e.g. 08
-				console.log(price, price < 500, departTime, 10 <= departHour && departHour <= 16);
+				if (price < 500 && 10 <= departHour && departHour <= 16) {
+					console.log(`${depDate} ${departTime} ${src}-${dst} ${airports[1][src]}-${airports[1][dst]} ￥${price}`);
+				}
 				await flight.dispose();
 			}
 		} else {
