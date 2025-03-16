@@ -763,5 +763,210 @@
 		"city": "宜昌",
 		"code": "yichang",
 		"parentCode": "HB"
+	},
+	{
+		"city": "安庆",
+		"code": "anqing",
+		"parentCode": "AH"
+	},
+	{
+		"city": "蚌埠",
+		"code": "bangbu",
+		"parentCode": "AH"
+	},
+	{
+		"city": "亳州",
+		"code": "zuozhou",
+		"parentCode": "AH"
+	},
+	{
+		"city": "池州",
+		"code": "chizhou",
+		"parentCode": "AH"
+	},
+	{
+		"city": "滁州",
+		"code": "chuzhou",
+		"parentCode": "AH"
+	},
+	{
+		"city": "阜阳",
+		"code": "fuyang",
+		"parentCode": "AH"
+	},
+	{
+		"city": "合肥",
+		"code": "hefei",
+		"parentCode": "AH"
+	},
+	{
+		"city": "淮北",
+		"code": "huaibei",
+		"parentCode": "AH"
+	},
+	{
+		"city": "淮南",
+		"code": "huainan",
+		"parentCode": "AH"
+	},
+	{
+		"city": "黄山",
+		"code": "huangshan",
+		"parentCode": "AH"
+	},
+	{
+		"city": "六安",
+		"code": "liuan",
+		"parentCode": "AH"
+	},
+	{
+		"city": "马鞍山",
+		"code": "maanshan",
+		"parentCode": "AH"
+	},
+	{
+		"city": "宿州",
+		"code": "suzhou",
+		"parentCode": "AH"
+	},
+	{
+		"city": "铜陵",
+		"code": "tongling",
+		"parentCode": "AH"
+	},
+	{
+		"city": "芜湖",
+		"code": "wuhu",
+		"parentCode": "AH"
+	},
+	{
+		"city": "宣城",
+		"code": "xuancheng",
+		"parentCode": "AH"
+	},
+	{
+		"city": "杭州",
+		"code": "hangzhou",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "湖州",
+		"code": "huzhou",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "嘉兴",
+		"code": "jiaxing",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "金华",
+		"code": "jinhua",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "丽水",
+		"code": "liandu1",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "宁波",
+		"code": "ningbo2",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "衢州",
+		"code": "zuozhou2",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "绍兴",
+		"code": "shaoxing",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "台州",
+		"code": "taizhou2",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "温州",
+		"code": "wenzhou",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "舟山",
+		"code": "zhoushan2",
+		"parentCode": "ZJ"
+	},
+	{
+		"city": "上海",
+		"code": "shanghai",
+		"parentCode": "SH"
+	},
+	{
+		"city": "常州",
+		"code": "changzhou",
+		"parentCode": "JS"
+	},
+	{
+		"city": "淮安",
+		"code": "huaian",
+		"parentCode": "JS"
+	},
+	{
+		"city": "连云港",
+		"code": "lianyungang",
+		"parentCode": "JS"
+	},
+	{
+		"city": "南京",
+		"code": "nanjing",
+		"parentCode": "JS"
+	},
+	{
+		"city": "南通",
+		"code": "nantong",
+		"parentCode": "JS"
+	},
+	{
+		"city": "苏州",
+		"code": "suzhou",
+		"parentCode": "JS"
+	},
+	{
+		"city": "宿迁",
+		"code": "suqian",
+		"parentCode": "JS"
+	},
+	{
+		"city": "泰州",
+		"code": "taizhou",
+		"parentCode": "JS"
+	},
+	{
+		"city": "无锡",
+		"code": "wuxi",
+		"parentCode": "JS"
+	},
+	{
+		"city": "徐州",
+		"code": "xuzhou",
+		"parentCode": "JS"
+	},
+	{
+		"city": "盐城",
+		"code": "yancheng",
+		"parentCode": "JS"
+	},
+	{
+		"city": "扬州",
+		"code": "yangzhou",
+		"parentCode": "JS"
+	},
+	{
+		"city": "镇江",
+		"code": "zhenjiang",
+		"parentCode": "JS"
 	}
 ]

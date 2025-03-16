@@ -610,5 +610,169 @@
 	{
 		"city": "宜昌",
 		"code": "yichang"
+	},
+	{
+		"city": "安庆",
+		"code": "anqing"
+	},
+	{
+		"city": "蚌埠",
+		"code": "bengbu"
+	},
+	{
+		"city": "亳州",
+		"code": "bozhou2"
+	},
+	{
+		"city": "池州",
+		"code": "chizhou"
+	},
+	{
+		"city": "滁州",
+		"code": "chuzhou1"
+	},
+	{
+		"city": "阜阳",
+		"code": "fuyang1"
+	},
+	{
+		"city": "合肥",
+		"code": "hefei"
+	},
+	{
+		"city": "淮北",
+		"code": "huaibei"
+	},
+	{
+		"city": "淮南",
+		"code": "huainan"
+	},
+	{
+		"city": "黄山",
+		"code": "huangshan"
+	},
+	{
+		"city": "六安",
+		"code": "luan"
+	},
+	{
+		"city": "马鞍山",
+		"code": "maanshan"
+	},
+	{
+		"city": "宿州",
+		"code": "suzhou1"
+	},
+	{
+		"city": "铜陵",
+		"code": "tongling"
+	},
+	{
+		"city": "芜湖",
+		"code": "wuhu"
+	},
+	{
+		"city": "宣城",
+		"code": "xuancheng"
+	},
+	{
+		"city": "杭州",
+		"code": "hangzhou"
+	},
+	{
+		"city": "湖州",
+		"code": "huzhou"
+	},
+	{
+		"city": "嘉兴",
+		"code": "jiaxing"
+	},
+	{
+		"city": "金华",
+		"code": "jinhua"
+	},
+	{
+		"city": "丽水",
+		"code": "lishui"
+	},
+	{
+		"city": "宁波",
+		"code": "ningbo"
+	},
+	{
+		"city": "衢州",
+		"code": "quzhou1"
+	},
+	{
+		"city": "绍兴",
+		"code": "shaoxing"
+	},
+	{
+		"city": "台州",
+		"code": "taizhou"
+	},
+	{
+		"city": "温州",
+		"code": "wenzhou"
+	},
+	{
+		"city": "舟山",
+		"code": "zhoushan"
+	},
+	{
+		"city": "上海",
+		"code": "shanghai"
+	},
+	{
+		"city": "常州",
+		"code": "changzhou"
+	},
+	{
+		"city": "淮安",
+		"code": "huaian1"
+	},
+	{
+		"city": "连云港",
+		"code": "lianyungang"
+	},
+	{
+		"city": "南京",
+		"code": "nanjing"
+	},
+	{
+		"city": "南通",
+		"code": "nantong"
+	},
+	{
+		"city": "苏州",
+		"code": "suzhou"
+	},
+	{
+		"city": "宿迁",
+		"code": "suqian"
+	},
+	{
+		"city": "泰州",
+		"code": "taizhou2"
+	},
+	{
+		"city": "无锡",
+		"code": "wuxi1"
+	},
+	{
+		"city": "徐州",
+		"code": "xuzhou"
+	},
+	{
+		"city": "盐城",
+		"code": "yancheng"
+	},
+	{
+		"city": "扬州",
+		"code": "yangzhou"
+	},
+	{
+		"city": "镇江",
+		"code": "zhenjiang"
 	}
 ]

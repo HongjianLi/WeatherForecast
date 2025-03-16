@@ -28,7 +28,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 		const levelArr = (await page.$eval('div.crumbs.fl', el => el.innerText)).replaceAll('\n', '').split('>');
 		console.assert([3, 4].includes(levelArr.length));
 		if (cityDir === 'city') {
-			const cityFromPage = ['香港', '澳门', '重庆'].includes(levelArr[1]) ? levelArr[1] : levelArr[2]; // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'.
+			const cityFromPage = ['香港', '澳门', '重庆', '上海'].includes(levelArr[1]) ? levelArr[1] : levelArr[2]; // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'.
 			if (levelArr.length === 4) console.assert(levelArr[3] === '城区');
 			console.assert(city === cityFromPage, `${city} !== ${cityFromPage}`);
 		} else {
@@ -36,7 +36,8 @@ for (let i = 0; i < codeArr.length; ++i) {
 			console.assert(
 				(cityFromPage.startsWith(city)) || // This is the majority case.
 				(cityFromPage === '城区' && ['香港', '澳门', '东莞', '中山', '湘潭', '岳阳', '楚雄', '大理', '红河', '文山', '阿坝', '甘孜', '广安', '恩施', '荆州', '潜江', '天门', '神农架', '仙桃'].includes(city)) || // These counties are not found in www.weather.com.cn, therefore their parent city's code are used instead.
-				(cityFromPage === '宜宾县' && city === '叙州') // 宜宾县 was renamed to 叙州区
+				(cityFromPage === '宜宾县' && city === '叙州') || // 宜宾县 was renamed to 叙州区
+				(cityFromPage === '芜湖县' && city === '湾沚')    // 芜湖县 was renamed to 湾沚区
 			, `${city} !== ${cityFromPage}`);
 		}
 		const c7dul = await page.$('.c7d ul');

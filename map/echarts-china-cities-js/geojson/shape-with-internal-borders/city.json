@@ -4430,5 +4430,1229 @@
 	{
 		"parent": "宜昌",
 		"city": "枝江"
+	},
+	{
+		"parent": "安庆",
+		"city": "迎江"
+	},
+	{
+		"parent": "安庆",
+		"city": "大观"
+	},
+	{
+		"parent": "安庆",
+		"city": "宜秀"
+	},
+	{
+		"parent": "安庆",
+		"city": "怀宁"
+	},
+	{
+		"parent": "安庆",
+		"city": "潜山"
+	},
+	{
+		"parent": "安庆",
+		"city": "太湖"
+	},
+	{
+		"parent": "安庆",
+		"city": "宿松"
+	},
+	{
+		"parent": "安庆",
+		"city": "望江"
+	},
+	{
+		"parent": "安庆",
+		"city": "岳西"
+	},
+	{
+		"parent": "安庆",
+		"city": "桐城"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "龙子湖"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "禹会"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "蚌山"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "淮上"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "怀远"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "五河"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "固镇"
+	},
+	{
+		"parent": "亳州",
+		"city": "谯城"
+	},
+	{
+		"parent": "亳州",
+		"city": "涡阳"
+	},
+	{
+		"parent": "亳州",
+		"city": "利辛"
+	},
+	{
+		"parent": "亳州",
+		"city": "蒙城"
+	},
+	{
+		"parent": "池州",
+		"city": "贵池"
+	},
+	{
+		"parent": "池州",
+		"city": "东至"
+	},
+	{
+		"parent": "池州",
+		"city": "石台"
+	},
+	{
+		"parent": "池州",
+		"city": "青阳"
+	},
+	{
+		"parent": "滁州",
+		"city": "琅琊"
+	},
+	{
+		"parent": "滁州",
+		"city": "南谯"
+	},
+	{
+		"parent": "滁州",
+		"city": "全椒"
+	},
+	{
+		"parent": "滁州",
+		"city": "定远"
+	},
+	{
+		"parent": "滁州",
+		"city": "来安"
+	},
+	{
+		"parent": "滁州",
+		"city": "凤阳"
+	},
+	{
+		"parent": "滁州",
+		"city": "明光"
+	},
+	{
+		"parent": "滁州",
+		"city": "天长"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍州"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍东"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍泉"
+	},
+	{
+		"parent": "阜阳",
+		"city": "临泉"
+	},
+	{
+		"parent": "阜阳",
+		"city": "太和"
+	},
+	{
+		"parent": "阜阳",
+		"city": "阜南"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍上"
+	},
+	{
+		"parent": "阜阳",
+		"city": "界首"
+	},
+	{
+		"parent": "合肥",
+		"city": "瑶海"
+	},
+	{
+		"parent": "合肥",
+		"city": "庐阳"
+	},
+	{
+		"parent": "合肥",
+		"city": "肥东"
+	},
+	{
+		"parent": "合肥",
+		"city": "包河"
+	},
+	{
+		"parent": "合肥",
+		"city": "蜀山"
+	},
+	{
+		"parent": "合肥",
+		"city": "长丰"
+	},
+	{
+		"parent": "合肥",
+		"city": "肥西"
+	},
+	{
+		"parent": "合肥",
+		"city": "巢湖"
+	},
+	{
+		"parent": "合肥",
+		"city": "庐江"
+	},
+	{
+		"parent": "淮北",
+		"city": "杜集"
+	},
+	{
+		"parent": "淮北",
+		"city": "烈山"
+	},
+	{
+		"parent": "淮北",
+		"city": "濉溪"
+	},
+	{
+		"parent": "淮北",
+		"city": "相山"
+	},
+	{
+		"parent": "淮南",
+		"city": "大通"
+	},
+	{
+		"parent": "淮南",
+		"city": "田家庵"
+	},
+	{
+		"parent": "淮南",
+		"city": "谢家集"
+	},
+	{
+		"parent": "淮南",
+		"city": "凤台"
+	},
+	{
+		"parent": "淮南",
+		"city": "潘集"
+	},
+	{
+		"parent": "淮南",
+		"city": "八公山"
+	},
+	{
+		"parent": "淮南",
+		"city": "寿县"
+	},
+	{
+		"parent": "黄山",
+		"city": "屯溪"
+	},
+	{
+		"parent": "黄山",
+		"city": "徽州"
+	},
+	{
+		"parent": "黄山",
+		"city": "黄山"
+	},
+	{
+		"parent": "黄山",
+		"city": "歙县"
+	},
+	{
+		"parent": "黄山",
+		"city": "休宁"
+	},
+	{
+		"parent": "黄山",
+		"city": "黟县"
+	},
+	{
+		"parent": "黄山",
+		"city": "祁门"
+	},
+	{
+		"parent": "六安",
+		"city": "金安"
+	},
+	{
+		"parent": "六安",
+		"city": "叶集"
+	},
+	{
+		"parent": "六安",
+		"city": "裕安"
+	},
+	{
+		"parent": "六安",
+		"city": "霍邱"
+	},
+	{
+		"parent": "六安",
+		"city": "金寨"
+	},
+	{
+		"parent": "六安",
+		"city": "舒城"
+	},
+	{
+		"parent": "六安",
+		"city": "霍山"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "花山"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "雨山"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "当涂"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "博望"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "含山"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "和县"
+	},
+	{
+		"parent": "宿州",
+		"city": "埇桥"
+	},
+	{
+		"parent": "宿州",
+		"city": "砀山"
+	},
+	{
+		"parent": "宿州",
+		"city": "灵璧"
+	},
+	{
+		"parent": "宿州",
+		"city": "萧县"
+	},
+	{
+		"parent": "宿州",
+		"city": "泗县"
+	},
+	{
+		"parent": "铜陵",
+		"city": "铜官"
+	},
+	{
+		"parent": "铜陵",
+		"city": "枞阳"
+	},
+	{
+		"parent": "铜陵",
+		"city": "义安"
+	},
+	{
+		"parent": "铜陵",
+		"city": "郊区"
+	},
+	{
+		"parent": "芜湖",
+		"city": "镜湖"
+	},
+	{
+		"parent": "芜湖",
+		"city": "弋江"
+	},
+	{
+		"parent": "芜湖",
+		"city": "三山"
+	},
+	{
+		"parent": "芜湖",
+		"city": "湾沚"
+	},
+	{
+		"parent": "芜湖",
+		"city": "繁昌"
+	},
+	{
+		"parent": "芜湖",
+		"city": "鸠江"
+	},
+	{
+		"parent": "芜湖",
+		"city": "南陵"
+	},
+	{
+		"parent": "芜湖",
+		"city": "无为"
+	},
+	{
+		"parent": "宣城",
+		"city": "广德"
+	},
+	{
+		"parent": "宣城",
+		"city": "宣州"
+	},
+	{
+		"parent": "宣城",
+		"city": "泾县"
+	},
+	{
+		"parent": "宣城",
+		"city": "郎溪"
+	},
+	{
+		"parent": "宣城",
+		"city": "绩溪"
+	},
+	{
+		"parent": "宣城",
+		"city": "旌德"
+	},
+	{
+		"parent": "宣城",
+		"city": "宁国"
+	},
+	{
+		"parent": "杭州",
+		"city": "上城"
+	},
+	{
+		"parent": "杭州",
+		"city": "滨江"
+	},
+	{
+		"parent": "杭州",
+		"city": "下城"
+	},
+	{
+		"parent": "杭州",
+		"city": "江干"
+	},
+	{
+		"parent": "杭州",
+		"city": "拱墅"
+	},
+	{
+		"parent": "杭州",
+		"city": "西湖"
+	},
+	{
+		"parent": "杭州",
+		"city": "萧山"
+	},
+	{
+		"parent": "杭州",
+		"city": "富阳"
+	},
+	{
+		"parent": "杭州",
+		"city": "余杭"
+	},
+	{
+		"parent": "杭州",
+		"city": "淳安"
+	},
+	{
+		"parent": "杭州",
+		"city": "桐庐"
+	},
+	{
+		"parent": "杭州",
+		"city": "建德"
+	},
+	{
+		"parent": "杭州",
+		"city": "临安"
+	},
+	{
+		"parent": "湖州",
+		"city": "吴兴"
+	},
+	{
+		"parent": "湖州",
+		"city": "南浔"
+	},
+	{
+		"parent": "湖州",
+		"city": "德清"
+	},
+	{
+		"parent": "湖州",
+		"city": "长兴"
+	},
+	{
+		"parent": "湖州",
+		"city": "安吉"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "南湖"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "嘉善"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "秀洲"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "海盐"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "平湖"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "海宁"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "桐乡"
+	},
+	{
+		"parent": "金华",
+		"city": "金东"
+	},
+	{
+		"parent": "金华",
+		"city": "浦江"
+	},
+	{
+		"parent": "金华",
+		"city": "婺城"
+	},
+	{
+		"parent": "金华",
+		"city": "武义"
+	},
+	{
+		"parent": "金华",
+		"city": "磐安"
+	},
+	{
+		"parent": "金华",
+		"city": "兰溪"
+	},
+	{
+		"parent": "金华",
+		"city": "义乌"
+	},
+	{
+		"parent": "金华",
+		"city": "东阳"
+	},
+	{
+		"parent": "金华",
+		"city": "永康"
+	},
+	{
+		"parent": "丽水",
+		"city": "莲都"
+	},
+	{
+		"parent": "丽水",
+		"city": "青田"
+	},
+	{
+		"parent": "丽水",
+		"city": "缙云"
+	},
+	{
+		"parent": "丽水",
+		"city": "遂昌"
+	},
+	{
+		"parent": "丽水",
+		"city": "松阳"
+	},
+	{
+		"parent": "丽水",
+		"city": "云和"
+	},
+	{
+		"parent": "丽水",
+		"city": "庆元"
+	},
+	{
+		"parent": "丽水",
+		"city": "景宁"
+	},
+	{
+		"parent": "丽水",
+		"city": "龙泉"
+	},
+	{
+		"parent": "宁波",
+		"city": "海曙"
+	},
+	{
+		"parent": "宁波",
+		"city": "北仑"
+	},
+	{
+		"parent": "宁波",
+		"city": "镇海"
+	},
+	{
+		"parent": "宁波",
+		"city": "鄞州"
+	},
+	{
+		"parent": "宁波",
+		"city": "江北"
+	},
+	{
+		"parent": "宁波",
+		"city": "象山"
+	},
+	{
+		"parent": "宁波",
+		"city": "慈溪"
+	},
+	{
+		"parent": "宁波",
+		"city": "宁海"
+	},
+	{
+		"parent": "宁波",
+		"city": "奉化"
+	},
+	{
+		"parent": "宁波",
+		"city": "余姚"
+	},
+	{
+		"parent": "衢州",
+		"city": "柯城"
+	},
+	{
+		"parent": "衢州",
+		"city": "常山"
+	},
+	{
+		"parent": "衢州",
+		"city": "开化"
+	},
+	{
+		"parent": "衢州",
+		"city": "衢江"
+	},
+	{
+		"parent": "衢州",
+		"city": "龙游"
+	},
+	{
+		"parent": "衢州",
+		"city": "江山"
+	},
+	{
+		"parent": "绍兴",
+		"city": "越城"
+	},
+	{
+		"parent": "绍兴",
+		"city": "上虞"
+	},
+	{
+		"parent": "绍兴",
+		"city": "新昌"
+	},
+	{
+		"parent": "绍兴",
+		"city": "柯桥"
+	},
+	{
+		"parent": "绍兴",
+		"city": "诸暨"
+	},
+	{
+		"parent": "绍兴",
+		"city": "嵊州"
+	},
+	{
+		"parent": "台州",
+		"city": "椒江"
+	},
+	{
+		"parent": "台州",
+		"city": "路桥"
+	},
+	{
+		"parent": "台州",
+		"city": "玉环"
+	},
+	{
+		"parent": "台州",
+		"city": "黄岩"
+	},
+	{
+		"parent": "台州",
+		"city": "三门"
+	},
+	{
+		"parent": "台州",
+		"city": "天台"
+	},
+	{
+		"parent": "台州",
+		"city": "温岭"
+	},
+	{
+		"parent": "台州",
+		"city": "仙居"
+	},
+	{
+		"parent": "台州",
+		"city": "临海"
+	},
+	{
+		"parent": "温州",
+		"city": "鹿城"
+	},
+	{
+		"parent": "温州",
+		"city": "龙湾"
+	},
+	{
+		"parent": "温州",
+		"city": "瓯海"
+	},
+	{
+		"parent": "温州",
+		"city": "洞头"
+	},
+	{
+		"parent": "温州",
+		"city": "永嘉"
+	},
+	{
+		"parent": "温州",
+		"city": "苍南"
+	},
+	{
+		"parent": "温州",
+		"city": "平阳"
+	},
+	{
+		"parent": "温州",
+		"city": "文成"
+	},
+	{
+		"parent": "温州",
+		"city": "泰顺"
+	},
+	{
+		"parent": "温州",
+		"city": "乐清"
+	},
+	{
+		"parent": "温州",
+		"city": "瑞安"
+	},
+	{
+		"parent": "舟山",
+		"city": "定海"
+	},
+	{
+		"parent": "舟山",
+		"city": "岱山"
+	},
+	{
+		"parent": "舟山",
+		"city": "嵊泗"
+	},
+	{
+		"parent": "舟山",
+		"city": "普陀"
+	},
+	{
+		"parent": "上海",
+		"city": "黄浦"
+	},
+	{
+		"parent": "上海",
+		"city": "徐汇"
+	},
+	{
+		"parent": "上海",
+		"city": "长宁"
+	},
+	{
+		"parent": "上海",
+		"city": "静安"
+	},
+	{
+		"parent": "上海",
+		"city": "普陀"
+	},
+	{
+		"parent": "上海",
+		"city": "虹口"
+	},
+	{
+		"parent": "上海",
+		"city": "杨浦"
+	},
+	{
+		"parent": "上海",
+		"city": "闵行"
+	},
+	{
+		"parent": "上海",
+		"city": "宝山"
+	},
+	{
+		"parent": "上海",
+		"city": "嘉定"
+	},
+	{
+		"parent": "上海",
+		"city": "浦东"
+	},
+	{
+		"parent": "上海",
+		"city": "金山"
+	},
+	{
+		"parent": "上海",
+		"city": "松江"
+	},
+	{
+		"parent": "上海",
+		"city": "青浦"
+	},
+	{
+		"parent": "上海",
+		"city": "奉贤"
+	},
+	{
+		"parent": "上海",
+		"city": "崇明"
+	},
+	{
+		"parent": "常州",
+		"city": "天宁"
+	},
+	{
+		"parent": "常州",
+		"city": "钟楼"
+	},
+	{
+		"parent": "常州",
+		"city": "新北"
+	},
+	{
+		"parent": "常州",
+		"city": "武进"
+	},
+	{
+		"parent": "常州",
+		"city": "金坛"
+	},
+	{
+		"parent": "常州",
+		"city": "溧阳"
+	},
+	{
+		"parent": "淮安",
+		"city": "清江浦"
+	},
+	{
+		"parent": "淮安",
+		"city": "淮安"
+	},
+	{
+		"parent": "淮安",
+		"city": "淮阴"
+	},
+	{
+		"parent": "淮安",
+		"city": "洪泽"
+	},
+	{
+		"parent": "淮安",
+		"city": "涟水"
+	},
+	{
+		"parent": "淮安",
+		"city": "金湖"
+	},
+	{
+		"parent": "淮安",
+		"city": "盱眙"
+	},
+	{
+		"parent": "连云港",
+		"city": "连云"
+	},
+	{
+		"parent": "连云港",
+		"city": "海州"
+	},
+	{
+		"parent": "连云港",
+		"city": "赣榆"
+	},
+	{
+		"parent": "连云港",
+		"city": "东海"
+	},
+	{
+		"parent": "连云港",
+		"city": "灌云"
+	},
+	{
+		"parent": "连云港",
+		"city": "灌南"
+	},
+	{
+		"parent": "南京",
+		"city": "玄武"
+	},
+	{
+		"parent": "南京",
+		"city": "建邺"
+	},
+	{
+		"parent": "南京",
+		"city": "秦淮"
+	},
+	{
+		"parent": "南京",
+		"city": "栖霞"
+	},
+	{
+		"parent": "南京",
+		"city": "浦口"
+	},
+	{
+		"parent": "南京",
+		"city": "鼓楼"
+	},
+	{
+		"parent": "南京",
+		"city": "雨花台"
+	},
+	{
+		"parent": "南京",
+		"city": "六合"
+	},
+	{
+		"parent": "南京",
+		"city": "高淳"
+	},
+	{
+		"parent": "南京",
+		"city": "溧水"
+	},
+	{
+		"parent": "南京",
+		"city": "江宁"
+	},
+	{
+		"parent": "南通",
+		"city": "崇川"
+	},
+	{
+		"parent": "南通",
+		"city": "港闸"
+	},
+	{
+		"parent": "南通",
+		"city": "通州"
+	},
+	{
+		"parent": "南通",
+		"city": "海安"
+	},
+	{
+		"parent": "南通",
+		"city": "如东"
+	},
+	{
+		"parent": "南通",
+		"city": "启东"
+	},
+	{
+		"parent": "南通",
+		"city": "海门"
+	},
+	{
+		"parent": "南通",
+		"city": "如皋"
+	},
+	{
+		"parent": "苏州",
+		"city": "虎丘"
+	},
+	{
+		"parent": "苏州",
+		"city": "姑苏"
+	},
+	{
+		"parent": "苏州",
+		"city": "相城"
+	},
+	{
+		"parent": "苏州",
+		"city": "吴中"
+	},
+	{
+		"parent": "苏州",
+		"city": "吴江"
+	},
+	{
+		"parent": "苏州",
+		"city": "常熟"
+	},
+	{
+		"parent": "苏州",
+		"city": "张家港"
+	},
+	{
+		"parent": "苏州",
+		"city": "昆山"
+	},
+	{
+		"parent": "苏州",
+		"city": "太仓"
+	},
+	{
+		"parent": "宿迁",
+		"city": "宿城"
+	},
+	{
+		"parent": "宿迁",
+		"city": "宿豫"
+	},
+	{
+		"parent": "宿迁",
+		"city": "泗阳"
+	},
+	{
+		"parent": "宿迁",
+		"city": "泗洪"
+	},
+	{
+		"parent": "宿迁",
+		"city": "沭阳"
+	},
+	{
+		"parent": "泰州",
+		"city": "海陵"
+	},
+	{
+		"parent": "泰州",
+		"city": "高港"
+	},
+	{
+		"parent": "泰州",
+		"city": "姜堰"
+	},
+	{
+		"parent": "泰州",
+		"city": "靖江"
+	},
+	{
+		"parent": "泰州",
+		"city": "兴化"
+	},
+	{
+		"parent": "泰州",
+		"city": "泰兴"
+	},
+	{
+		"parent": "无锡",
+		"city": "锡山"
+	},
+	{
+		"parent": "无锡",
+		"city": "惠山"
+	},
+	{
+		"parent": "无锡",
+		"city": "滨湖"
+	},
+	{
+		"parent": "无锡",
+		"city": "梁溪"
+	},
+	{
+		"parent": "无锡",
+		"city": "新吴"
+	},
+	{
+		"parent": "无锡",
+		"city": "江阴"
+	},
+	{
+		"parent": "无锡",
+		"city": "宜兴"
+	},
+	{
+		"parent": "徐州",
+		"city": "鼓楼"
+	},
+	{
+		"parent": "徐州",
+		"city": "云龙"
+	},
+	{
+		"parent": "徐州",
+		"city": "贾汪"
+	},
+	{
+		"parent": "徐州",
+		"city": "泉山"
+	},
+	{
+		"parent": "徐州",
+		"city": "丰县"
+	},
+	{
+		"parent": "徐州",
+		"city": "沛县"
+	},
+	{
+		"parent": "徐州",
+		"city": "铜山"
+	},
+	{
+		"parent": "徐州",
+		"city": "睢宁"
+	},
+	{
+		"parent": "徐州",
+		"city": "新沂"
+	},
+	{
+		"parent": "徐州",
+		"city": "邳州"
+	},
+	{
+		"parent": "盐城",
+		"city": "亭湖"
+	},
+	{
+		"parent": "盐城",
+		"city": "盐都"
+	},
+	{
+		"parent": "盐城",
+		"city": "大丰"
+	},
+	{
+		"parent": "盐城",
+		"city": "响水"
+	},
+	{
+		"parent": "盐城",
+		"city": "滨海"
+	},
+	{
+		"parent": "盐城",
+		"city": "建湖"
+	},
+	{
+		"parent": "盐城",
+		"city": "射阳"
+	},
+	{
+		"parent": "盐城",
+		"city": "阜宁"
+	},
+	{
+		"parent": "盐城",
+		"city": "东台"
+	},
+	{
+		"parent": "扬州",
+		"city": "广陵"
+	},
+	{
+		"parent": "扬州",
+		"city": "邗江"
+	},
+	{
+		"parent": "扬州",
+		"city": "江都"
+	},
+	{
+		"parent": "扬州",
+		"city": "宝应"
+	},
+	{
+		"parent": "扬州",
+		"city": "仪征"
+	},
+	{
+		"parent": "扬州",
+		"city": "高邮"
+	},
+	{
+		"parent": "镇江",
+		"city": "京口"
+	},
+	{
+		"parent": "镇江",
+		"city": "润州"
+	},
+	{
+		"parent": "镇江",
+		"city": "丹徒"
+	},
+	{
+		"parent": "镇江",
+		"city": "扬中"
+	},
+	{
+		"parent": "镇江",
+		"city": "丹阳"
+	},
+	{
+		"parent": "镇江",
+		"city": "句容"
 	}
 ]

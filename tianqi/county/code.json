@@ -5528,5 +5528,1535 @@
 		"parent": "宜昌",
 		"city": "枝江",
 		"code": "zhijiang"
+	},
+	{
+		"parent": "安庆",
+		"city": "迎江",
+		"code": "yingjiangqu"
+	},
+	{
+		"parent": "安庆",
+		"city": "大观",
+		"code": "daguanqu"
+	},
+	{
+		"parent": "安庆",
+		"city": "宜秀",
+		"code": "yixiu"
+	},
+	{
+		"parent": "安庆",
+		"city": "怀宁",
+		"code": "huaining"
+	},
+	{
+		"parent": "安庆",
+		"city": "潜山",
+		"code": "qianshan"
+	},
+	{
+		"parent": "安庆",
+		"city": "太湖",
+		"code": "taihu"
+	},
+	{
+		"parent": "安庆",
+		"city": "宿松",
+		"code": "susong"
+	},
+	{
+		"parent": "安庆",
+		"city": "望江",
+		"code": "wangjiang"
+	},
+	{
+		"parent": "安庆",
+		"city": "岳西",
+		"code": "yuexi"
+	},
+	{
+		"parent": "安庆",
+		"city": "桐城",
+		"code": "tongcheng1"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "龙子湖",
+		"code": "longzihu"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "禹会",
+		"code": "yuhui"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "蚌山",
+		"code": "bengshanqu"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "淮上",
+		"code": "huaishang"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "怀远",
+		"code": "huaiyuan"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "五河",
+		"code": "wuhe"
+	},
+	{
+		"parent": "蚌埠",
+		"city": "固镇",
+		"code": "guzhen"
+	},
+	{
+		"parent": "亳州",
+		"city": "谯城",
+		"code": "qiaocheng"
+	},
+	{
+		"parent": "亳州",
+		"city": "涡阳",
+		"code": "guoyang"
+	},
+	{
+		"parent": "亳州",
+		"city": "利辛",
+		"code": "lixin"
+	},
+	{
+		"parent": "亳州",
+		"city": "蒙城",
+		"code": "mengcheng"
+	},
+	{
+		"parent": "池州",
+		"city": "贵池",
+		"code": "guichi"
+	},
+	{
+		"parent": "池州",
+		"city": "东至",
+		"code": "dongzhi"
+	},
+	{
+		"parent": "池州",
+		"city": "石台",
+		"code": "shitai"
+	},
+	{
+		"parent": "池州",
+		"city": "青阳",
+		"code": "qingyang1"
+	},
+	{
+		"parent": "滁州",
+		"city": "琅琊",
+		"code": "langya"
+	},
+	{
+		"parent": "滁州",
+		"city": "南谯",
+		"code": "nanqiao"
+	},
+	{
+		"parent": "滁州",
+		"city": "全椒",
+		"code": "quanjiao"
+	},
+	{
+		"parent": "滁州",
+		"city": "定远",
+		"code": "dingyuan"
+	},
+	{
+		"parent": "滁州",
+		"city": "来安",
+		"code": "laian"
+	},
+	{
+		"parent": "滁州",
+		"city": "凤阳",
+		"code": "fengyang"
+	},
+	{
+		"parent": "滁州",
+		"city": "明光",
+		"code": "mingguang"
+	},
+	{
+		"parent": "滁州",
+		"city": "天长",
+		"code": "tianchang"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍州",
+		"code": "yingzhou"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍东",
+		"code": "yingdong"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍泉",
+		"code": "yingquan"
+	},
+	{
+		"parent": "阜阳",
+		"city": "临泉",
+		"code": "linquan"
+	},
+	{
+		"parent": "阜阳",
+		"city": "太和",
+		"code": "taihe"
+	},
+	{
+		"parent": "阜阳",
+		"city": "阜南",
+		"code": "funan"
+	},
+	{
+		"parent": "阜阳",
+		"city": "颍上",
+		"code": "yingshang"
+	},
+	{
+		"parent": "阜阳",
+		"city": "界首",
+		"code": "jieshou"
+	},
+	{
+		"parent": "合肥",
+		"city": "瑶海",
+		"code": "yaohai"
+	},
+	{
+		"parent": "合肥",
+		"city": "庐阳",
+		"code": "luyang"
+	},
+	{
+		"parent": "合肥",
+		"city": "肥东",
+		"code": "feidong"
+	},
+	{
+		"parent": "合肥",
+		"city": "包河",
+		"code": "baohe"
+	},
+	{
+		"parent": "合肥",
+		"city": "蜀山",
+		"code": "shushan"
+	},
+	{
+		"parent": "合肥",
+		"city": "长丰",
+		"code": "changfeng"
+	},
+	{
+		"parent": "合肥",
+		"city": "肥西",
+		"code": "feixi"
+	},
+	{
+		"parent": "合肥",
+		"city": "巢湖",
+		"code": "chaohu"
+	},
+	{
+		"parent": "合肥",
+		"city": "庐江",
+		"code": "lujiang"
+	},
+	{
+		"parent": "淮北",
+		"city": "杜集",
+		"code": "dujiqu"
+	},
+	{
+		"parent": "淮北",
+		"city": "烈山",
+		"code": "lieshan"
+	},
+	{
+		"parent": "淮北",
+		"city": "濉溪",
+		"code": "suixi"
+	},
+	{
+		"parent": "淮北",
+		"city": "相山",
+		"code": "xiangshanqu"
+	},
+	{
+		"parent": "淮南",
+		"city": "大通",
+		"code": "datongqu"
+	},
+	{
+		"parent": "淮南",
+		"city": "田家庵",
+		"code": "tianjiaanqu"
+	},
+	{
+		"parent": "淮南",
+		"city": "谢家集",
+		"code": "xiejiajiqu"
+	},
+	{
+		"parent": "淮南",
+		"city": "凤台",
+		"code": "fengtai1"
+	},
+	{
+		"parent": "淮南",
+		"city": "潘集",
+		"code": "panji"
+	},
+	{
+		"parent": "淮南",
+		"city": "八公山",
+		"code": "bagong-mountainqu"
+	},
+	{
+		"parent": "淮南",
+		"city": "寿县",
+		"code": "shouxian"
+	},
+	{
+		"parent": "黄山",
+		"city": "屯溪",
+		"code": "tunxi"
+	},
+	{
+		"parent": "黄山",
+		"city": "徽州",
+		"code": "huizhouqu"
+	},
+	{
+		"parent": "黄山",
+		"city": "黄山",
+		"code": "huangshanqu"
+	},
+	{
+		"parent": "黄山",
+		"city": "歙县",
+		"code": "shexian2"
+	},
+	{
+		"parent": "黄山",
+		"city": "休宁",
+		"code": "xiuning"
+	},
+	{
+		"parent": "黄山",
+		"city": "黟县",
+		"code": "yixian2"
+	},
+	{
+		"parent": "黄山",
+		"city": "祁门",
+		"code": "qimen"
+	},
+	{
+		"parent": "六安",
+		"city": "金安",
+		"code": "jinanqu"
+	},
+	{
+		"parent": "六安",
+		"city": "叶集",
+		"code": "yeji"
+	},
+	{
+		"parent": "六安",
+		"city": "裕安",
+		"code": "yuan"
+	},
+	{
+		"parent": "六安",
+		"city": "霍邱",
+		"code": "huoqiu"
+	},
+	{
+		"parent": "六安",
+		"city": "金寨",
+		"code": "jinzhai"
+	},
+	{
+		"parent": "六安",
+		"city": "舒城",
+		"code": "shucheng"
+	},
+	{
+		"parent": "六安",
+		"city": "霍山",
+		"code": "huoshan"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "花山",
+		"code": "huashan"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "雨山",
+		"code": "yushanqu"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "当涂",
+		"code": "dangtu"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "博望",
+		"code": "bowang"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "含山",
+		"code": "hanshan"
+	},
+	{
+		"parent": "马鞍山",
+		"city": "和县",
+		"code": "hexian"
+	},
+	{
+		"parent": "宿州",
+		"city": "埇桥",
+		"code": "yongqiao"
+	},
+	{
+		"parent": "宿州",
+		"city": "砀山",
+		"code": "dangshan"
+	},
+	{
+		"parent": "宿州",
+		"city": "灵璧",
+		"code": "lingbi"
+	},
+	{
+		"parent": "宿州",
+		"city": "萧县",
+		"code": "xiaoxian"
+	},
+	{
+		"parent": "宿州",
+		"city": "泗县",
+		"code": "sixian"
+	},
+	{
+		"parent": "铜陵",
+		"city": "铜官",
+		"code": "tongguanqu"
+	},
+	{
+		"parent": "铜陵",
+		"city": "枞阳",
+		"code": "zongyang"
+	},
+	{
+		"parent": "铜陵",
+		"city": "义安",
+		"code": "yianqu"
+	},
+	{
+		"parent": "铜陵",
+		"city": "郊区",
+		"code": "anhui-jiaoqu"
+	},
+	{
+		"parent": "芜湖",
+		"city": "镜湖",
+		"code": "jinghu"
+	},
+	{
+		"parent": "芜湖",
+		"city": "弋江",
+		"code": "yijiang"
+	},
+	{
+		"parent": "芜湖",
+		"city": "三山",
+		"code": "sanshan"
+	},
+	{
+		"parent": "芜湖",
+		"city": "湾沚",
+		"code": "wuhuxian"
+	},
+	{
+		"parent": "芜湖",
+		"city": "繁昌",
+		"code": "fanchang"
+	},
+	{
+		"parent": "芜湖",
+		"city": "鸠江",
+		"code": "jiujiangqu"
+	},
+	{
+		"parent": "芜湖",
+		"city": "南陵",
+		"code": "nanlingqu"
+	},
+	{
+		"parent": "芜湖",
+		"city": "无为",
+		"code": "wuwei1"
+	},
+	{
+		"parent": "宣城",
+		"city": "广德",
+		"code": "guangde"
+	},
+	{
+		"parent": "宣城",
+		"city": "宣州",
+		"code": "xuanzhou"
+	},
+	{
+		"parent": "宣城",
+		"city": "泾县",
+		"code": "jingxian1"
+	},
+	{
+		"parent": "宣城",
+		"city": "郎溪",
+		"code": "langxi"
+	},
+	{
+		"parent": "宣城",
+		"city": "绩溪",
+		"code": "jixi1"
+	},
+	{
+		"parent": "宣城",
+		"city": "旌德",
+		"code": "jingde"
+	},
+	{
+		"parent": "宣城",
+		"city": "宁国",
+		"code": "ningguo"
+	},
+	{
+		"parent": "杭州",
+		"city": "上城",
+		"code": "shangchengqu"
+	},
+	{
+		"parent": "杭州",
+		"city": "滨江",
+		"code": "binjianqu"
+	},
+	{
+		"parent": "杭州",
+		"city": "下城",
+		"code": "xiachengqu"
+	},
+	{
+		"parent": "杭州",
+		"city": "江干",
+		"code": "jiangganqu"
+	},
+	{
+		"parent": "杭州",
+		"city": "拱墅",
+		"code": "gongshu"
+	},
+	{
+		"parent": "杭州",
+		"city": "西湖",
+		"code": "xihu"
+	},
+	{
+		"parent": "杭州",
+		"city": "萧山",
+		"code": "xiaoshan"
+	},
+	{
+		"parent": "杭州",
+		"city": "富阳",
+		"code": "fuyang"
+	},
+	{
+		"parent": "杭州",
+		"city": "余杭",
+		"code": "yuhang"
+	},
+	{
+		"parent": "杭州",
+		"city": "淳安",
+		"code": "chunan"
+	},
+	{
+		"parent": "杭州",
+		"city": "桐庐",
+		"code": "tonglu"
+	},
+	{
+		"parent": "杭州",
+		"city": "建德",
+		"code": "jiande"
+	},
+	{
+		"parent": "杭州",
+		"city": "临安",
+		"code": "linan"
+	},
+	{
+		"parent": "湖州",
+		"city": "吴兴",
+		"code": "wuxing"
+	},
+	{
+		"parent": "湖州",
+		"city": "南浔",
+		"code": "nanxun"
+	},
+	{
+		"parent": "湖州",
+		"city": "德清",
+		"code": "deqing"
+	},
+	{
+		"parent": "湖州",
+		"city": "长兴",
+		"code": "changxing"
+	},
+	{
+		"parent": "湖州",
+		"city": "安吉",
+		"code": "anji"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "南湖",
+		"code": "nanhuqu"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "嘉善",
+		"code": "jiashan"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "秀洲",
+		"code": "xiuzhou"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "海盐",
+		"code": "haiyan"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "平湖",
+		"code": "pinghu"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "海宁",
+		"code": "haining"
+	},
+	{
+		"parent": "嘉兴",
+		"city": "桐乡",
+		"code": "tongxiang"
+	},
+	{
+		"parent": "金华",
+		"city": "金东",
+		"code": "jindong"
+	},
+	{
+		"parent": "金华",
+		"city": "浦江",
+		"code": "pujiang"
+	},
+	{
+		"parent": "金华",
+		"city": "婺城",
+		"code": "wuchengqu"
+	},
+	{
+		"parent": "金华",
+		"city": "武义",
+		"code": "wuyi1"
+	},
+	{
+		"parent": "金华",
+		"city": "磐安",
+		"code": "panan"
+	},
+	{
+		"parent": "金华",
+		"city": "兰溪",
+		"code": "lanxi1"
+	},
+	{
+		"parent": "金华",
+		"city": "义乌",
+		"code": "yiwu1"
+	},
+	{
+		"parent": "金华",
+		"city": "东阳",
+		"code": "dongyang"
+	},
+	{
+		"parent": "金华",
+		"city": "永康",
+		"code": "yongkang"
+	},
+	{
+		"parent": "丽水",
+		"city": "莲都",
+		"code": "liandu"
+	},
+	{
+		"parent": "丽水",
+		"city": "青田",
+		"code": "qingtian"
+	},
+	{
+		"parent": "丽水",
+		"city": "缙云",
+		"code": "jinyun"
+	},
+	{
+		"parent": "丽水",
+		"city": "遂昌",
+		"code": "suichang"
+	},
+	{
+		"parent": "丽水",
+		"city": "松阳",
+		"code": "songyang"
+	},
+	{
+		"parent": "丽水",
+		"city": "云和",
+		"code": "yunhe"
+	},
+	{
+		"parent": "丽水",
+		"city": "庆元",
+		"code": "qingyuan2"
+	},
+	{
+		"parent": "丽水",
+		"city": "景宁",
+		"code": "jingning1"
+	},
+	{
+		"parent": "丽水",
+		"city": "龙泉",
+		"code": "longquan"
+	},
+	{
+		"parent": "宁波",
+		"city": "海曙",
+		"code": "haishu"
+	},
+	{
+		"parent": "宁波",
+		"city": "北仑",
+		"code": "beilun"
+	},
+	{
+		"parent": "宁波",
+		"city": "镇海",
+		"code": "zhenhai"
+	},
+	{
+		"parent": "宁波",
+		"city": "鄞州",
+		"code": "yinzhou"
+	},
+	{
+		"parent": "宁波",
+		"city": "江北",
+		"code": "zhejiang-jiangbei"
+	},
+	{
+		"parent": "宁波",
+		"city": "象山",
+		"code": "xiangshan"
+	},
+	{
+		"parent": "宁波",
+		"city": "慈溪",
+		"code": "cixi"
+	},
+	{
+		"parent": "宁波",
+		"city": "宁海",
+		"code": "ninghai"
+	},
+	{
+		"parent": "宁波",
+		"city": "奉化",
+		"code": "fenghua"
+	},
+	{
+		"parent": "宁波",
+		"city": "余姚",
+		"code": "yuyao"
+	},
+	{
+		"parent": "衢州",
+		"city": "柯城",
+		"code": "kecheng"
+	},
+	{
+		"parent": "衢州",
+		"city": "常山",
+		"code": "changshan"
+	},
+	{
+		"parent": "衢州",
+		"city": "开化",
+		"code": "kaihua"
+	},
+	{
+		"parent": "衢州",
+		"city": "衢江",
+		"code": "qujiang1"
+	},
+	{
+		"parent": "衢州",
+		"city": "龙游",
+		"code": "longyou"
+	},
+	{
+		"parent": "衢州",
+		"city": "江山",
+		"code": "jiangshan"
+	},
+	{
+		"parent": "绍兴",
+		"city": "越城",
+		"code": "yuecheng"
+	},
+	{
+		"parent": "绍兴",
+		"city": "上虞",
+		"code": "shangyu"
+	},
+	{
+		"parent": "绍兴",
+		"city": "新昌",
+		"code": "xinchang"
+	},
+	{
+		"parent": "绍兴",
+		"city": "柯桥",
+		"code": "keqiao"
+	},
+	{
+		"parent": "绍兴",
+		"city": "诸暨",
+		"code": "zhuji"
+	},
+	{
+		"parent": "绍兴",
+		"city": "嵊州",
+		"code": "shengzhou"
+	},
+	{
+		"parent": "台州",
+		"city": "椒江",
+		"code": "jiaojiang"
+	},
+	{
+		"parent": "台州",
+		"city": "路桥",
+		"code": "luqiao"
+	},
+	{
+		"parent": "台州",
+		"city": "玉环",
+		"code": "yuhuan"
+	},
+	{
+		"parent": "台州",
+		"city": "黄岩",
+		"code": "huangyan"
+	},
+	{
+		"parent": "台州",
+		"city": "三门",
+		"code": "sanmen"
+	},
+	{
+		"parent": "台州",
+		"city": "天台",
+		"code": "tiantai"
+	},
+	{
+		"parent": "台州",
+		"city": "温岭",
+		"code": "wenling"
+	},
+	{
+		"parent": "台州",
+		"city": "仙居",
+		"code": "xianju"
+	},
+	{
+		"parent": "台州",
+		"city": "临海",
+		"code": "linhai"
+	},
+	{
+		"parent": "温州",
+		"city": "鹿城",
+		"code": "luchengqu"
+	},
+	{
+		"parent": "温州",
+		"city": "龙湾",
+		"code": "longwan"
+	},
+	{
+		"parent": "温州",
+		"city": "瓯海",
+		"code": "ouhai"
+	},
+	{
+		"parent": "温州",
+		"city": "洞头",
+		"code": "dongtou"
+	},
+	{
+		"parent": "温州",
+		"city": "永嘉",
+		"code": "yongjia"
+	},
+	{
+		"parent": "温州",
+		"city": "苍南",
+		"code": "cangnan"
+	},
+	{
+		"parent": "温州",
+		"city": "平阳",
+		"code": "pingyang"
+	},
+	{
+		"parent": "温州",
+		"city": "文成",
+		"code": "wencheng"
+	},
+	{
+		"parent": "温州",
+		"city": "泰顺",
+		"code": "taishun"
+	},
+	{
+		"parent": "温州",
+		"city": "乐清",
+		"code": "yueqing"
+	},
+	{
+		"parent": "温州",
+		"city": "瑞安",
+		"code": "ruian"
+	},
+	{
+		"parent": "舟山",
+		"city": "定海",
+		"code": "dinghai"
+	},
+	{
+		"parent": "舟山",
+		"city": "岱山",
+		"code": "daishan"
+	},
+	{
+		"parent": "舟山",
+		"city": "嵊泗",
+		"code": "shengsi"
+	},
+	{
+		"parent": "舟山",
+		"city": "普陀",
+		"code": "putuo"
+	},
+	{
+		"parent": "上海",
+		"city": "黄浦",
+		"code": "huangpu"
+	},
+	{
+		"parent": "上海",
+		"city": "徐汇",
+		"code": "xuhui"
+	},
+	{
+		"parent": "上海",
+		"city": "长宁",
+		"code": "changningqu"
+	},
+	{
+		"parent": "上海",
+		"city": "静安",
+		"code": "jinganqu"
+	},
+	{
+		"parent": "上海",
+		"city": "普陀",
+		"code": "shanghai-putuo"
+	},
+	{
+		"parent": "上海",
+		"city": "虹口",
+		"code": "hongkou"
+	},
+	{
+		"parent": "上海",
+		"city": "杨浦",
+		"code": "yangpuqu"
+	},
+	{
+		"parent": "上海",
+		"city": "闵行",
+		"code": "minhang"
+	},
+	{
+		"parent": "上海",
+		"city": "宝山",
+		"code": "baoshan"
+	},
+	{
+		"parent": "上海",
+		"city": "嘉定",
+		"code": "jiading"
+	},
+	{
+		"parent": "上海",
+		"city": "浦东",
+		"code": "pudong"
+	},
+	{
+		"parent": "上海",
+		"city": "金山",
+		"code": "jinshan"
+	},
+	{
+		"parent": "上海",
+		"city": "松江",
+		"code": "songjiang"
+	},
+	{
+		"parent": "上海",
+		"city": "青浦",
+		"code": "qingpu"
+	},
+	{
+		"parent": "上海",
+		"city": "奉贤",
+		"code": "fengxian"
+	},
+	{
+		"parent": "上海",
+		"city": "崇明",
+		"code": "chongming"
+	},
+	{
+		"parent": "常州",
+		"city": "天宁",
+		"code": "tianning"
+	},
+	{
+		"parent": "常州",
+		"city": "钟楼",
+		"code": "zhonglou"
+	},
+	{
+		"parent": "常州",
+		"city": "新北",
+		"code": "jiangsu-xinbeiqu/15549"
+	},
+	{
+		"parent": "常州",
+		"city": "武进",
+		"code": "wujin"
+	},
+	{
+		"parent": "常州",
+		"city": "金坛",
+		"code": "jintan"
+	},
+	{
+		"parent": "常州",
+		"city": "溧阳",
+		"code": "liyang"
+	},
+	{
+		"parent": "淮安",
+		"city": "清江浦",
+		"code": "qingjiangpu"
+	},
+	{
+		"parent": "淮安",
+		"city": "淮安",
+		"code": "huaianqu"
+	},
+	{
+		"parent": "淮安",
+		"city": "淮阴",
+		"code": "huaiyin"
+	},
+	{
+		"parent": "淮安",
+		"city": "洪泽",
+		"code": "hongze"
+	},
+	{
+		"parent": "淮安",
+		"city": "涟水",
+		"code": "lianshui"
+	},
+	{
+		"parent": "淮安",
+		"city": "金湖",
+		"code": "jinhu"
+	},
+	{
+		"parent": "淮安",
+		"city": "盱眙",
+		"code": "xuyi"
+	},
+	{
+		"parent": "连云港",
+		"city": "连云",
+		"code": "lianyun"
+	},
+	{
+		"parent": "连云港",
+		"city": "海州",
+		"code": "jiangsu-haizhouqu"
+	},
+	{
+		"parent": "连云港",
+		"city": "赣榆",
+		"code": "ganyu"
+	},
+	{
+		"parent": "连云港",
+		"city": "东海",
+		"code": "donghai"
+	},
+	{
+		"parent": "连云港",
+		"city": "灌云",
+		"code": "guanyun"
+	},
+	{
+		"parent": "连云港",
+		"city": "灌南",
+		"code": "guannan"
+	},
+	{
+		"parent": "南京",
+		"city": "玄武",
+		"code": "xuanwu"
+	},
+	{
+		"parent": "南京",
+		"city": "建邺",
+		"code": "jianye"
+	},
+	{
+		"parent": "南京",
+		"city": "秦淮",
+		"code": "qinhuai"
+	},
+	{
+		"parent": "南京",
+		"city": "栖霞",
+		"code": "qixiaqu"
+	},
+	{
+		"parent": "南京",
+		"city": "浦口",
+		"code": "pukou"
+	},
+	{
+		"parent": "南京",
+		"city": "鼓楼",
+		"code": "nanjinggulou"
+	},
+	{
+		"parent": "南京",
+		"city": "雨花台",
+		"code": "yuhuatai"
+	},
+	{
+		"parent": "南京",
+		"city": "六合",
+		"code": "luhe1"
+	},
+	{
+		"parent": "南京",
+		"city": "高淳",
+		"code": "gaochun"
+	},
+	{
+		"parent": "南京",
+		"city": "溧水",
+		"code": "lishui2"
+	},
+	{
+		"parent": "南京",
+		"city": "江宁",
+		"code": "jiangning"
+	},
+	{
+		"parent": "南通",
+		"city": "崇川",
+		"code": "chongchuan"
+	},
+	{
+		"parent": "南通",
+		"city": "港闸",
+		"code": "gangzha"
+	},
+	{
+		"parent": "南通",
+		"city": "通州",
+		"code": "tongzhou1"
+	},
+	{
+		"parent": "南通",
+		"city": "海安",
+		"code": "jiangsu-haian/14912"
+	},
+	{
+		"parent": "南通",
+		"city": "如东",
+		"code": "rudong"
+	},
+	{
+		"parent": "南通",
+		"city": "启东",
+		"code": "qidong"
+	},
+	{
+		"parent": "南通",
+		"city": "海门",
+		"code": "haimen"
+	},
+	{
+		"parent": "南通",
+		"city": "如皋",
+		"code": "rugao"
+	},
+	{
+		"parent": "苏州",
+		"city": "虎丘",
+		"code": "huqiu"
+	},
+	{
+		"parent": "苏州",
+		"city": "姑苏",
+		"code": "gusu"
+	},
+	{
+		"parent": "苏州",
+		"city": "相城",
+		"code": "xiangchengqu"
+	},
+	{
+		"parent": "苏州",
+		"city": "吴中",
+		"code": "wuzhong1"
+	},
+	{
+		"parent": "苏州",
+		"city": "吴江",
+		"code": "wujiang"
+	},
+	{
+		"parent": "苏州",
+		"city": "常熟",
+		"code": "changshu"
+	},
+	{
+		"parent": "苏州",
+		"city": "张家港",
+		"code": "zhangjiagang"
+	},
+	{
+		"parent": "苏州",
+		"city": "昆山",
+		"code": "kunshan"
+	},
+	{
+		"parent": "苏州",
+		"city": "太仓",
+		"code": "taicang"
+	},
+	{
+		"parent": "宿迁",
+		"city": "宿城",
+		"code": "sucheng"
+	},
+	{
+		"parent": "宿迁",
+		"city": "宿豫",
+		"code": "suyu"
+	},
+	{
+		"parent": "宿迁",
+		"city": "泗阳",
+		"code": "siyang"
+	},
+	{
+		"parent": "宿迁",
+		"city": "泗洪",
+		"code": "sihong"
+	},
+	{
+		"parent": "宿迁",
+		"city": "沭阳",
+		"code": "shuyang"
+	},
+	{
+		"parent": "泰州",
+		"city": "海陵",
+		"code": "hailing"
+	},
+	{
+		"parent": "泰州",
+		"city": "高港",
+		"code": "gaogang"
+	},
+	{
+		"parent": "泰州",
+		"city": "姜堰",
+		"code": "jiangyan"
+	},
+	{
+		"parent": "泰州",
+		"city": "靖江",
+		"code": "jingjiang"
+	},
+	{
+		"parent": "泰州",
+		"city": "兴化",
+		"code": "xinghua"
+	},
+	{
+		"parent": "泰州",
+		"city": "泰兴",
+		"code": "taixing"
+	},
+	{
+		"parent": "无锡",
+		"city": "锡山",
+		"code": "xishan"
+	},
+	{
+		"parent": "无锡",
+		"city": "惠山",
+		"code": "huishan"
+	},
+	{
+		"parent": "无锡",
+		"city": "滨湖",
+		"code": "binhu"
+	},
+	{
+		"parent": "无锡",
+		"city": "梁溪",
+		"code": "liangxi"
+	},
+	{
+		"parent": "无锡",
+		"city": "新吴",
+		"code": "xinwu"
+	},
+	{
+		"parent": "无锡",
+		"city": "江阴",
+		"code": "jiangyin"
+	},
+	{
+		"parent": "无锡",
+		"city": "宜兴",
+		"code": "yixing"
+	},
+	{
+		"parent": "徐州",
+		"city": "鼓楼",
+		"code": "gulouqu"
+	},
+	{
+		"parent": "徐州",
+		"city": "云龙",
+		"code": "yunlongqu"
+	},
+	{
+		"parent": "徐州",
+		"city": "贾汪",
+		"code": "jiawang"
+	},
+	{
+		"parent": "徐州",
+		"city": "泉山",
+		"code": "quanshan"
+	},
+	{
+		"parent": "徐州",
+		"city": "丰县",
+		"code": "fengxian2"
+	},
+	{
+		"parent": "徐州",
+		"city": "沛县",
+		"code": "peixian"
+	},
+	{
+		"parent": "徐州",
+		"city": "铜山",
+		"code": "tongshanxian"
+	},
+	{
+		"parent": "徐州",
+		"city": "睢宁",
+		"code": "suining2"
+	},
+	{
+		"parent": "徐州",
+		"city": "新沂",
+		"code": "xinyi"
+	},
+	{
+		"parent": "徐州",
+		"city": "邳州",
+		"code": "pizhou"
+	},
+	{
+		"parent": "盐城",
+		"city": "亭湖",
+		"code": "tinghuqu"
+	},
+	{
+		"parent": "盐城",
+		"city": "盐都",
+		"code": "yandu"
+	},
+	{
+		"parent": "盐城",
+		"city": "大丰",
+		"code": "dafeng"
+	},
+	{
+		"parent": "盐城",
+		"city": "响水",
+		"code": "xiangshui"
+	},
+	{
+		"parent": "盐城",
+		"city": "滨海",
+		"code": "binhai"
+	},
+	{
+		"parent": "盐城",
+		"city": "建湖",
+		"code": "jianhu"
+	},
+	{
+		"parent": "盐城",
+		"city": "射阳",
+		"code": "sheyang"
+	},
+	{
+		"parent": "盐城",
+		"city": "阜宁",
+		"code": "funing1"
+	},
+	{
+		"parent": "盐城",
+		"city": "东台",
+		"code": "dongtai"
+	},
+	{
+		"parent": "扬州",
+		"city": "广陵",
+		"code": "guanglingqu"
+	},
+	{
+		"parent": "扬州",
+		"city": "邗江",
+		"code": "hanjiangxian"
+	},
+	{
+		"parent": "扬州",
+		"city": "江都",
+		"code": "jiangdu"
+	},
+	{
+		"parent": "扬州",
+		"city": "宝应",
+		"code": "baoying"
+	},
+	{
+		"parent": "扬州",
+		"city": "仪征",
+		"code": "yizheng"
+	},
+	{
+		"parent": "扬州",
+		"city": "高邮",
+		"code": "gaoyou"
+	},
+	{
+		"parent": "镇江",
+		"city": "京口",
+		"code": "jingkou"
+	},
+	{
+		"parent": "镇江",
+		"city": "润州",
+		"code": "runzhou"
+	},
+	{
+		"parent": "镇江",
+		"city": "丹徒",
+		"code": "dantu"
+	},
+	{
+		"parent": "镇江",
+		"city": "扬中",
+		"code": "yangzhong"
+	},
+	{
+		"parent": "镇江",
+		"city": "丹阳",
+		"code": "danyang"
+	},
+	{
+		"parent": "镇江",
+		"city": "句容",
+		"code": "jurong"
 	}
 ]
