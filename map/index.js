@@ -1,7 +1,7 @@
 import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
-const mapName = '香港澳门广东广西湖南江西福建贵州云南重庆四川湖北';
+const mapName = '香港澳门广东广西湖南江西福建贵州云南重庆四川湖北安徽浙江上海江苏';
 const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
 const uncomfortableDaysArr = await fetch(`../weather/${cityDir}/uncomfortableDays.json`).then(res => res.json());
