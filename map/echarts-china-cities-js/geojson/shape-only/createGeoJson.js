@@ -21,6 +21,6 @@ const features = [].concat(...await Promise.all((await fs.readdir('.')).reduce((
 	});
 	return features;
 })));
-console.assert(features.length === 194, features.length); // 合共153市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市 + 安徽16市 + 浙江11市 + 上海1市 + 江苏13市
+console.assert(features.length === 194, features.length); // 合共194市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市 + 安徽16市 + 浙江11市 + 上海1市 + 江苏13市
 await fs.writeFile('city.json', JSON.stringify(features.map(feature => ({ city: feature.properties.name })), null, '	'));
 await fs.writeFile(`map.geojson`, JSON.stringify({ type: "FeatureCollection", features }));

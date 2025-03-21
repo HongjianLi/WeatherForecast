@@ -2,7 +2,7 @@
 // This script creates city.json and map.geojson. It has to be run once only, after ../shape-only/createGeoJson.js.
 import fs from 'fs/promises';
 const cityArr0 = JSON.parse(await fs.readFile('../shape-only/city.json'));
-console.assert(cityArr0.length === 194); // 合共71市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市
+console.assert(cityArr0.length === 194); // 合共194市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市 + 安徽16市 + 浙江11市 + 上海1市 + 江苏13市
 const featuresArr = await Promise.all([].concat(
 	['xianggang', 'aomen'].map(city => `../shape-only/${city}.geojson`), // Since Hong Kong and Macao are small cities, treat them as a whole and substitute their shape-only version.
 	(await fs.readdir('.')).reduce((cityArr, city) => { // The current directory was cloned from https://github.com/echarts-maps/echarts-china-cityArr-js/tree/master/geojson
@@ -39,7 +39,7 @@ const cityArr = featuresArr.reduce((cityArr, features, index) => {
 	});
 	return cityArr;
 }, []);
-console.assert(cityArr.length === 1414); // 合共1108县 = 香港1市 + 澳门1市 + 广东123县 + 广西111县 + 湖南122县 + 江西100县 + 福建85县 + 海南24县 + 贵州88县 + 云南129县 + 重庆38县 + 四川183县 + 湖北103县 + 安徽105县 + 浙江89县 + 上海16县 + 江苏96县
+console.assert(cityArr.length === 1414); // 合共1414县 = 香港1市 + 澳门1市 + 广东123县 + 广西111县 + 湖南122县 + 江西100县 + 福建85县 + 海南24县 + 贵州88县 + 云南129县 + 重庆38县 + 四川183县 + 湖北103县 + 安徽105县 + 浙江89县 + 上海16县 + 江苏96县
 await fs.writeFile(`map.geojson`, JSON.stringify({ type: "FeatureCollection", features: cityArr.map(city => city.feature) }));
 cityArr.forEach(city => delete city.feature);
 await fs.writeFile('city.json', JSON.stringify(cityArr, null, '	')); // Both 张家界 and 龙岩 have 永定区. Both 广州 and 贵阳 have 白云区. Both 福州 and 黔东南 have 台江. Both 乐山 and 内江 have 市中区. Both 重庆 and 宁波 have 江北区. Both 南京 and 徐州 have 鼓楼区.
