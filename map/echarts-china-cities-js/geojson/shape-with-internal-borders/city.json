@@ -5654,5 +5654,741 @@
 	{
 		"parent": "镇江",
 		"city": "句容"
+	},
+	{
+		"parent": "信阳",
+		"city": "浉河"
+	},
+	{
+		"parent": "信阳",
+		"city": "罗山"
+	},
+	{
+		"parent": "信阳",
+		"city": "光山"
+	},
+	{
+		"parent": "信阳",
+		"city": "新县"
+	},
+	{
+		"parent": "信阳",
+		"city": "平桥"
+	},
+	{
+		"parent": "信阳",
+		"city": "淮滨"
+	},
+	{
+		"parent": "信阳",
+		"city": "固始"
+	},
+	{
+		"parent": "信阳",
+		"city": "潢川"
+	},
+	{
+		"parent": "信阳",
+		"city": "商城"
+	},
+	{
+		"parent": "信阳",
+		"city": "息县"
+	},
+	{
+		"parent": "驻马店",
+		"city": "驿城"
+	},
+	{
+		"parent": "驻马店",
+		"city": "西平"
+	},
+	{
+		"parent": "驻马店",
+		"city": "上蔡"
+	},
+	{
+		"parent": "驻马店",
+		"city": "平舆"
+	},
+	{
+		"parent": "驻马店",
+		"city": "正阳"
+	},
+	{
+		"parent": "驻马店",
+		"city": "确山"
+	},
+	{
+		"parent": "驻马店",
+		"city": "泌阳"
+	},
+	{
+		"parent": "驻马店",
+		"city": "遂平"
+	},
+	{
+		"parent": "驻马店",
+		"city": "汝南"
+	},
+	{
+		"parent": "驻马店",
+		"city": "新蔡"
+	},
+	{
+		"parent": "南阳",
+		"city": "宛城"
+	},
+	{
+		"parent": "南阳",
+		"city": "卧龙"
+	},
+	{
+		"parent": "南阳",
+		"city": "南召"
+	},
+	{
+		"parent": "南阳",
+		"city": "方城"
+	},
+	{
+		"parent": "南阳",
+		"city": "西峡"
+	},
+	{
+		"parent": "南阳",
+		"city": "镇平"
+	},
+	{
+		"parent": "南阳",
+		"city": "内乡"
+	},
+	{
+		"parent": "南阳",
+		"city": "淅川"
+	},
+	{
+		"parent": "南阳",
+		"city": "社旗"
+	},
+	{
+		"parent": "南阳",
+		"city": "新野"
+	},
+	{
+		"parent": "南阳",
+		"city": "唐河"
+	},
+	{
+		"parent": "南阳",
+		"city": "桐柏"
+	},
+	{
+		"parent": "南阳",
+		"city": "邓州"
+	},
+	{
+		"parent": "周口",
+		"city": "川汇"
+	},
+	{
+		"parent": "周口",
+		"city": "扶沟"
+	},
+	{
+		"parent": "周口",
+		"city": "沈丘"
+	},
+	{
+		"parent": "周口",
+		"city": "西华"
+	},
+	{
+		"parent": "周口",
+		"city": "商水"
+	},
+	{
+		"parent": "周口",
+		"city": "郸城"
+	},
+	{
+		"parent": "周口",
+		"city": "淮阳"
+	},
+	{
+		"parent": "周口",
+		"city": "项城"
+	},
+	{
+		"parent": "周口",
+		"city": "太康"
+	},
+	{
+		"parent": "周口",
+		"city": "鹿邑"
+	},
+	{
+		"parent": "漯河",
+		"city": "源汇"
+	},
+	{
+		"parent": "漯河",
+		"city": "郾城"
+	},
+	{
+		"parent": "漯河",
+		"city": "召陵"
+	},
+	{
+		"parent": "漯河",
+		"city": "舞阳"
+	},
+	{
+		"parent": "漯河",
+		"city": "临颍"
+	},
+	{
+		"parent": "许昌",
+		"city": "魏都"
+	},
+	{
+		"parent": "许昌",
+		"city": "鄢陵"
+	},
+	{
+		"parent": "许昌",
+		"city": "襄城"
+	},
+	{
+		"parent": "许昌",
+		"city": "建安"
+	},
+	{
+		"parent": "许昌",
+		"city": "禹州"
+	},
+	{
+		"parent": "许昌",
+		"city": "长葛"
+	},
+	{
+		"parent": "平顶山",
+		"city": "新华"
+	},
+	{
+		"parent": "平顶山",
+		"city": "卫东"
+	},
+	{
+		"parent": "平顶山",
+		"city": "石龙"
+	},
+	{
+		"parent": "平顶山",
+		"city": "湛河"
+	},
+	{
+		"parent": "平顶山",
+		"city": "宝丰"
+	},
+	{
+		"parent": "平顶山",
+		"city": "郏县"
+	},
+	{
+		"parent": "平顶山",
+		"city": "鲁山"
+	},
+	{
+		"parent": "平顶山",
+		"city": "叶县"
+	},
+	{
+		"parent": "平顶山",
+		"city": "舞钢"
+	},
+	{
+		"parent": "平顶山",
+		"city": "汝州"
+	},
+	{
+		"parent": "洛阳",
+		"city": "老城"
+	},
+	{
+		"parent": "洛阳",
+		"city": "西工"
+	},
+	{
+		"parent": "洛阳",
+		"city": "瀍河"
+	},
+	{
+		"parent": "洛阳",
+		"city": "涧西"
+	},
+	{
+		"parent": "洛阳",
+		"city": "吉利"
+	},
+	{
+		"parent": "洛阳",
+		"city": "洛龙"
+	},
+	{
+		"parent": "洛阳",
+		"city": "孟津"
+	},
+	{
+		"parent": "洛阳",
+		"city": "新安"
+	},
+	{
+		"parent": "洛阳",
+		"city": "栾川"
+	},
+	{
+		"parent": "洛阳",
+		"city": "汝阳"
+	},
+	{
+		"parent": "洛阳",
+		"city": "嵩县"
+	},
+	{
+		"parent": "洛阳",
+		"city": "宜阳"
+	},
+	{
+		"parent": "洛阳",
+		"city": "伊川"
+	},
+	{
+		"parent": "洛阳",
+		"city": "洛宁"
+	},
+	{
+		"parent": "洛阳",
+		"city": "偃师"
+	},
+	{
+		"parent": "三门峡",
+		"city": "湖滨"
+	},
+	{
+		"parent": "三门峡",
+		"city": "陕州"
+	},
+	{
+		"parent": "三门峡",
+		"city": "义马"
+	},
+	{
+		"parent": "三门峡",
+		"city": "渑池"
+	},
+	{
+		"parent": "三门峡",
+		"city": "卢氏"
+	},
+	{
+		"parent": "三门峡",
+		"city": "灵宝"
+	},
+	{
+		"parent": "商丘",
+		"city": "梁园"
+	},
+	{
+		"parent": "商丘",
+		"city": "睢阳"
+	},
+	{
+		"parent": "商丘",
+		"city": "睢县"
+	},
+	{
+		"parent": "商丘",
+		"city": "民权"
+	},
+	{
+		"parent": "商丘",
+		"city": "宁陵"
+	},
+	{
+		"parent": "商丘",
+		"city": "柘城"
+	},
+	{
+		"parent": "商丘",
+		"city": "虞城"
+	},
+	{
+		"parent": "商丘",
+		"city": "永城"
+	},
+	{
+		"parent": "商丘",
+		"city": "夏邑"
+	},
+	{
+		"parent": "开封",
+		"city": "龙亭"
+	},
+	{
+		"parent": "开封",
+		"city": "禹王台"
+	},
+	{
+		"parent": "开封",
+		"city": "顺河"
+	},
+	{
+		"parent": "开封",
+		"city": "鼓楼"
+	},
+	{
+		"parent": "开封",
+		"city": "杞县"
+	},
+	{
+		"parent": "开封",
+		"city": "通许"
+	},
+	{
+		"parent": "开封",
+		"city": "祥符"
+	},
+	{
+		"parent": "开封",
+		"city": "兰考"
+	},
+	{
+		"parent": "开封",
+		"city": "尉氏"
+	},
+	{
+		"parent": "郑州",
+		"city": "中原"
+	},
+	{
+		"parent": "郑州",
+		"city": "二七"
+	},
+	{
+		"parent": "郑州",
+		"city": "管城"
+	},
+	{
+		"parent": "郑州",
+		"city": "金水"
+	},
+	{
+		"parent": "郑州",
+		"city": "惠济"
+	},
+	{
+		"parent": "郑州",
+		"city": "上街"
+	},
+	{
+		"parent": "郑州",
+		"city": "中牟"
+	},
+	{
+		"parent": "郑州",
+		"city": "登封"
+	},
+	{
+		"parent": "郑州",
+		"city": "巩义"
+	},
+	{
+		"parent": "郑州",
+		"city": "荥阳"
+	},
+	{
+		"parent": "郑州",
+		"city": "新密"
+	},
+	{
+		"parent": "郑州",
+		"city": "新郑"
+	},
+	{
+		"parent": "安康",
+		"city": "汉阴"
+	},
+	{
+		"parent": "安康",
+		"city": "石泉"
+	},
+	{
+		"parent": "安康",
+		"city": "汉滨"
+	},
+	{
+		"parent": "安康",
+		"city": "宁陕"
+	},
+	{
+		"parent": "安康",
+		"city": "镇坪"
+	},
+	{
+		"parent": "安康",
+		"city": "紫阳"
+	},
+	{
+		"parent": "安康",
+		"city": "平利"
+	},
+	{
+		"parent": "安康",
+		"city": "岚皋"
+	},
+	{
+		"parent": "安康",
+		"city": "白河"
+	},
+	{
+		"parent": "安康",
+		"city": "旬阳"
+	},
+	{
+		"parent": "汉中",
+		"city": "汉台"
+	},
+	{
+		"parent": "汉中",
+		"city": "南郑"
+	},
+	{
+		"parent": "汉中",
+		"city": "城固"
+	},
+	{
+		"parent": "汉中",
+		"city": "洋县"
+	},
+	{
+		"parent": "汉中",
+		"city": "西乡"
+	},
+	{
+		"parent": "汉中",
+		"city": "勉县"
+	},
+	{
+		"parent": "汉中",
+		"city": "宁强"
+	},
+	{
+		"parent": "汉中",
+		"city": "略阳"
+	},
+	{
+		"parent": "汉中",
+		"city": "镇巴"
+	},
+	{
+		"parent": "汉中",
+		"city": "佛坪"
+	},
+	{
+		"parent": "汉中",
+		"city": "留坝"
+	},
+	{
+		"parent": "商洛",
+		"city": "商州"
+	},
+	{
+		"parent": "商洛",
+		"city": "洛南"
+	},
+	{
+		"parent": "商洛",
+		"city": "丹凤"
+	},
+	{
+		"parent": "商洛",
+		"city": "商南"
+	},
+	{
+		"parent": "商洛",
+		"city": "山阳"
+	},
+	{
+		"parent": "商洛",
+		"city": "镇安"
+	},
+	{
+		"parent": "商洛",
+		"city": "柞水"
+	},
+	{
+		"parent": "西安",
+		"city": "新城"
+	},
+	{
+		"parent": "西安",
+		"city": "碑林"
+	},
+	{
+		"parent": "西安",
+		"city": "莲湖"
+	},
+	{
+		"parent": "西安",
+		"city": "灞桥"
+	},
+	{
+		"parent": "西安",
+		"city": "雁塔"
+	},
+	{
+		"parent": "西安",
+		"city": "未央"
+	},
+	{
+		"parent": "西安",
+		"city": "阎良"
+	},
+	{
+		"parent": "西安",
+		"city": "高陵"
+	},
+	{
+		"parent": "西安",
+		"city": "周至"
+	},
+	{
+		"parent": "西安",
+		"city": "蓝田"
+	},
+	{
+		"parent": "西安",
+		"city": "长安"
+	},
+	{
+		"parent": "西安",
+		"city": "临潼"
+	},
+	{
+		"parent": "西安",
+		"city": "鄠邑"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "渭滨"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "金台"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "凤翔"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "陈仓"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "岐山"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "扶风"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "眉县"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "千阳"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "陇县"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "麟游"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "凤县"
+	},
+	{
+		"parent": "宝鸡",
+		"city": "太白"
+	},
+	{
+		"parent": "陇南",
+		"city": "武都"
+	},
+	{
+		"parent": "陇南",
+		"city": "成县"
+	},
+	{
+		"parent": "陇南",
+		"city": "文县"
+	},
+	{
+		"parent": "陇南",
+		"city": "宕昌"
+	},
+	{
+		"parent": "陇南",
+		"city": "康县"
+	},
+	{
+		"parent": "陇南",
+		"city": "西和"
+	},
+	{
+		"parent": "陇南",
+		"city": "徽县"
+	},
+	{
+		"parent": "陇南",
+		"city": "礼县"
+	},
+	{
+		"parent": "陇南",
+		"city": "两当"
+	},
+	{
+		"parent": "天水",
+		"city": "秦州"
+	},
+	{
+		"parent": "天水",
+		"city": "清水"
+	},
+	{
+		"parent": "天水",
+		"city": "秦安"
+	},
+	{
+		"parent": "天水",
+		"city": "甘谷"
+	},
+	{
+		"parent": "天水",
+		"city": "武山"
+	},
+	{
+		"parent": "天水",
+		"city": "麦积"
+	},
+	{
+		"parent": "天水",
+		"city": "张家川"
 	}
 ]

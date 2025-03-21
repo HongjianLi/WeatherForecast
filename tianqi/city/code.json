@@ -774,5 +774,81 @@
 	{
 		"city": "镇江",
 		"code": "zhenjiang"
+	},
+	{
+		"city": "信阳",
+		"code": "xinyang"
+	},
+	{
+		"city": "驻马店",
+		"code": "zhumadian"
+	},
+	{
+		"city": "南阳",
+		"code": "nanyang"
+	},
+	{
+		"city": "周口",
+		"code": "zhoukou"
+	},
+	{
+		"city": "漯河",
+		"code": "luohe"
+	},
+	{
+		"city": "许昌",
+		"code": "xuchang"
+	},
+	{
+		"city": "平顶山",
+		"code": "pingdingshan"
+	},
+	{
+		"city": "洛阳",
+		"code": "luoyang"
+	},
+	{
+		"city": "三门峡",
+		"code": "sanmenxia"
+	},
+	{
+		"city": "商丘",
+		"code": "shangqiu"
+	},
+	{
+		"city": "开封",
+		"code": "kaifeng"
+	},
+	{
+		"city": "郑州",
+		"code": "zhengzhou"
+	},
+	{
+		"city": "安康",
+		"code": "ankang"
+	},
+	{
+		"city": "汉中",
+		"code": "hanzhong"
+	},
+	{
+		"city": "商洛",
+		"code": "shangluo"
+	},
+	{
+		"city": "西安",
+		"code": "xian"
+	},
+	{
+		"city": "宝鸡",
+		"code": "baoji"
+	},
+	{
+		"city": "陇南",
+		"code": "longnan1"
+	},
+	{
+		"city": "天水",
+		"code": "tianshui"
 	}
 ]

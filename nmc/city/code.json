@@ -968,5 +968,100 @@
 		"city": "镇江",
 		"code": "zhenjiang",
 		"parentCode": "JS"
+	},
+	{
+		"city": "信阳",
+		"code": "xinyang",
+		"parentCode": "HA"
+	},
+	{
+		"city": "驻马店",
+		"code": "zhumadian",
+		"parentCode": "HA"
+	},
+	{
+		"city": "南阳",
+		"code": "nanyang",
+		"parentCode": "HA"
+	},
+	{
+		"city": "周口",
+		"code": "zhoukou",
+		"parentCode": "HA"
+	},
+	{
+		"city": "漯河",
+		"code": "zuohe",
+		"parentCode": "HA"
+	},
+	{
+		"city": "许昌",
+		"code": "xuchang",
+		"parentCode": "HA"
+	},
+	{
+		"city": "平顶山",
+		"code": "pingdingshan",
+		"parentCode": "HA"
+	},
+	{
+		"city": "洛阳",
+		"code": "luoyang2",
+		"parentCode": "HA"
+	},
+	{
+		"city": "三门峡",
+		"code": "sanmenxia",
+		"parentCode": "HA"
+	},
+	{
+		"city": "商丘",
+		"code": "shangqiu",
+		"parentCode": "HA"
+	},
+	{
+		"city": "开封",
+		"code": "kaifeng",
+		"parentCode": "HA"
+	},
+	{
+		"city": "郑州",
+		"code": "zhengzhou",
+		"parentCode": "HA"
+	},
+	{
+		"city": "安康",
+		"code": "ankang",
+		"parentCode": "SN"
+	},
+	{
+		"city": "汉中",
+		"code": "hanzhong",
+		"parentCode": "SN"
+	},
+	{
+		"city": "商洛",
+		"code": "shangluo",
+		"parentCode": "SN"
+	},
+	{
+		"city": "西安",
+		"code": "xian",
+		"parentCode": "SN"
+	},
+	{
+		"city": "宝鸡",
+		"code": "baoji",
+		"parentCode": "SN"
+	},
+	{
+		"city": "陇南",
+		"code": "longnan",
+		"parentCode": "GS"
+	},
+	{
+		"city": "天水",
+		"code": "tianshui",
+		"parentCode": "GS"
 	}
 ]
