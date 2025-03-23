@@ -28,6 +28,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		map: mapName, // Map name registered in echarts.registerMap().
 		label: {
 			show: cityDir === 'city',
+//			fontSize: 7, // Default is 12
 		},
 		data: uncomfortableDaysArr.map(city => ({
 			name: `${city.parent ?? ''}${city.city}`,
