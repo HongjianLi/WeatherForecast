@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
 const monday = new Date();
 for (var nDaysAhead = 0; monday.getDay() !== 1; ++nDaysAhead) monday.setDate(monday.getDate() + 1); // Find the nearest Monday.
-const depDate = monday.toISOString().slice(0, 10);
+const depDate = monday.toLocaleDateString('en-CA'/*, { year: 'numeric', month: '2-digit', day: '2-digit'}*/);
 console.log(`Departing on ${depDate}, i.e. ${nDaysAhead} days ahead`);
 const airports = await Promise.all(['CityCode', 'CodeCity'].map(m => fs.readFile(`airports${m}.json`).then(JSON.parse)));
 const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomfortableDays.json`)).slice(23).filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
