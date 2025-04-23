@@ -18,7 +18,7 @@ await page.setExtraHTTPHeaders({
 const cityDir = process.argv.length > 2 ? process.argv[2] : 'city';
 const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
-const uncomfortableDaysArr = [];
+const forecastArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
 	if (i) await new Promise(resolve => setTimeout(resolve, 2520)); // Wait for some seconds between requests to avoid being blocked.
 	const { parent, city, code } = codeArr[i];
@@ -38,36 +38,56 @@ for (let i = 0; i < codeArr.length; ++i) {
 			const cityFromPage = (await page.$eval('dd.name>h2', el => el.innerText));
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
 			const divday7 = await page.$('div.day7');
-			const txtArr = await divday7.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
-			console.assert(txtArr.length === 7);
-			const highTemperatureArr = await divday7.$$eval('div.zxt_shuju>ul>li>span', spanArr => spanArr.map(span => span.innerText));
-			console.assert(highTemperatureArr.length === 7);
-			const lowTemperatureArr = await divday7.$$eval('div.zxt_shuju>ul>li>b', bArr => bArr.map(b => b.innerText));
-			console.assert(lowTemperatureArr.length === 7);
-			const uncomfortableDays = [...Array(7).keys()].map(i => {
-				const txt = txtArr[i];
-				if (['雨', '雾', '霾'].some(keyword => txt.includes(keyword))) return 1;
-				const highTemperature = highTemperatureArr[i];
-				if (highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-				const lowTemperature = lowTemperatureArr[i];
-				if (lowTemperature < 10) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-				return 0;
+			const dateArr = await divday7.$$eval('ul.week>li>b', bArr => bArr.map(b => b.innerText));
+			console.assert(dateArr.length === 7);
+			const weekdayArr = await divday7.$$eval('ul.week>li>span', bArr => bArr.map(b => b.innerText));
+			console.assert(weekdayArr.length === 7);
+			const descrArr = await divday7.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
+			console.assert(descrArr.length === 7);
+			const dayTmpArr = await divday7.$$eval('div.zxt_shuju>ul>li>span', spanArr => spanArr.map(span => span.innerText));
+			console.assert(dayTmpArr.length === 7);
+			const nightTmpArr = await divday7.$$eval('div.zxt_shuju>ul>li>b', bArr => bArr.map(b => b.innerText));
+			console.assert(nightTmpArr.length === 7);
+			const forecast = [...Array(7).keys()].map(i => {
+				const descArr = descrArr[i].split('转');
+				return {
+					date: dateArr[i],
+					weekday: weekdayArr[i],
+					day: {
+						tmp: parseInt(dayTmpArr[i]),
+						desc: descArr[0],
+					},
+					night: {
+						tmp: parseInt(nightTmpArr[i]),
+						desc: descArr[descArr.length - 1],
+					},
+				};
 			});
-			uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+			forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
 			await divday7.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
 			await divday7.dispose();
 		} else {
 			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
 			const c7dul = await page.$('ul.weaul');
-			const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
-				const [ date, day, weather, temperature ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
-				if (['雨', '雾', '霾'].some(keyword => weather.includes(keyword))) return 1;
-				const [ lowTemperature, highTemperature ] = temperature.replaceAll('℃', '').split('~'); // The temperatures are strings, not numbers.
-				if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-				return 0;
+			const forecast = await c7dul.$$eval('li', liArr => liArr.map(li => {
+				const [ date, weekday, desc, tmp ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
+				const descArr = desc.split('转');
+				const tmpArr = tmp.split('~');
+				return {
+					date,
+					weekday,
+					day: {
+						tmp: parseInt(tmpArr[tmpArr.length - 1]), // The high temperature comes behind the low temperature.
+						desc: descArr[0],
+					},
+					night: {
+						tmp: parseInt(tmpArr[0]),
+						desc: descArr[descArr.length - 1],
+					},
+				};
 			}));
-			uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+			forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
 			await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
 			await c7dul.dispose();
 		}
@@ -76,5 +96,5 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 };
 await browser.close();
-console.assert(uncomfortableDaysArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${uncomfortableDaysArr.length} were fetched.`);
-await fs.promises.writeFile(`${cityDir}/uncomfortableDays.json`, JSON.stringify(uncomfortableDaysArr, null, '	'));
+console.assert(forecastArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${forecastArr.length} were fetched.`);
+await fs.promises.writeFile(`${cityDir}/forecast.json`, JSON.stringify(forecastArr, null, '	'));

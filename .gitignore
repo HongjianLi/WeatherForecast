@@ -4,5 +4,5 @@ node_modules
 *.png
 *.gif
 *.webp
-uncomfortableDays.json
+forecast.json
 start.txt

@@ -12,7 +12,7 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 const cityDir = 'city';
 const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
-const uncomfortableDaysArr = [];
+const forecastArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
 	const { city, parentCode, code } = codeArr[i];
 	bar.tick({ city });
@@ -32,19 +32,28 @@ for (let i = 0; i < codeArr.length; ++i) {
 		await day7div.evaluate(div => {
 			$('div:first-of-type', div).removeClass('selected'); // jQuery is used by www.nmc.cn
 		}, day7div);
-		const uncomfortableDays = await day7div.$$eval('div.weather', divArr => divArr.map(div => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
-			const parts = div.innerText.split('\n'); // The li.innerText looks like '01/20\n周一\n \n \n \n \n \n16℃\n晴\n无持续风向\n微风' or '01/26\n周日\n阴\n东北风\n3~4级\n20℃\n12℃\n晴\n东北风\n3~4级'
-			console.assert([10, 11].includes(parts.length));
-			if ([2, parts.length - 3].some(index => parts[index].includes('雨'))) return 1;
-			const lowTemperature = parts[parts.length - 4].replace('℃', ''); // The temperatures are strings, not numbers.
-			if (lowTemperature < 10) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-			if (parts.length === 10) {
-				const highTemperature = parts[5].replace('℃', '');
-				if (highTemperature < 18 || highTemperature > 24) return 1;
-			}
-			return 0;
+		const forecast = await day7div.$$eval('div.weather', divArr => divArr.map(div => {
+			const parts = div.innerText.split('\n').filter(part => part.trim()); // The li.innerText looks like '01/26\n周日\n阴\n东北风\n3~4级\n20℃\n12℃\n晴\n东北风\n3~4级' or '01/20\n周一\n \n \n \n \n \n16℃\n晴\n无持续风向\n微风'
+			const n = parts.length;
+			console.assert(n === 10 || n === 6);
+			return {
+				date: parts[0],
+				weekday: parts[1],
+				day: n === 10 ? { // 08:00~20:00
+					desc: parts[2],
+					windd: parts[3],
+					winds: parts[4],
+					tmp: parseInt(parts[5]/*.replace('℃', '')*/), // parseInt() will automatically discard the '℃' symbol.
+				} : undefined,
+				night: { // 20:00~08:00
+					tmp: parseInt(parts[n - 4]/*.replace('℃', '')*/),
+					desc: parts[n - 3],
+					windd: parts[n - 2],
+					winds: parts[n - 1],
+				},
+			};
 		}));
-		uncomfortableDaysArr.push({ city: `${city}`, uncomfortableDays });
+		forecastArr.push({ city, forecast });
 		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
 		await day7div.dispose();
 	} else {
@@ -52,5 +61,5 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 }
 await browser.close();
-console.assert(uncomfortableDaysArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${uncomfortableDaysArr.length} were fetched.`);
-await fs.promises.writeFile(`${cityDir}/uncomfortableDays.json`, JSON.stringify(uncomfortableDaysArr, null, '	'));
+console.assert(forecastArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${forecastArr.length} were fetched.`);
+await fs.promises.writeFile(`${cityDir}/forecast.json`, JSON.stringify(forecastArr, null, '	'));

@@ -4,13 +4,21 @@ const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'c
 const mapName = '香港澳门广东广西湖南江西福建海南贵州云南重庆四川湖北安徽浙江上海江苏河南陕西甘肃';
 const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
-const uncomfortableDaysArr = await fetch(`../weather/${cityDir}/uncomfortableDays.json`).then(res => res.json());
+const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res => res.json());
+forecastArr.forEach(fc => {
+	fc.forecast.forEach(f => {
+		f.uncomfortable = +( // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10 or above 20, the high temperature is below 16 or above 24.
+			f.sky === '天空灰霾' || f.night.desc.includes('雨') || f.night.tmp < 10 || f.night.tmp > 20 || // ['雨', '雾', '霾'].some(keyword => f.night.desc.includes(keyword))
+			(f.day !== undefined && (f.day.desc.includes('雨') || f.day.tmp < 16 || f.day.tmp > 24))
+		);
+	});
+});
 echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
 			const { name, value } = params;
-			const { uncomfortableDays } = uncomfortableDaysArr.find(city => city.city === name);
-			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px"><tr>${uncomfortableDays.map(b => `<td style="width: 14%; background-color: ${['green', 'orangered'][b]}"></td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
+			const { forecast } = forecastArr.find(city => city.city === name);
+			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px"><tr>${forecast.map(f => `<td style="width: 14%; background-color: ${['green', 'orangered'][f.uncomfortable]}"></td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
 		},
 	},
 	visualMap: {
@@ -30,10 +38,10 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 			show: cityDir === 'city',
 //			fontSize: 7, // Default is 12
 		},
-		data: uncomfortableDaysArr.map(city => ({
-			name: `${city.parent ?? ''}${city.city}`,
-			value: city.uncomfortableDays.reduce((acc, cur) => { // Sum the number of uncomfortable days.
-				return acc + cur;
+		data: forecastArr.map(fc => ({
+			name: `${fc.parent ?? ''}${fc.city}`,
+			value: fc.forecast.reduce((acc, cur) => { // Sum the number of uncomfortable days.
+				return acc + cur.uncomfortable;
 			}, 0),
 		})),
 	},

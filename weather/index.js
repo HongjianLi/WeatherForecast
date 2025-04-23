@@ -11,7 +11,7 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 const cityDir = process.argv.length > 2 ? process.argv[2] : 'city';
 const codeArr = JSON.parse(await fs.promises.readFile(`${cityDir}/code.json`));
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: codeArr.length });
-const uncomfortableDaysArr = [];
+const forecastArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
 	const { parent, city, code } = codeArr[i]; // parent is undefined if cityDir === 'city'. parent is the prefecture-level city if cityDir === 'county'.
 	bar.tick({ city });
@@ -48,21 +48,38 @@ for (let i = 0; i < codeArr.length; ++i) {
 		await c7dul.evaluate(ul => {
 			$('li:first-of-type', ul).removeClass('on'); // jQuery is used by www.weather.com.cn
 		}, c7dul);
-		const uncomfortableDays = await c7dul.$$eval('li', liArr => liArr.map(li => { // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10, the high temperature is below 18 or above 24.
-			if (li.classList.contains('lv4')) return 1; // lv1: 天空蔚蓝, lv2: 天空淡蓝, lv3: 天空阴沉, lv4: 天空灰霾
-			const [ date, weather, temperature ] = li.innerText.split('\n\n'); // The li.innerText looks like '30日（今天）\n\n多云\n\n12℃\n\n<3级' or '1日（明天）\n\n晴\n\n24℃/14℃\n\n \n<3级'
-			if (weather.includes('雨')) return 1;
-			const temperatureArr = temperature.replaceAll('℃', '').split('/'); // The temperatures are strings, not numbers.
-			if (temperatureArr.length === 1) {
-				const [ lowTemperature ] = temperatureArr;
-				if (lowTemperature < 10) return 1;
-			} else {
-				const [ highTemperature, lowTemperature ] = temperatureArr;
-				if (lowTemperature < 10 || highTemperature < 18 || highTemperature > 24) return 1; // When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison.
-			}
-			return 0;
+		const forecast = await c7dul.$$eval('li', liArr => liArr.map(li => {
+			const [ date, desc, tmp, wind ] = li.innerText.split('\n').filter(part => part.trim()); // The li.innerText looks like '1日（明天）\n\n晴\n\n24℃/14℃\n\n \n<3级' or '30日（今天）\n\n多云\n\n12℃\n\n<3级'
+			const dateArr = date.split('（');
+			const tmpArr = tmp.split('/');
+			const descArr = desc.split('转');
+			const windsArr = wind.split('转');
+			const winddArr = [];
+			li.querySelectorAll('p.win span').forEach(span => winddArr.push(span.getAttribute('title')));
+			return {
+				date: dateArr[0],
+				weekday: dateArr[1].substring(0, 2),
+				day: winddArr.length === 2 ? {
+					tmp: parseInt(tmpArr[0]),
+					desc: descArr[0],
+					winds: windsArr[0],
+					windd: winddArr[0],
+				} : undefined,
+				night: {
+					tmp: parseInt(tmpArr[tmpArr.length - 1]),
+					desc: descArr[descArr.length - 1],
+					winds: windsArr[windsArr.length - 1],
+					windd: winddArr[winddArr.length - 1],
+				},
+				sky: {
+					lv1: '天空蔚蓝',
+					lv2: '天空淡蓝',
+					lv3: '天空阴沉',
+					lv4: '天空灰霾',
+				}[li.classList[2]],
+			};
 		}));
-		uncomfortableDaysArr.push({ city: `${parent ?? ''}${city}`, uncomfortableDays });
+		forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
 		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
 		await c7dul.dispose();
 	} else {
@@ -70,5 +87,5 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 }
 await browser.close();
-console.assert(uncomfortableDaysArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${uncomfortableDaysArr.length} were fetched.`);
-await fs.promises.writeFile(`${cityDir}/uncomfortableDays.json`, JSON.stringify(uncomfortableDaysArr, null, '	'));
+console.assert(forecastArr.length === codeArr.length, `Of ${codeArr.length} cities, only ${forecastArr.length} were fetched.`);
+await fs.promises.writeFile(`${cityDir}/forecast.json`, JSON.stringify(forecastArr, null, '	'));
