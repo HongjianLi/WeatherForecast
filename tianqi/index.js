@@ -35,21 +35,22 @@ for (let i = 0; i < codeArr.length; ++i) {
 		continue;
 	}
 	if (response.ok()) {
+		let container, forecast;
 		if (code.includes('-')) {
 			const cityFromPage = (await page.$eval('dd.name>h2', el => el.innerText));
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
-			const divday7 = await page.$('div.day7');
-			const dateArr = await divday7.$$eval('ul.week>li>b', bArr => bArr.map(b => b.innerText));
+			container = await page.$('div.day7');
+			const dateArr = await container.$$eval('ul.week>li>b', bArr => bArr.map(b => b.innerText));
 			console.assert(dateArr.length === 7);
-			const weekdayArr = await divday7.$$eval('ul.week>li>span', bArr => bArr.map(b => b.innerText));
+			const weekdayArr = await container.$$eval('ul.week>li>span', bArr => bArr.map(b => b.innerText));
 			console.assert(weekdayArr.length === 7);
-			const descrArr = await divday7.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
+			const descrArr = await container.$$eval('ul.txt.txt2>li', liArr => liArr.map(li => li.innerText));
 			console.assert(descrArr.length === 7);
-			const dayTmpArr = await divday7.$$eval('div.zxt_shuju>ul>li>span', spanArr => spanArr.map(span => span.innerText));
+			const dayTmpArr = await container.$$eval('div.zxt_shuju>ul>li>span', spanArr => spanArr.map(span => span.innerText));
 			console.assert(dayTmpArr.length === 7);
-			const nightTmpArr = await divday7.$$eval('div.zxt_shuju>ul>li>b', bArr => bArr.map(b => b.innerText));
+			const nightTmpArr = await container.$$eval('div.zxt_shuju>ul>li>b', bArr => bArr.map(b => b.innerText));
 			console.assert(nightTmpArr.length === 7);
-			const forecast = [...Array(7).keys()].map(i => {
+			forecast = [...Array(7).keys()].map(i => {
 				const descArr = descrArr[i].split('转');
 				return {
 					date: dateArr[i],
@@ -64,15 +65,11 @@ for (let i = 0; i < codeArr.length; ++i) {
 					},
 				};
 			});
-			forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
-			forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
-			await divday7.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
-			await divday7.dispose();
 		} else {
 			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
-			const c7dul = await page.$('ul.weaul');
-			const forecast = await c7dul.$$eval('li', liArr => liArr.map(li => {
+			container = await page.$('ul.weaul');
+			forecast = await container.$$eval('li', liArr => liArr.map(li => {
 				const [ date, weekday, desc, tmp ] = li.innerText.split('\n'); // The li.innerText looks like '11-30\n今天\n多云\n7~17℃' or '12-01\n明天\n晴\n9~22℃'
 				const descArr = desc.split('转');
 				const tmpArr = tmp.split('~');
@@ -89,11 +86,11 @@ for (let i = 0; i < codeArr.length; ++i) {
 					},
 				};
 			}));
-			forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
-			forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
-			await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
-			await c7dul.dispose();
 		}
+		forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
+		forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
+		await container.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
+		await container.dispose();
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`); // Status code 403 is usually returned.
 	}
