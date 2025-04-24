@@ -3,6 +3,7 @@
 import fs from 'fs';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
+import util from '../util.js';
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 3840, height: 2160, deviceScaleFactor: 0.85 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
@@ -53,6 +54,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 				},
 			};
 		}));
+		forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
 		forecastArr.push({ city, forecast });
 		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
 		await day7div.dispose();

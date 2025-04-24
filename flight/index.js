@@ -7,10 +7,10 @@ for (var nDaysAhead = 0; monday.getDay() !== 1; ++nDaysAhead) monday.setDate(mon
 const depDate = monday.toLocaleDateString('en-CA'/*, { year: 'numeric', month: '2-digit', day: '2-digit'}*/);
 console.log(`Departing on ${depDate}, i.e. ${nDaysAhead} days ahead`);
 const airports = await Promise.all(['CityCode', 'CodeCity'].map(m => fs.readFile(`airports${m}.json`).then(JSON.parse)));
-const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/uncomfortableDays.json`)).slice(23).filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
-	const uncomfortableDays = city.uncomfortableDays.slice(nDaysAhead); // Skip dates before departure.
-	if (uncomfortableDays[0]) return false; // If the departure date is uncomfortable, skip it.
-	return uncomfortableDays.slice(1).reduce((acc, cur) => { // Sum the number of uncomfortable days after departure, and restrict the sum equal to or below 1.
+const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/forecast.json`)).slice(23).filter(city => { // The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
+	const uncomfortableDaysArr = city.forecast.map(f => f.uncomfortable).slice(nDaysAhead); // Skip dates before departure.
+	if (uncomfortableDaysArr[0]) return false; // If the departure date is uncomfortable, skip it.
+	return uncomfortableDaysArr.slice(1).reduce((acc, cur) => { // Sum the number of uncomfortable days after departure, and restrict the sum equal to or below 1.
 		return acc + cur;
 	}, 0) <= 2;
 }).map(city => airports[0][city.city]).filter(airport => airport).map(codeArr => codeArr.slice(0, 1))).reduce((acc, cur) => { if (!acc.includes(cur)) acc.push(cur); return acc; }, []); // codeArr.slice(0, 1) retains the first code for the same city, e.g. CTU for 成都, because ly will return the flights for all airports of the same city, e.g. including TFU.

@@ -1,18 +1,12 @@
 import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
+//import util from '/util.js';
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
 const mapName = '香港澳门广东广西湖南江西福建海南贵州云南重庆四川湖北安徽浙江上海江苏河南陕西甘肃';
 const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
 const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res => res.json());
-forecastArr.forEach(fc => {
-	fc.forecast.forEach(f => {
-		f.uncomfortable = +( // A day is considered to be uncomfortable if any of the following conditions occurs: it rains, the low temperature is below 10 or above 20, the high temperature is below 16 or above 24.
-			f.sky === '天空灰霾' || f.night.desc.includes('雨') || f.night.tmp < 10 || f.night.tmp > 20 || // ['雨', '雾', '霾'].some(keyword => f.night.desc.includes(keyword))
-			(f.day !== undefined && (f.day.desc.includes('雨') || f.day.tmp < 16 || f.day.tmp > 24))
-		);
-	});
-});
+//forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
 echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
 		formatter: (params) => {
