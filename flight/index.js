@@ -12,7 +12,7 @@ const dstArr = [].concat(...JSON.parse(await fs.readFile(`../weather/city/foreca
 	if (uncomfortableDaysArr[0]) return false; // If the departure date is uncomfortable, skip it.
 	return uncomfortableDaysArr.slice(1).reduce((acc, cur) => { // Sum the number of uncomfortable days after departure, and restrict the sum equal to or below 1.
 		return acc + cur;
-	}, 0) <= 2;
+	}, 0) <= 1;
 }).map(city => airports[0][city.city]).filter(airport => airport).map(codeArr => codeArr.slice(0, 1))).reduce((acc, cur) => { if (!acc.includes(cur)) acc.push(cur); return acc; }, []); // codeArr.slice(0, 1) retains the first code for the same city, e.g. CTU for 成都, because ly will return the flights for all airports of the same city, e.g. including TFU.
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
