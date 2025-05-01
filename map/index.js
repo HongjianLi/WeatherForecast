@@ -28,6 +28,8 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	series: {
 		type: 'map',
 		map: mapName, // Map name registered in echarts.registerMap().
+		roam: true,
+		zoom: 1.2,
 		label: {
 			show: cityDir === 'city',
 //			fontSize: 7, // Default is 12
