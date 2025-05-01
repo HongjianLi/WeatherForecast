@@ -9,7 +9,7 @@ const browser = await puppeteer.launch({
 });
 const page = (await browser.pages())[0];
 await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0');
-const code0Arr = ['10132', '10133', '10128', '10130', '10125', '10124', '10123', '10131', '10126', '10129', '10104', '10127', '10120', '10122', '10121', '10102', '10119', '10118', '10111', '10116' ]; // They are the codes of provinces [ '香港', '澳门', '广东', '广西', '湖南', '江西', '福建', '海南', '贵州', '云南', '重庆', '四川', '湖北', '安徽', '浙江', '上海', '江苏', '河南', '陕西', '甘肃' ]
+const code0Arr = ['10132', '10133', '10128', '10130', '10125', '10124', '10123', '10131', '10126', '10129', '10104', '10127', '10120', '10122', '10121', '10102', '10119', '10118', '10111', '10116', '10110', '10112', '10109', '10103', '10101', '10117', '10115', '10114', '10108', '10113', '10107', '10106', '10105' ]; // They are the codes of provinces [ '香港', '澳门', '广东', '广西', '湖南', '江西', '福建', '海南', '贵州', '云南', '重庆', '四川', '湖北', '安徽', '浙江', '上海', '江苏', '河南', '陕西', '甘肃', '山西', '山东', '河北', '天津', '北京', '宁夏', '青海', '西藏', '内蒙古', '新疆', '辽宁', '吉林', '黑龙江' ]
 const maxNumCities = 21; // Assuming each province has at most 21 cities.
 const bar = new ProgressBar('[:bar] :code :current/:total=:percent :elapseds :etas', { total: maxNumCities * code0Arr.length });
 for (let k = 0; k < code0Arr.length; ++k) {

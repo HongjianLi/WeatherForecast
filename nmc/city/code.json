@@ -970,13 +970,33 @@
 		"parentCode": "JS"
 	},
 	{
-		"city": "信阳",
-		"code": "xinyang",
+		"city": "安阳",
+		"code": "anyang",
 		"parentCode": "HA"
 	},
 	{
-		"city": "驻马店",
-		"code": "zhumadian",
+		"city": "鹤壁",
+		"code": "hebi",
+		"parentCode": "HA"
+	},
+	{
+		"city": "济源",
+		"code": "jiyuan",
+		"parentCode": "HA"
+	},
+	{
+		"city": "焦作",
+		"code": "jiaozuo",
+		"parentCode": "HA"
+	},
+	{
+		"city": "开封",
+		"code": "kaifeng",
+		"parentCode": "HA"
+	},
+	{
+		"city": "洛阳",
+		"code": "luoyang2",
 		"parentCode": "HA"
 	},
 	{
@@ -985,28 +1005,13 @@
 		"parentCode": "HA"
 	},
 	{
-		"city": "周口",
-		"code": "zhoukou",
-		"parentCode": "HA"
-	},
-	{
-		"city": "漯河",
-		"code": "zuohe",
-		"parentCode": "HA"
-	},
-	{
-		"city": "许昌",
-		"code": "xuchang",
-		"parentCode": "HA"
-	},
-	{
 		"city": "平顶山",
 		"code": "pingdingshan",
 		"parentCode": "HA"
 	},
 	{
-		"city": "洛阳",
-		"code": "luoyang2",
+		"city": "濮阳",
+		"code": "zuoyang1",
 		"parentCode": "HA"
 	},
 	{
@@ -1020,8 +1025,23 @@
 		"parentCode": "HA"
 	},
 	{
-		"city": "开封",
-		"code": "kaifeng",
+		"city": "漯河",
+		"code": "zuohe",
+		"parentCode": "HA"
+	},
+	{
+		"city": "新乡",
+		"code": "xinxiang",
+		"parentCode": "HA"
+	},
+	{
+		"city": "信阳",
+		"code": "xinyang",
+		"parentCode": "HA"
+	},
+	{
+		"city": "许昌",
+		"code": "xuchang",
 		"parentCode": "HA"
 	},
 	{
@@ -1030,8 +1050,23 @@
 		"parentCode": "HA"
 	},
 	{
+		"city": "周口",
+		"code": "zhoukou",
+		"parentCode": "HA"
+	},
+	{
+		"city": "驻马店",
+		"code": "zhumadian",
+		"parentCode": "HA"
+	},
+	{
 		"city": "安康",
 		"code": "ankang",
+		"parentCode": "SN"
+	},
+	{
+		"city": "宝鸡",
+		"code": "baoji",
 		"parentCode": "SN"
 	},
 	{
@@ -1045,14 +1080,74 @@
 		"parentCode": "SN"
 	},
 	{
+		"city": "铜川",
+		"code": "tongchuan",
+		"parentCode": "SN"
+	},
+	{
+		"city": "渭南",
+		"code": "weinan",
+		"parentCode": "SN"
+	},
+	{
 		"city": "西安",
 		"code": "xian",
 		"parentCode": "SN"
 	},
 	{
-		"city": "宝鸡",
-		"code": "baoji",
+		"city": "咸阳",
+		"code": "xianyang",
 		"parentCode": "SN"
+	},
+	{
+		"city": "延安",
+		"code": "yanan",
+		"parentCode": "SN"
+	},
+	{
+		"city": "榆林",
+		"code": "yulin",
+		"parentCode": "SN"
+	},
+	{
+		"city": "白银",
+		"code": "baiyin",
+		"parentCode": "GS"
+	},
+	{
+		"city": "定西",
+		"code": "dingxi",
+		"parentCode": "GS"
+	},
+	{
+		"city": "甘南",
+		"code": "gannan",
+		"parentCode": "GS"
+	},
+	{
+		"city": "嘉峪关",
+		"code": "jiayuguan",
+		"parentCode": "GS"
+	},
+	{
+		"city": "金昌",
+		"code": "jinchang",
+		"parentCode": "GS"
+	},
+	{
+		"city": "酒泉",
+		"code": "jiuquan",
+		"parentCode": "GS"
+	},
+	{
+		"city": "兰州",
+		"code": "lanzhou",
+		"parentCode": "GS"
+	},
+	{
+		"city": "临夏",
+		"code": "linxia",
+		"parentCode": "GS"
 	},
 	{
 		"city": "陇南",
@@ -1060,8 +1155,682 @@
 		"parentCode": "GS"
 	},
 	{
+		"city": "平凉",
+		"code": "pingliang",
+		"parentCode": "GS"
+	},
+	{
+		"city": "庆阳",
+		"code": "qingyang",
+		"parentCode": "GS"
+	},
+	{
 		"city": "天水",
 		"code": "tianshui",
 		"parentCode": "GS"
+	},
+	{
+		"city": "武威",
+		"code": "wuwei",
+		"parentCode": "GS"
+	},
+	{
+		"city": "张掖",
+		"code": "zhangye",
+		"parentCode": "GS"
+	},
+	{
+		"city": "长治",
+		"code": "changzhi",
+		"parentCode": "SX"
+	},
+	{
+		"city": "大同",
+		"code": "datong",
+		"parentCode": "SX"
+	},
+	{
+		"city": "晋城",
+		"code": "jincheng",
+		"parentCode": "SX"
+	},
+	{
+		"city": "晋中",
+		"code": "jinzhong",
+		"parentCode": "SX"
+	},
+	{
+		"city": "临汾",
+		"code": "linfen",
+		"parentCode": "SX"
+	},
+	{
+		"city": "吕梁",
+		"code": "lvliang",
+		"parentCode": "SX"
+	},
+	{
+		"city": "朔州",
+		"code": "shuozhou",
+		"parentCode": "SX"
+	},
+	{
+		"city": "太原",
+		"code": "taiyuan",
+		"parentCode": "SX"
+	},
+	{
+		"city": "忻州",
+		"code": "xinzhou",
+		"parentCode": "SX"
+	},
+	{
+		"city": "阳泉",
+		"code": "yangquan",
+		"parentCode": "SX"
+	},
+	{
+		"city": "运城",
+		"code": "yuncheng",
+		"parentCode": "SX"
+	},
+	{
+		"city": "滨州",
+		"code": "binzhou",
+		"parentCode": "SD"
+	},
+	{
+		"city": "德州",
+		"code": "dezhou",
+		"parentCode": "SD"
+	},
+	{
+		"city": "东营",
+		"code": "dongying",
+		"parentCode": "SD"
+	},
+	{
+		"city": "菏泽",
+		"code": "heze",
+		"parentCode": "SD"
+	},
+	{
+		"city": "济南",
+		"code": "jinan",
+		"parentCode": "SD"
+	},
+	{
+		"city": "济宁",
+		"code": "jining",
+		"parentCode": "SD"
+	},
+	{
+		"city": "聊城",
+		"code": "liaocheng",
+		"parentCode": "SD"
+	},
+	{
+		"city": "临沂",
+		"code": "linyi2",
+		"parentCode": "SD"
+	},
+	{
+		"city": "青岛",
+		"code": "qingdao",
+		"parentCode": "SD"
+	},
+	{
+		"city": "日照",
+		"code": "rizhao",
+		"parentCode": "SD"
+	},
+	{
+		"city": "泰安",
+		"code": "taian",
+		"parentCode": "SD"
+	},
+	{
+		"city": "威海",
+		"code": "weihai",
+		"parentCode": "SD"
+	},
+	{
+		"city": "潍坊",
+		"code": "weifang",
+		"parentCode": "SD"
+	},
+	{
+		"city": "烟台",
+		"code": "yantai",
+		"parentCode": "SD"
+	},
+	{
+		"city": "枣庄",
+		"code": "zaozhuang",
+		"parentCode": "SD"
+	},
+	{
+		"city": "淄博",
+		"code": "zibo",
+		"parentCode": "SD"
+	},
+	{
+		"city": "保定",
+		"code": "baoding",
+		"parentCode": "HE"
+	},
+	{
+		"city": "沧州",
+		"code": "cangzhou",
+		"parentCode": "HE"
+	},
+	{
+		"city": "承德",
+		"code": "chengde",
+		"parentCode": "HE"
+	},
+	{
+		"city": "邯郸",
+		"code": "handan",
+		"parentCode": "HE"
+	},
+	{
+		"city": "衡水",
+		"code": "hengshui",
+		"parentCode": "HE"
+	},
+	{
+		"city": "廊坊",
+		"code": "langfang",
+		"parentCode": "HE"
+	},
+	{
+		"city": "秦皇岛",
+		"code": "qinhuangdao",
+		"parentCode": "HE"
+	},
+	{
+		"city": "石家庄",
+		"code": "shijiazhuang",
+		"parentCode": "HE"
+	},
+	{
+		"city": "唐山",
+		"code": "tangshan",
+		"parentCode": "HE"
+	},
+	{
+		"city": "邢台",
+		"code": "xingtai",
+		"parentCode": "HE"
+	},
+	{
+		"city": "张家口",
+		"code": "zhangjiakou",
+		"parentCode": "HE"
+	},
+	{
+		"city": "天津",
+		"code": "tianjin",
+		"parentCode": "TJ"
+	},
+	{
+		"city": "北京",
+		"code": "beijing",
+		"parentCode": "BJ"
+	},
+	{
+		"city": "固原",
+		"code": "guyuan",
+		"parentCode": "NX"
+	},
+	{
+		"city": "石嘴山",
+		"code": "shizuishan",
+		"parentCode": "NX"
+	},
+	{
+		"city": "吴忠",
+		"code": "wuzhong",
+		"parentCode": "NX"
+	},
+	{
+		"city": "银川",
+		"code": "yinchuan",
+		"parentCode": "NX"
+	},
+	{
+		"city": "中卫",
+		"code": "zhongwei",
+		"parentCode": "NX"
+	},
+	{
+		"city": "果洛",
+		"code": "guoluo",
+		"parentCode": "QH"
+	},
+	{
+		"city": "海北",
+		"code": "haibei",
+		"parentCode": "QH"
+	},
+	{
+		"city": "海东",
+		"code": "haidong",
+		"parentCode": "QH"
+	},
+	{
+		"city": "海南",
+		"code": "hainan",
+		"parentCode": "QH"
+	},
+	{
+		"city": "海西",
+		"code": "haixi",
+		"parentCode": "QH"
+	},
+	{
+		"city": "黄南",
+		"code": "huangnan",
+		"parentCode": "QH"
+	},
+	{
+		"city": "西宁",
+		"code": "xining",
+		"parentCode": "QH"
+	},
+	{
+		"city": "玉树",
+		"code": "yushu",
+		"parentCode": "QH"
+	},
+	{
+		"city": "阿里",
+		"code": "ali",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "昌都",
+		"code": "changdu",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "拉萨",
+		"code": "lasa",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "林芝",
+		"code": "linzhi",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "那曲",
+		"code": "naqu",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "日喀则",
+		"code": "rikaze",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "山南",
+		"code": "shannan",
+		"parentCode": "XZ"
+	},
+	{
+		"city": "阿拉善盟",
+		"code": "alashanmeng",
+		"parentCode": "NM"
+	},
+	{
+		"city": "巴彦淖尔",
+		"code": "bayannaoer",
+		"parentCode": "NM"
+	},
+	{
+		"city": "包头",
+		"code": "baotou",
+		"parentCode": "NM"
+	},
+	{
+		"city": "赤峰",
+		"code": "chifeng",
+		"parentCode": "NM"
+	},
+	{
+		"city": "鄂尔多斯",
+		"code": "eerduosi",
+		"parentCode": "NM"
+	},
+	{
+		"city": "呼和浩特",
+		"code": "saihan1",
+		"parentCode": "NM"
+	},
+	{
+		"city": "呼伦贝尔",
+		"code": "hulunbeier",
+		"parentCode": "NM"
+	},
+	{
+		"city": "通辽",
+		"code": "tongliao",
+		"parentCode": "NM"
+	},
+	{
+		"city": "乌海",
+		"code": "wuhai",
+		"parentCode": "NM"
+	},
+	{
+		"city": "乌兰察布",
+		"code": "wulanchabu",
+		"parentCode": "NM"
+	},
+	{
+		"city": "锡林郭勒盟",
+		"code": "xilinguole",
+		"parentCode": "NM"
+	},
+	{
+		"city": "兴安盟",
+		"code": "xinganmeng",
+		"parentCode": "NM"
+	},
+	{
+		"city": "阿克苏",
+		"code": "akesu",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "阿拉尔",
+		"code": "alaer",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "阿勒泰",
+		"code": "aletai",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "巴音郭楞",
+		"code": "bayinguoleng",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "北屯",
+		"code": "beitun",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "博尔塔拉",
+		"code": "boertala",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "昌吉",
+		"code": "changji",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "哈密",
+		"code": "hami",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "和田",
+		"code": "hetian",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "喀什",
+		"code": "kashi",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "可克达拉",
+		"code": "kekedala",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "克拉玛依",
+		"code": "kelamayi",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "克孜勒苏",
+		"code": "kezhou",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "昆玉",
+		"code": "kunyu",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "石河子",
+		"code": "shihezi",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "双河",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "塔城",
+		"code": "tacheng",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "铁门关",
+		"code": "tiemenguan",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "图木舒克",
+		"code": "tumushuke",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "吐鲁番",
+		"code": "tulufan",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "乌鲁木齐",
+		"code": "wulumuqi",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "五家渠",
+		"code": "wujiaqu",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "伊犁",
+		"code": "yili",
+		"parentCode": "XJ"
+	},
+	{
+		"city": "鞍山",
+		"code": "anshan",
+		"parentCode": "LN"
+	},
+	{
+		"city": "本溪",
+		"code": "benxi",
+		"parentCode": "LN"
+	},
+	{
+		"city": "大连",
+		"code": "dalian",
+		"parentCode": "LN"
+	},
+	{
+		"city": "丹东",
+		"code": "dandong",
+		"parentCode": "LN"
+	},
+	{
+		"city": "抚顺",
+		"code": "fushun",
+		"parentCode": "LN"
+	},
+	{
+		"city": "阜新",
+		"code": "fuxin",
+		"parentCode": "LN"
+	},
+	{
+		"city": "葫芦岛",
+		"code": "huludao",
+		"parentCode": "LN"
+	},
+	{
+		"city": "锦州",
+		"code": "jinzhou1",
+		"parentCode": "LN"
+	},
+	{
+		"city": "辽阳",
+		"code": "liaoyang",
+		"parentCode": "LN"
+	},
+	{
+		"city": "盘锦",
+		"code": "panjin",
+		"parentCode": "LN"
+	},
+	{
+		"city": "沈阳",
+		"code": "shenyang",
+		"parentCode": "LN"
+	},
+	{
+		"city": "铁岭",
+		"code": "tieling",
+		"parentCode": "LN"
+	},
+	{
+		"city": "营口",
+		"code": "yingkou",
+		"parentCode": "LN"
+	},
+	{
+		"city": "朝阳",
+		"code": "chaoyang",
+		"parentCode": "LN"
+	},
+	{
+		"city": "白城",
+		"code": "baicheng",
+		"parentCode": "JL"
+	},
+	{
+		"city": "白山",
+		"code": "baishan",
+		"parentCode": "JL"
+	},
+	{
+		"city": "长春",
+		"code": "changchun",
+		"parentCode": "JL"
+	},
+	{
+		"city": "吉林",
+		"code": "jilin",
+		"parentCode": "JL"
+	},
+	{
+		"city": "辽源",
+		"code": "liaoyuan",
+		"parentCode": "JL"
+	},
+	{
+		"city": "四平",
+		"code": "siping",
+		"parentCode": "JL"
+	},
+	{
+		"city": "松原",
+		"code": "songyuan",
+		"parentCode": "JL"
+	},
+	{
+		"city": "通化",
+		"code": "tonghua",
+		"parentCode": "JL"
+	},
+	{
+		"city": "延边",
+		"code": "yanbian",
+		"parentCode": "JL"
+	},
+	{
+		"city": "大庆",
+		"code": "daqing",
+		"parentCode": "HL"
+	},
+	{
+		"city": "大兴安岭",
+		"code": "daxinganling",
+		"parentCode": "HL"
+	},
+	{
+		"city": "哈尔滨",
+		"code": "haerbin",
+		"parentCode": "HL"
+	},
+	{
+		"city": "鹤岗",
+		"code": "hegang",
+		"parentCode": "HL"
+	},
+	{
+		"city": "黑河",
+		"code": "heihe",
+		"parentCode": "HL"
+	},
+	{
+		"city": "鸡西",
+		"code": "jixi",
+		"parentCode": "HL"
+	},
+	{
+		"city": "佳木斯",
+		"code": "jiamusi",
+		"parentCode": "HL"
+	},
+	{
+		"city": "牡丹江",
+		"code": "mudanjiang",
+		"parentCode": "HL"
+	},
+	{
+		"city": "七台河",
+		"code": "qitaihe",
+		"parentCode": "HL"
+	},
+	{
+		"city": "齐齐哈尔",
+		"code": "qiqihaer",
+		"parentCode": "HL"
+	},
+	{
+		"city": "双鸭山",
+		"code": "shuangyashan",
+		"parentCode": "HL"
+	},
+	{
+		"city": "绥化",
+		"code": "suihua",
+		"parentCode": "HL"
+	},
+	{
+		"city": "伊春",
+		"code": "yichun",
+		"parentCode": "HL"
 	}
 ]

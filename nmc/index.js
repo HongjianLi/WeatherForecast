@@ -17,6 +17,7 @@ const forecastArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
 	const { city, parentCode, code } = codeArr[i];
 	bar.tick({ city });
+	if (!code) continue; // 新疆双河 is not found in nmc.
 	let response;
 	try {
 		response = await page.goto(`http://www.nmc.cn/publish/forecast/A${parentCode}/${code}.html`, {
@@ -28,7 +29,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 	}
 	if (response.ok()) {
 		const cityFromPage = (await page.$eval('head>title', el => el.innerText)).split('-')[0]; // City's short name, e.g. 广州, 湘西
-		console.assert(city === cityFromPage);
+		console.assert(city === cityFromPage || (city === '锡林郭勒盟' && cityFromPage === '锡林郭勒') || (city === '克孜勒苏' && cityFromPage === '克州') || (city === '吉林' && cityFromPage === '吉林乌拉'));
 		const day7div = await page.$('div#day7');
 		await day7div.evaluate(div => {
 			$('div:first-of-type', div).removeClass('selected'); // jQuery is used by www.nmc.cn
