@@ -29,7 +29,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 		const levelArr = (await page.$eval('div.crumbs.fl', el => el.innerText)).replaceAll('\n', '').split('>');
 		console.assert([3, 4].includes(levelArr.length));
 		if (cityDir === 'city') {
-			console.assert(levelArr[levelArr.length - 1] === '城区' || levelArr[1] === '海南');
+			console.assert(levelArr[levelArr.length - 1] === '城区' || (levelArr.length === 3 && levelArr[1] === '海南'));
 			const cityFromPage = levelArr.length === 3 && ['香港', '澳门', '重庆', '上海', '天津', '北京', '吉林'].includes(levelArr[1]) ? levelArr[1] : levelArr[2]; // cityFromPage is always in short form, i.e. not ending with '市', '区', '县'.
 			console.assert(city === cityFromPage || (city === '锡林郭勒盟' && cityFromPage === '锡林郭勒') || (city === '克孜勒苏' && cityFromPage === '克州'), `${city} !== ${cityFromPage}`);
 		} else {
