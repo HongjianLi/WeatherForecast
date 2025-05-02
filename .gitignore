@@ -4,5 +4,5 @@ node_modules
 *.png
 *.gif
 *.webp
-forecast.json
+forecast*.json
 start.txt
