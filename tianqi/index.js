@@ -65,6 +65,15 @@ for (let i = 0; i < codeArr.length; ++i) {
 					},
 				};
 			});
+			const date = new Date();
+			forecast.forEach(f => {
+				const dateStr = date.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
+				console.assert(f.date === `${dateStr.slice(5, 7)}月${dateStr.slice(8)}日`);
+				f.date = dateStr;
+				console.assert(f.weekday === `星期${['日', '一', '二', '三', '四', '五', '六'][date.getDay()]}`);
+				date.setDate(date.getDate() + 1);
+				f.uncomfortable = util.isUncomfortable(f);
+			});
 		} else {
 			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
@@ -86,8 +95,16 @@ for (let i = 0; i < codeArr.length; ++i) {
 					},
 				};
 			}));
+			const date = new Date();
+			forecast.forEach(f => {
+				const dateStr = date.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
+				console.assert(f.date === dateStr.slice(5));
+				f.date = dateStr;
+				console.assert(f.weekday === i < 3 ? ['今天', '明天', '后天'][i] : `星期${['日', '一', '二', '三', '四', '五', '六'][date.getDay()]}`);
+				date.setDate(date.getDate() + 1);
+				f.uncomfortable = util.isUncomfortable(f);
+			});
 		}
-		forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
 		forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
 		await container.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
 		await container.dispose();

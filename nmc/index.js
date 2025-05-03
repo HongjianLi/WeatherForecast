@@ -55,7 +55,15 @@ for (let i = 0; i < codeArr.length; ++i) {
 				},
 			};
 		}));
-		forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
+		const date = new Date();
+		forecast.forEach(f => {
+			const dateStr = date.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
+			console.assert(f.date === dateStr.slice(5).replace('-', '/'));
+			f.date = dateStr;
+			console.assert(f.weekday === `周${['日', '一', '二', '三', '四', '五', '六'][date.getDay()]}`);
+			date.setDate(date.getDate() + 1);
+			f.uncomfortable = util.isUncomfortable(f);
+		});
 		forecastArr.push({ city, forecast });
 		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
 		await day7div.dispose();

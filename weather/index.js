@@ -80,7 +80,16 @@ for (let i = 0; i < codeArr.length; ++i) {
 				}[li.classList[2]],
 			};
 		}));
-		forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f));
+		const date = new Date();
+		forecast.forEach((f, i) => {
+			console.assert(f.date === `${date.getDate()}日`);
+			f.date = date.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
+			const weekday = `周${['日', '一', '二', '三', '四', '五', '六'][date.getDay()]}`;
+			console.assert(f.weekday === i < 3 ? ['今天', '明天', '后天'][i] : weekday);
+			f.weekday = weekday;
+			date.setDate(date.getDate() + 1);
+			f.uncomfortable = util.isUncomfortable(f);
+		});
 		forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
 		await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
 		await c7dul.dispose();
