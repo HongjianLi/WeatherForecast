@@ -25,23 +25,20 @@ for (const fc of forecastArr) {
 	const dstCodeArr = city2code[dstCity];
 	if (!dstCodeArr) continue; // Skip cities without airports.
 	const dstCode = dstCodeArr[0]; // It's sufficient to get just the first code for the city, e.g. CTU for 成都, because ly.com will return the flights for all airports of the same city, e.g. including TFU.
-	const srcDate = new Date(); // srcDate is the departure date.
 	for (let i = 1; i < 5; ++i) {
-		srcDate.setDate(srcDate.getDate() + 1);
 		const f = forecast[i];
 		if (f.uncomfortable) continue;
 		const n = Math.min(6 - i, 4); // The number of days ahead to check.
 		if ([...Array(n).keys()].reduce((acc, cur) => { // In the following n days, the number of uncomfortable days must be less than half.
 			return acc + forecast[i + 1 + cur].uncomfortable;
 		}, 0) >= n / 2) continue;
-		const srcDateStr = srcDate.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
 		for (const srcCity of srcCityArr) {
 			const srcCode = city2code[srcCity][0];
 			let response;
 			try {
-				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${srcCode}-${dstCode}?date=${srcDateStr}`, { waitUntil: 'networkidle0'} );
-			} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next dst.
-				console.error(`${srcDateStr} ${srcCity}-${dstCity}: page.goto() error ${error}`);
+				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${srcCode}-${dstCode}?date=${f.date}`, { waitUntil: 'networkidle0'} );
+			} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next srcCity.
+				console.error(`${f.date} ${srcCity}-${dstCity}: page.goto() error ${error}`);
 				continue;
 			}
 			if (response.ok()) {
@@ -68,7 +65,7 @@ for (const fc of forecastArr) {
 					if (durHour > 6) continue; // durHour: [1, 6] is acceptable, equivalent to duration: [1h0m, 6h59m].
 					const transition = await flight.$('div.f-line-to>div.v-popover'); // e.g. 经停, 华夏联程
 					if (transition !== null) { await transition.dispose(); continue }; // If the current flight has a transition, skip it.
-					console.log(`${srcDateStr} ${srcTime} ${duration} ${srcCity}-${dstCity} ￥${price}`);
+//					console.log(`${f.date} ${srcTime} ${duration} ${srcCity}-${dstCity} ￥${price}`);
 					if (!f.flight || f.flight.price > price) {
 						const no = await flight.$eval('p.flight-item-name', el => el.innerText); // e.g. 东方航空MU5742
 						const carrier = await flight.$eval('span.flight-item-type', el => el.innerText); // e.g. 波音737(中)
@@ -76,7 +73,7 @@ for (const fc of forecastArr) {
 						const srcPort = await flight.$eval('div.f-startTime>em', el => el.innerText); // e.g. 白云机场T1
 						const dstPort = await flight.$eval('div.f-endTime>em', el => el.innerText); // e.g. 三义机场
 						f.flight = {
-							date: srcDateStr, no, carrier, duration, price,
+							no, carrier, duration, price,
 							src: { time : srcTime, airport: srcPort, city: srcCity }, // code: srcCode is not necessarily correct, because when searching e.g. src: CTU, ly.com will also return flights departing from TFU.
 							dst: { time : dstTime, airport: dstPort }, // code: dstCode is not necessarily correct either. Same reason, when searching dst: CTU, ly.com will also return flights arriving at TFU.
 						};
@@ -87,7 +84,7 @@ for (const fc of forecastArr) {
 					await flight.dispose();
 				}
 			} else {
-				console.error(`${srcDateStr} ${srcCity}-${dstCity}: HTTP response status code ${response.status()}`);
+				console.error(`${f.date} ${srcCity}-${dstCity}: HTTP response status code ${response.status()}`);
 			}
 		}
 	}
