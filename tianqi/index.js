@@ -75,7 +75,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 				f.uncomfortable = util.isUncomfortable(f);
 			});
 		} else {
-			const cityFromPage = (await page.$eval('div.inleft_place>a.place_b', el => el.innerText)).split(' ')[0];
+			const cityFromPage = (await page.$eval('div.inleft_place>nav.breadcrumb>ol>li:last-of-type', el => el.innerText)).slice(0, -6);
 			console.assert(cityFromPage.includes(city), `${city} != ${cityFromPage}`);
 			container = await page.$('ul.weaul');
 			forecast = await container.$$eval('li', liArr => liArr.map(li => {
