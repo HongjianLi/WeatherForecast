@@ -12,7 +12,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		formatter: (params) => {
 			const { name, value } = params;
 			const { forecast } = forecastArr.find(city => city.city === name);
-			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px" style="color: white"><tr>${forecast.map(f => `<td style="width: 14%; background-color: ${['green', 'orangered'][f.uncomfortable]}">${f.flight ? `${f.flight.src[0]} ${f.flight.departTime} ${f.flight.price}` : '&nbsp;'}</td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
+			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px" style="color: white"><tr>${forecast.map(f => `<td style="width: 14%; background-color: ${['green', 'orangered'][f.uncomfortable]}">${f.flight ? `${f.flight.src.city[0]}${f.flight.src.time} ${f.flight.price}` : '&nbsp;'}</td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
 		},
 	},
 	visualMap: {

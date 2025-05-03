@@ -16,31 +16,32 @@ await page.setExtraHTTPHeaders({
 	'sec-ch-ua-mobile': '?0',
 	'sec-ch-ua-platform': '"Linux"',
 });
-const srcArr = ['CAN', 'SZX'];
+const srcCityArr = ['广州', '深圳'];
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: forecastArr.length });
 for (const fc of forecastArr) {
-	const { city, forecast } = fc;
-	bar.tick({ city });
+	const { city: dstCity, forecast } = fc; // fc.city is dstCity.
+	bar.tick({ city: dstCity });
 	if (bar.curr <= 23) continue; // curr starts from one. The first 23 cities are 香港, 澳门 and 广东21市. 无须飞机航班，乘坐高铁即可。
-	const dstArr = city2code[city];
-	if (!dstArr) continue; // Skip cities without airports.
-	const dst = dstArr[0]; // It's sufficient to get just the first code for the city, e.g. CTU for 成都, because ly will return the flights for all airports of the same city, e.g. including TFU.
-	const departDate = new Date();
+	const dstCodeArr = city2code[dstCity];
+	if (!dstCodeArr) continue; // Skip cities without airports.
+	const dstCode = dstCodeArr[0]; // It's sufficient to get just the first code for the city, e.g. CTU for 成都, because ly.com will return the flights for all airports of the same city, e.g. including TFU.
+	const srcDate = new Date(); // srcDate is the departure date.
 	for (let i = 1; i < 5; ++i) {
-		departDate.setDate(departDate.getDate() + 1);
+		srcDate.setDate(srcDate.getDate() + 1);
 		const f = forecast[i];
 		if (f.uncomfortable) continue;
 		const n = Math.min(6 - i, 4); // The number of days ahead to check.
 		if ([...Array(n).keys()].reduce((acc, cur) => { // In the following n days, the number of uncomfortable days must be less than half.
 			return acc + forecast[i + 1 + cur].uncomfortable;
 		}, 0) >= n / 2) continue;
-		const departDateString = departDate.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
-		for (const src of srcArr) {
+		const srcDateStr = srcDate.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
+		for (const srcCity of srcCityArr) {
+			const srcCode = city2code[srcCity][0];
 			let response;
 			try {
-				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${src}-${dst}?date=${departDateString}`, { waitUntil: 'networkidle0'} );
+				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${srcCode}-${dstCode}?date=${srcDateStr}`, { waitUntil: 'networkidle0'} );
 			} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next dst.
-				console.error(`${departDateString}: ${src}-${dst}: page.goto() error ${error}`);
+				console.error(`${srcDateStr} ${srcCity}-${dstCity}: page.goto() error ${error}`);
 				continue;
 			}
 			if (response.ok()) {
@@ -59,19 +60,34 @@ for (const fc of forecastArr) {
 				const flightList = await page.$$('div.flight-lists-container>div.flight-item');
 				for (const flight of flightList) {
 					const price = parseInt((await flight.$eval('div.head-prices>strong>em', el => el.innerText)).slice(1)); // .slice(1) to filter out the currency symbol ￥.
-					const departTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 08:35
-					await flight.dispose();
-					const departHour = departTime.slice(0, 2); // e.g. 08
-					if (10 <= departHour && departHour <= 16) {
-//						console.log(`${code2city[src]}-${code2city[dst]} ${src}-${dst} ${departDateString} ${departTime} ￥${price}`);
-						if (!f.flight || f.flight.price > price) {
-							f.flight = { src, departTime, price };
-						}
-						break; // The flightList is sorted by price ascendingly, so skip processing if the current flight is satisfactory.
+					const srcTime = await flight.$eval('div.f-startTime>strong', el => el.innerText); // e.g. 14:25
+					const srcHour = parseInt(srcTime.slice(0, 2)); // e.g. 14
+					if (srcHour < 10 || srcHour > 16) continue; // srcHour: [10, 16] is acceptable, equivalent to srcTime: [10:00, 16:59].
+					const duration = await flight.$eval('div.f-line-to>i', el => el.innerText); // e.g. 3h0m
+					const durHour = parseInt(duration.split('h')[0]);
+					if (durHour > 6) continue; // durHour: [1, 6] is acceptable, equivalent to duration: [1h0m, 6h59m].
+					const transition = await flight.$('div.f-line-to>div.v-popover'); // e.g. 经停, 华夏联程
+					if (transition !== null) { await transition.dispose(); continue }; // If the current flight has a transition, skip it.
+					console.log(`${srcDateStr} ${srcTime} ${duration} ${srcCity}-${dstCity} ￥${price}`);
+					if (!f.flight || f.flight.price > price) {
+						const no = await flight.$eval('p.flight-item-name', el => el.innerText); // e.g. 东方航空MU5742
+						const carrier = await flight.$eval('span.flight-item-type', el => el.innerText); // e.g. 波音737(中)
+						const dstTime = await flight.$eval('div.f-endTime>strong', el => el.innerText); // e.g. 17:25
+						const srcPort = await flight.$eval('div.f-startTime>em', el => el.innerText); // e.g. 白云机场T1
+						const dstPort = await flight.$eval('div.f-endTime>em', el => el.innerText); // e.g. 三义机场
+						f.flight = {
+							date: srcDateStr, no, carrier, duration, price,
+							src: { time : srcTime, airport: srcPort, city: srcCity }, // code: srcCode is not necessarily correct, because when searching e.g. src: CTU, ly.com will also return flights departing from TFU.
+							dst: { time : dstTime, airport: dstPort }, // code: dstCode is not necessarily correct either. Same reason, when searching dst: CTU, ly.com will also return flights arriving at TFU.
+						};
 					}
+					break; // The flightList is sorted by price ascendingly, so skip processing if the current flight is already satisfactory.
+				}
+				for (const flight of flightList) {
+					await flight.dispose();
 				}
 			} else {
-				console.error(`${departDateString}: ${src}-${dst}: HTTP response status code ${response.status()}`);
+				console.error(`${srcDateStr} ${srcCity}-${dstCity}: HTTP response status code ${response.status()}`);
 			}
 		}
 	}
