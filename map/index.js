@@ -5,7 +5,7 @@ const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'c
 const mapName = '香港澳门广东广西湖南江西福建海南贵州云南重庆四川湖北安徽浙江上海江苏河南陕西甘肃';
 const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
-const forecastArr = await fetch(`../flight/forecast.json`).then(res => res.json());
+const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res => res.json()); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
 //forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
 echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {

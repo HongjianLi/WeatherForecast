@@ -77,4 +77,4 @@ for (const fc of forecastArr) {
 	}
 }
 await browser.close();
-await fs.writeFile(`forecast.json`, JSON.stringify(forecastArr, null, '	'));
+await fs.writeFile('../weather/city/forecast.json', JSON.stringify(forecastArr, null, '	'));
