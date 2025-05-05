@@ -17,6 +17,7 @@ await page.setExtraHTTPHeaders({
 	'sec-ch-ua-platform': '"Linux"',
 });
 const srcCityArr = ['广州', '深圳'];
+const flightCache = {}; // This is a cache for the flight results, to avoid unnecessary page requests, e.g. "扬州": ["YTY"] and "泰州": ["YTY"], the flight results for 扬州 can be re-used for 泰州.
 const bar = new ProgressBar('[:bar] :city :current/:total=:percent :elapseds :etas', { total: forecastArr.length });
 for (const fc of forecastArr) {
 	const { city: dstCity, forecast } = fc; // fc.city is dstCity.
@@ -32,6 +33,11 @@ for (const fc of forecastArr) {
 		if ([...Array(n).keys()].reduce((acc, cur) => { // In the following n days, the number of uncomfortable days must be less than half.
 			return acc + forecast[i + 1 + cur].uncomfortable;
 		}, 0) >= n / 2) continue;
+		const cache = flightCache[`${f.date}${dstCode}`]; // If this specific date and dstCode has been searched before, use the cache.
+		if (cache) {
+			f.flight = cache;
+			continue;
+		}
 		for (const srcCity of srcCityArr) {
 			const srcCode = city2code[srcCity][0];
 			let response;
@@ -72,7 +78,7 @@ for (const fc of forecastArr) {
 						const dstTime = await flight.$eval('div.f-endTime>strong', el => el.innerText); // e.g. 17:25
 						const srcPort = await flight.$eval('div.f-startTime>em', el => el.innerText); // e.g. 白云机场T1
 						const dstPort = await flight.$eval('div.f-endTime>em', el => el.innerText); // e.g. 三义机场
-						f.flight = {
+						flightCache[`${f.date}${dstCode}`] = f.flight = {
 							no, carrier, duration, price,
 							src: { time : srcTime, airport: srcPort, city: srcCity }, // code: srcCode is not necessarily correct, because when searching e.g. src: CTU, ly.com will also return flights departing from TFU.
 							dst: { time : dstTime, airport: dstPort }, // code: dstCode is not necessarily correct either. Same reason, when searching dst: CTU, ly.com will also return flights arriving at TFU.
