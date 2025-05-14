@@ -1,5 +1,5 @@
 import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
-//import util from '/util.js';
+//import util from '../util.js';
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
 const mapName = '香港澳门广东广西湖南江西福建海南贵州云南重庆四川湖北安徽浙江上海江苏河南陕西甘肃';
