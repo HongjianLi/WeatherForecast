@@ -106,7 +106,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 			});
 		}
 		forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
-		await container.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
+//		await container.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp` });
 		await container.dispose();
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`); // Status code 403 is usually returned.

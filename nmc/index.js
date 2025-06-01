@@ -65,7 +65,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 			f.uncomfortable = util.isUncomfortable(f);
 		});
 		forecastArr.push({ city, forecast });
-		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
+//		await day7div.screenshot({ path: `${cityDir}/${city}.webp`, clip: { x: 0, y: 8, width: 791, height: 374 } });
 		await day7div.dispose();
 	} else {
 		console.error(`${city}: HTTP response status code ${response.status()}`);

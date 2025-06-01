@@ -92,7 +92,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 				f.uncomfortable = util.isUncomfortable(f);
 			});
 			forecastArr.push({ city: `${parent ?? ''}${city}`, forecast });
-			await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
+//			await c7dul.screenshot({ path: `${cityDir}/${parent ?? ''}${city}.webp`, clip: { x: 0, y: 0, width: 656, height: 254 } });
 			await c7dul.dispose();
 		} else {
 			console.error(`${city}: HTTP response status code ${response.status()}`);
