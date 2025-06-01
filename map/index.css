@@ -103,3 +103,48 @@
 	top: 66.67%;
 	right: 0px;
 }
+
+/* The following .tmp_lte_{-41,-36,...,40,45} classes were extracted from http://image.nmc.cn/assets/css/newcss.css */
+.tmp_lte_45{background-color: #d05b37; color: #fff;}
+.tmp_lte_40{background-color: #d76e3c; color: #fff;}
+.tmp_lte_35{background-color: #db9148; color: #fff;}
+.tmp_lte_30{background-color: #e4ad54; color: #fff;}
+.tmp_lte_25{background-color: #efdb64; color: #333;}
+.tmp_lte_20{background-color: #dff3bb; color: #333;}
+.tmp_lte_15{background-color: #c5f576; color: #333;}
+.tmp_lte_10{background-color: #8fc560; color: #fff;}
+.tmp_lte_4{background-color: #44ab83; color: #fff;}
+.tmp_lte_-1{background-color: #58974c; color: #fff;}
+.tmp_lte_-6{background-color: #2a683a; color: #fff;}
+.tmp_lte_-11{background-color: #407460; color: #fff;}
+.tmp_lte_-16{background-color: #207c65; color: #fff;}
+.tmp_lte_-21{background-color: #157c87; color: #fff;}
+.tmp_lte_-26{background-color: #0a819d; color: #fff;}
+.tmp_lte_-31{background-color: #0474af; color: #fff;}
+.tmp_lte_-36{background-color: #0460af; color: #fff;}
+.tmp_lte_-41{background-color: #043cad; color: #fff;}
+
+/* The following .sky.lv{1-4} classes were extracted from https://i.tq121.com.cn/c/weather2015/bluesky/c_7d.css */
+.sky.lv1 {
+    background: -ms-linear-gradient(top, #0e7fdf, #69b8f0);
+    background: -moz-linear-gradient(top, #0e7fdf, #69b8f0);
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#0e7fdf), to(#69b8f0));
+}
+
+.sky.lv2 {
+    background: -ms-linear-gradient(top, #50b2fb, #a6d4f6);
+    background: -moz-linear-gradient(top, #50b2fb, #a6d4f6);
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#50b2fb), to(#a6d4f6));
+}
+
+.sky.lv3 {
+    background: -ms-linear-gradient(top, #88a9ca, #bcd3e3);
+    background: -moz-linear-gradient(top, #88a9ca, #bcd3e3);
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#88a9ca), to(#bcd3e3));
+}
+
+.sky.lv4 {
+    background: -ms-linear-gradient(top, #999691, #c5c5c5);
+    background: -moz-linear-gradient(top, #999691, #c5c5c5);
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#999691), to(#c5c5c5));
+}

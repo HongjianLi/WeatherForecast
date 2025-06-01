@@ -7,12 +7,111 @@ const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city
 echarts.registerMap(mapName, geojson);
 const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res => res.json()); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
 //forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
+const tmpArr = [-41, -36, -31, -26, -21, -16, -11, -6, -1, 4, 10, 15, 20, 25, 30, 35, 40, 45];
+function getTmpClass(tmp) {
+	for (var tmpIndex = 0; !(tmp <= tmpArr[tmpIndex]); ++tmpIndex);
+	return tmpArr[tmpIndex];
+}
 echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 	tooltip: {
+		backgroundColor: 'rgba(50,50,50,0.8)',
+		textStyle: {
+			color: '#fff',
+		},
 		formatter: (params) => {
 			const { name, value } = params;
-			const { forecast } = forecastArr.find(city => city.city === name);
-			return `${name} 不舒适天数 ${value}${cityDir === 'city' ? `<br><img src="../nmc/${cityDir}/${name}.webp">` : ''}<br><table width="100%" height="16px" style="color: white"><tr>${forecast.map(f => `<td style="width: 14%; background-color: ${['green', 'orangered'][f.uncomfortable]}">${f.flight ? `${f.flight.src.city[0]}${f.flight.src.time} ${f.flight.price}` : '&nbsp;'}</td>`).join('')}</tr></table><img src="../weather/${cityDir}/${name}.webp">`;
+			const city = forecastArr.find(city => city.city === name);
+			if (!city) return `${name} unknown`; // value is NaN
+			const { forecast } = city;
+			return [
+				`${name} 不舒适天数 ${value}`,
+				'<br>',
+				'<table width="672px">',
+				'<tr>',
+				forecast.map(f => [
+					'<th width="14.3%">',
+					f.date.substring(5),
+					'</th>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.weekday,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.day ? f.day.desc : '',
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.day ? f.day.windd : '',
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.day ? f.day.winds : '',
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				forecast.map(f => [
+					f.day ? `<td class="tmp_lte_${getTmpClass(f.day.tmp)}">` : '<td>',
+					f.day ? f.day.tmp : '',
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'</tr>',
+				forecast.map(f => [
+					`<td class="tmp_lte_${getTmpClass(f.night.tmp)}">`,
+					f.night.tmp,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.night.desc,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.night.windd,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					'<td>',
+					f.night.winds,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					`<td class="sky lv${1 + [ '天空蔚蓝', '天空淡蓝', '天空阴沉', '天空灰霾' ].indexOf(f.sky)}">`,
+					f.sky,
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'<tr>',
+				forecast.map(f => [
+					`<td style="background-color: ${['green', 'orangered'][f.uncomfortable]}">`,
+					f.flight ? `${f.flight.src.city[0]}${f.flight.src.time} ${f.flight.price}` : '&nbsp;',
+					'</td>',
+				].join('')).join(''),
+				'</tr>',
+				'</table>',
+			].join('');
 		},
 	},
 	visualMap: {
