@@ -9,7 +9,7 @@ const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res 
 //forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
 const tmpArr = [-41, -36, -31, -26, -21, -16, -11, -6, -1, 4, 10, 15, 20, 25, 30, 35, 40, 45];
 function getTmpClass(tmp) {
-	for (var tmpIndex = 0; !(tmp <= tmpArr[tmpIndex]); ++tmpIndex);
+	for (var tmpIndex = 0; !(tmp <= tmpArr[tmpIndex]) && tmpIndex + 1 < tmpArr.length; ++tmpIndex);
 	return tmpArr[tmpIndex];
 }
 echarts.init(document.getElementById('mainChart'), 'dark').setOption({
