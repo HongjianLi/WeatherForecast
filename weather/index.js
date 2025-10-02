@@ -28,7 +28,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 		}
 		if (response.ok()) {
 			const levelArr = (await page.$eval('div.crumbs.fl', el => el.innerText)).replaceAll('\n', '').split('>');
-			console.assert([3, 4].includes(levelArr.length));
+			console.assert([3, 4].includes(levelArr.length), '[3, 4].includes(levelArr.length)');
 			if (cityDir === 'city') {
 				console.assert(
 					levelArr[levelArr.length - 1] === '城区' ||
@@ -87,7 +87,7 @@ for (let i = 0; i < codeArr.length; ++i) {
 			}));
 			const date = new Date();
 			forecast.forEach((f, i) => {
-				console.assert(f.date === `${date.getDate()}日`);
+				console.assert(f.date === `${date.getDate()}日`, city, f.date);
 				f.date = date.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit'});
 				const weekday = `周${['日', '一', '二', '三', '四', '五', '六'][date.getDay()]}`;
 				console.assert(f.weekday === i < 3 ? ['今天', '明天', '后天'][i] : weekday);
