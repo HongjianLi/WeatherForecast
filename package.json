@@ -13,7 +13,7 @@
 		"puppeteer-core": "^23.11.1"
 	},
 	"devDependencies": {
-		"pinyin-pro": "^3.26.0"
+		"pinyin-pro": "^3.27.0"
 	},
 	"main": "weather/index.js",
 	"scripts": {
