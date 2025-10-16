@@ -92,9 +92,9 @@ const hh0113 = ['01','13'][hourIndex];
 ], { date, hh0820, hh0012 } );*/
 await fetchImages('nmc', [
 	// 全国降水量预报图。06时发布01和00，18时发布13和12
-	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0002400.JPG',
-	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0004800.JPG',
-	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0007200.JPG',
+	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0113}0002400.jpg',
+	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0113}0004800.jpg',
+	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0113}0007200.jpg',
 	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0009600.jpg',
 	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0012000.jpg',
 	'http://image.nmc.cn/product/{YYYY}/{MM}/{DD}/STFC/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_{date}{hh0012}0014400.jpg',
