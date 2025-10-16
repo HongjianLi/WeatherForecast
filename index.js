@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import { Readable } from 'stream';
-async function fetchImages(site, urlArr, replacements) {
+function fetchImages(site, urlArr, replacements) {
 	console.log(`Fetching images from ${site}`);
-	await Promise.all(urlArr.map(async (url) => {
+	return Promise.all(urlArr.map(async (url) => {
 		const response = await fetch(url.replace(/{(\w+)}/g, (match, p1) => replacements[p1] || match));
 		if (!response.ok) return;
 		Readable.fromWeb(response.body).pipe(fs.createWriteStream(`${site}/${url.split('/').pop().replace(/{\w+}/g, '')}`));
