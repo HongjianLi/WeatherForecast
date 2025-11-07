@@ -1,4 +1,4 @@
-import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
+import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.esm.min.js'
 //import util from '../util.js';
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
@@ -131,6 +131,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 		zoom: 1.2,
 		label: {
 			show: cityDir === 'city',
+			color: 'black',
 //			fontSize: 7, // Default is 12
 		},
 		data: forecastArr.map(fc => ({

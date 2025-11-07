@@ -1,4 +1,4 @@
-import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.esm.min.js'
+import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.esm.min.js'
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
 const mapName = '中国大陆';
