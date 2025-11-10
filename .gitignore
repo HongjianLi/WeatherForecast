@@ -4,5 +4,6 @@ node_modules
 *.png
 *.gif
 *.webp
+*.rar
 forecast*.json
 start.txt
