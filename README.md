@@ -4,8 +4,8 @@
 
 ## Initialization (`init.sh`)
 
-* `cd map/echarts-china-cities-js/geojson/shape-only; node createGeoJson.js; cd ../../../..` This script creates `city.json` and `广东广西湖南江西福建.geojson`.
-* `cd map/echarts-china-cities-js/geojson/shape-with-internal-borders; node createGeoJson.js; cd ../../../..` This script creates `city.json` and `广东广西湖南江西福建.geojson`.
+* `cd map/echarts-china-cities-js/geojson/shape-only; node createGeoJson.js; cd ../../../..` This script creates `city.json` and `map.geojson`.
+* `cd map/echarts-china-cities-js/geojson/shape-with-internal-borders; node createGeoJson.js; cd ../../../..` This script creates `city.json` and `map.geojson`.
 * `cd weather/city; node createCode.js; cd ../..` This script creates `code.json`.
 * `cd weather/county; node createCode.js; cd ../..` This script creates `code.json`.
 * `cd tianqi/city; node createCode.js; cd ../..` This script creates `code.json`.
