@@ -1,5 +1,5 @@
 {
-	"name": "WeatherForecast",
+	"name": "weather-forecast",
 	"version": "2.0.0",
 	"description": "Browse www.weather.com.cn and www.tianqi.com to extract forecast for 7 days",
 	"author": "Hongjian Li",
