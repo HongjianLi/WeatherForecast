@@ -42,7 +42,7 @@ for (const fc of forecastArr) {
 			const srcCode = city2code[srcCity][0];
 			let response;
 			try {
-				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${srcCode}-${dstCode}?date=${f.date}`, { waitUntil: 'networkidle0'} );
+				response = await page.goto(`https://www.ly.com/flights/itinerary/oneway/${srcCode}-${dstCode}?date=${f.date}`, { waitUntil: 'networkidle0' });
 			} catch (error) { // In case of error, e.g. TimeoutError, continue to goto the next srcCity.
 				console.error(`${f.date} ${srcCity}-${dstCity}: page.goto() error ${error}`);
 				continue;
@@ -57,7 +57,7 @@ for (const fc of forecastArr) {
 					await new Promise(resolve => setTimeout(resolve, 2120)); // Wait for some seconds for new contents to load.
 //					await page.waitForNetworkIdle({ idleTime: 2000 }); // Time (in milliseconds) the network should be idle.
 					const newHeight = await page.evaluate(() => document.body.scrollHeight);
-					if (newHeight === prevHeight) break; // Break the loop if no new content is loaded.
+					if (newHeight === prevHeight) break; // Break the loop if no new content was loaded.
 					prevHeight = newHeight;
 				}
 				const flightList = await page.$$('div.flight-lists-container>div.flight-item');
