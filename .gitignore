@@ -7,4 +7,5 @@ node_modules
 *.rar
 forecast*.json
 start.txt
+flight/tracker/tracker.json
 flight/tracker/*.tsv
