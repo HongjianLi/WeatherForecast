@@ -14,24 +14,24 @@
 }
 
 /* For resolution 2560 x 1600 and zoom 125%, e.g. LAPTOP-O511PV03 */
-@media (min-width: 2040px) and (min-height: 1162px) {
+@media (min-width: 2040px) and (min-height: 1156px) {
 	.mainChart {
 		width: 2032px;
-		height: 1146px;
+		height: 1140px;
 	}
 	.side {
-		height: 387px;
+		height: 385px;
 	}
 }
 
 /* For resolution 2880 x 1800 and zoom 125%, e.g. LAPTOP-8DRAKJJF */
-@media (min-width: 2296px) and (min-height: 1314px) {
+@media (min-width: 2296px) and (min-height: 1308px) {
 	.mainChart {
-		width: 2288px;
-		height: 1298px;
+		width: 2273px;
+		height: 1292px;
 	}
 	.side {
-		height: 438px;
+		height: 436px;
 	}
 }
 
