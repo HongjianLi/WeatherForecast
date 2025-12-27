@@ -20,5 +20,9 @@ echo "$(date +"%F %T.%N") cd flight"
 cd flight
 echo "$(date +"%F %T.%N") node index.js"
 node index.js
-cd ..
+echo "$(date +"%F %T.%N") cd tracker"
+cd tracker
+echo "$(date +"%F %T.%N") node tracker.js"
+node tracker.js
+cd ../..
 echo "$(date +"%F %T.%N") Script completed"
