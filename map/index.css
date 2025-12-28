@@ -36,13 +36,13 @@
 }
 
 /* For resolution 3840 x 2160 and zoom 150%, e.g. LAPTOP-8DRAKJJF projected on a 4K monitor */
-@media (min-width: 2552px) and (min-height: 1314px) {
+@media (min-width: 2552px) and (min-height: 1308px) {
 	.mainChart {
 		width: 2544px;
-		height: 1298px;
+		height: 1292px;
 	}
 	.side {
-		height: 438px;
+		height: 436px;
 	}
 }
 
