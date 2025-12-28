@@ -105,7 +105,7 @@ echarts.init(document.getElementById('mainChart'), 'dark').setOption({
 				'</tr>',
 				'<tr>',
 				forecast.map(f => [
-					`<td style="background-color: ${['green', 'orangered'][f.uncomfortable]}">`,
+					`<td style="background-color: ${['green', 'yellow', 'orangered'][f.uncomfortable * 2]}">`,
 					f.flight ? `${f.flight.src.city[0]}${f.flight.src.time} ${f.flight.price}` : '&nbsp;',
 					'</td>',
 				].join('')).join(''),
