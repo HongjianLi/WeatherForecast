@@ -1,4 +1,4 @@
-function isUncomfortable(dn, minTmp, maxTmp, relax = 2) { // [ minTmp, maxTmp ] refers to the comfortable temperature range.
+function isUncomfortable(dn, minTmp, maxTmp, relax = 2) { // [ minTmp, maxTmp ] refers to the comfortable temperature range. Setting relax = 0 will revert to returning either 1 or 0.
 	const { desc, tmp } = dn;
 	if (['雨', '沙', '尘', '雾', '霾'].some(keyword => desc.includes(keyword)) && desc !== '阵雨') return 1;
 	if (minTmp <= tmp && tmp <= maxTmp) return 0; // [ minTmp, maxTmp ] is considered comfortable.
