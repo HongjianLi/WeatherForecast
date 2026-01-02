@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
-const nowLocaleString = (new Date()).toLocaleString('zh-CN');
-const dateStr = nowLocaleString.substring(0, 10).replace(/\//g, '-');
-const timeStr = nowLocaleString.substring(11);
+const now = new Date();
+const dateStr = now.toLocaleDateString('en-CA'); // This locale outputs date as yyyy-mm-dd
+const timeStr = now.toLocaleTimeString('zh-CN'); // This locale outputs time as HH:MM:SS
 const [ dsdArr, city2code ] = await Promise.all(['tracker.json', '../airportsCityCode.json'].map(p => fs.readFile(p).then(JSON.parse)));
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 },
