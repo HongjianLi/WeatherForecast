@@ -40,6 +40,6 @@ const cityArr = featuresArr.reduce((cityArr, features, index) => {
 	return cityArr;
 }, []);
 console.assert(cityArr.length === 1598); // 合共1598县 = 香港1市 + 澳门1市 + 广东123县 + 广西111县 + 湖南122县 + 江西100县 + 福建85县 + 海南24县 + 贵州88县 + 云南129县 + 重庆38县 + 四川183县 + 湖北103县 + 安徽105县 + 浙江89县 + 上海16县 + 江苏96县 + 河南115县(部分) + 陕西53县(部分) + 甘肃16县(部分)
-await fs.writeFile(`map.geojson`, JSON.stringify({ type: "FeatureCollection", features: cityArr.map(city => city.feature) }));
+await fs.writeFile('map.geojson', [ '{"type":"FeatureCollection","features":[', ...cityArr.map((city, i) => `${JSON.stringify(city.feature)}${i + 1 < cityArr.length ? ',' : ''}`), ']}' ].join('\n')); // Output each feature at a separate line, for easy update in the future.
 cityArr.forEach(city => delete city.feature);
 await fs.writeFile('city.json', JSON.stringify(cityArr, null, '	')); // Both 张家界 and 龙岩 have 永定区. Both 广州 and 贵阳 have 白云区. Both 福州 and 黔东南 have 台江. Both 乐山 and 内江 have 市中区. Both 重庆 and 宁波 have 江北区. 福州、南京、徐州、开封 have 鼓楼区.
