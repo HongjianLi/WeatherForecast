@@ -1,3 +1,7 @@
+.mainChart {
+	text-align: center;
+}
+
 /* For resolution 848 x 1555, e.g. vivo iQOO Neo8 Pro */
 @media (max-width: 1555px) {
 	.mainChart {
