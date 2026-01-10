@@ -3,25 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="map/index.css">
 </head>
 <body>
 	<div id="mainChart" class="mainChart"></div>
-	<img src="../nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0002400.jpg" class="side topLeft">
-	<img src="../nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0004800.jpg" class="side middleLeft">
-	<img src="../nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0007200.jpg" class="side bottomLeft">
-	<img src="../nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0002424.jpg" class="side topRight">
-	<img src="../nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0004824.jpg" class="side middleRight">
-	<img src="../nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0007224.jpg" class="side bottomRight">
+	<img src="nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0002400.jpg" class="side topLeft">
+	<img src="nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0004800.jpg" class="side middleLeft">
+	<img src="nmc/SEVP_NMC_STFC_SFER_ER24_ACHN_L88_P9_0007200.jpg" class="side bottomLeft">
+	<img src="nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0002424.jpg" class="side topRight">
+	<img src="nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0004824.jpg" class="side middleRight">
+	<img src="nmc/SEVP_NMC_APWF_SFER_EAIRP_ACHN_LNO_P9_0007224.jpg" class="side bottomRight">
 	<script type="module">
 import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.esm.min.js'
-//import util from '../util.js';
+//import util from './util.js';
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
 const mapName = '中国大陆';
-const geojson = await fetch(`echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
+const geojson = await fetch(`map/echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
-const forecastArr = await fetch(`../weather/${cityDir}/forecast.json`).then(res => res.json()); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
+const forecastArr = await fetch(`weather/${cityDir}/forecast.json`).then(res => res.json()); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
 //forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
 const tmpArr = [-41, -36, -31, -26, -21, -16, -11, -6, -1, 4, 10, 15, 20, 25, 30, 35, 40, 45];
 function getTmpClass(tmp) {
