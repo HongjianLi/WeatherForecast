@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Hongjian Li">
+	<title>Provincial statistical yearbook</title>
+	<style>
+.mainChart {
+	display: inline-block;
+	width: 843px;
+	height: 1261px;
+	text-align: center;
+}
+	</style>
+</head>
+<body>
+	<div id="chartContainer"></div>
+	<script type="module">
+import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.esm.min.js'
+const mapName = '华南';
+const geojson = await fetch(`../echarts-china-cities-js/geojson/shape-with-internal-borders/map.geojson`).then(res => res.json());
+echarts.registerMap(mapName, geojson);
+const stats = [].concat(...await Promise.all(['2025香港', '2025澳门', '2025广东', '2024广西', '2024海南', '2024湖南', '2024江西', '2025福建', '2024贵州', '2024云南', '2024重庆', '2024四川', '2024湖北', '2024安徽', '2025浙江', '2025江苏', '2025河南', '2025陕西', '2025甘肃'].map(dir => (fetch(`${dir}/perCapita.tsv`).then(res => res.text()).then(text => text.split('\n').slice(1, -1).map(line => { // Use .slice(1, -1) to skip the header line and the last empty line.
+	const fields = line.split('	');
+	return {
+		city: fields[0],
+		county: fields[1],
+		pcdiuh: parseInt(fields[2]), // Per Capita Disposable Income of Urban Households 城镇居民人均可支配收入(元)
+		pcdirh: parseInt(fields[3]), // Per Capita Disposable Income of Rural Households 农村居民人均可支配收入(元)
+		pcgdp: parseInt(fields[4]), // Per Capita Gross Domestic Product 人均地区生产总值(元)
+	};
+}))))));
+const chartContainer = document.getElementById('chartContainer');
+[{
+	metricEN: 'pcdiuh', // Per Capita Disposable Income of Urban Households
+	metricCN: '城镇居民人均可支配收入(元)', // Values vary between [ 22166, 414646 ]. Median is 42021.
+}, {
+	metricEN: 'pcdirh', // Per Capita Disposable Income of Rural Households
+	metricCN: '农村居民人均可支配收入(元)', // Values vary between [ 9093, 60344 ]. Median is 22097.
+}, {
+	metricEN: 'pcgdp', // Per Capita Gross Domestic Product
+	metricCN: '人均地区生产总值(元)', // Values vary between [ 15549, 527449 ]. Median is 62368.
+}].forEach(metric => {
+	const metricValues = stats.map(stat => stat[metric.metricEN]).filter(value => !isNaN(value)).sort((value0, value1) => (value0 - value1));
+	const div = document.createElement('div');
+	div.classList.add(`mainChart`);
+	chartContainer.appendChild(div);
+	const chart = echarts.init(div, 'dark');
+	chart.setOption({
+		title: {
+			text: metric.metricCN,
+		},
+		tooltip: {
+			formatter: '{b}<br/>{c}'
+		},
+		visualMap: {
+			min: metricValues[0],
+			max: metricValues[Math.floor(metricValues.length / 2)], // Median value
+			text: ['High', 'Low'],
+			calculable: true,
+			inRange: {
+				color: ['lightskyblue', 'yellow', 'orangered']
+			}
+		},
+		series: {
+			type: 'map',
+			map: mapName,
+			roam: true,
+			zoom: 1.2,
+			data: stats.map(stat => ({
+				name: `${stat.city}${stat.county}`,
+				value: stat[metric.metricEN],
+			})),
+		}
+	});
+});
+	</script>
+</body>
+</html>
