@@ -47,13 +47,13 @@
 }
 
 /* For resolution 3840 x 2160 and zoom 150%, e.g. jacky-B650I-AORUS-ULTRA */
-@media (min-width: 2560px) and (min-height: 1247px) {
+@media (min-width: 2560px) and (min-height: 1281px) {
 	.mainChart {
 		width: 2552px;
-		height: 1231px;
+		height: 1265px;
 	}
 	.side {
-		height: 415px;
+		height: 426px;
 	}
 }
 
