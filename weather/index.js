@@ -16,6 +16,7 @@ const forecastArr = [];
 for (let i = 0; i < codeArr.length; ++i) {
 	const { parent, city, code } = codeArr[i]; // parent is undefined if cityDir === 'city'. parent is the prefecture-level city if cityDir === 'county'.
 	bar.tick({ city });
+	if (!code) continue; // Some counties are not found in weather.com.cn and thus have no code: 杭州钱塘、杭州临平、温州龙港
 	for (let k = 0; k < 2; ++k) { // Retry in case of TimeoutError.
 		let response;
 		try {
