@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="map/index.css">
+	<link rel="stylesheet" href="../map/index.css">
 </head>
 <body>
 	<div id="mainChart" class="mainChart"></div>
@@ -19,7 +19,7 @@ import * as echarts from 'https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echart
 const urlParams = new URLSearchParams(window.location.search);
 const cityDir = urlParams.get('cityDir') ?? 'city'; // Can be eiher 'city' or 'county'
 const mapName = '中国大陆';
-const geojson = await fetch(`map/echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
+const geojson = await fetch(`../map/echarts-china-cities-js/geojson/${cityDir === 'city' ? 'shape-only' : 'shape-with-internal-borders'}/map.geojson`).then(res => res.json());
 echarts.registerMap(mapName, geojson);
 const forecastArr = await fetch(`weather/${cityDir}/forecast.json`).then(res => res.json()); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
 //forecastArr.forEach(fc => fc.forecast.forEach(f => f.uncomfortable = util.isUncomfortable(f))); // Re-evaluate the conditions.
