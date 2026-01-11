@@ -21,6 +21,6 @@ const features = [].concat(...await Promise.all((await fs.readdir('.')).reduce((
 	});
 	return features;
 })));
-console.assert(features.length === 367, features.length); // 合共368市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市 + 安徽16市 + 浙江11市 + 上海1市 + 江苏13市 + 河南18市 + 陕西10市 + 甘肃14市 + 山西11市 + 山东16市 + 河北11市 + 天津1市 + 北京1市 + 宁夏5市 + 青海8市 + 西藏7市 + 内蒙古12市 + 新疆23市 + 辽宁14市 + 吉林9市 + 黑龙江13市
+console.assert(features.length === 367, features.length); // 合共367市 = 香港1市 + 澳门1市 + 广东21市 + 广西14市 + 湖南14市 + 江西11市 + 福建9市 + 海南18市 + 贵州9市 + 云南16市 + 重庆1市 + 四川21市 + 湖北17市 + 安徽16市 + 浙江11市 + 上海1市 + 江苏13市 + 河南18市 + 陕西10市 + 甘肃14市 + 山西11市 + 山东16市 + 河北11市 + 天津1市 + 北京1市 + 宁夏5市 + 青海8市 + 西藏7市 + 内蒙古12市 + 新疆23市 + 辽宁14市 + 吉林9市 + 黑龙江13市
 await fs.writeFile('city.json', JSON.stringify(features.map(feature => ({ city: feature.properties.name })), null, '	'));
 await fs.writeFile('map.geojson', [ '{"type":"FeatureCollection","features":[', ...features.map((f, i) => `${JSON.stringify(f)}${i + 1 < features.length ? ',' : ''}`), ']}' ].join('\n')); // Output each feature at a separate line, for easy update in the future.
