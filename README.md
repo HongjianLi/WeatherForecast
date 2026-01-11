@@ -4,7 +4,6 @@ Map-based applications, including
 * visited cities (directory `visited`)
 * statistical yearbook (directory `yearbook`)
 * weather forecast (directory `weather`)
-* flight tracker (directory `flight`)
 
 ## Initialization (`init.sh`)
 
