@@ -1,10 +1,23 @@
-行政区域调整
+# map
+
+Map-based applications, including
+* visited cities (directory `visited`)
+* statistical yearbook (directory `statistical-yearbook`)
+* weather forecast (directory `weather-forecast`)
+* flight tracker (directory `flight`)
+
+## Initialization (`init.sh`)
+
+* `cd echarts-china-cities-js/geojson/shape-only; node createGeoJson.js; cd ../../..`
+* `cd echarts-china-cities-js/geojson/shape-with-internal-borders; node createGeoJson.js; cd ../../..`
+
+## 行政区域调整
 
 * 福建 三明 梅列。合并。[2021年2月3日，福建省人民政府同意撤销三明市梅列区、三元区，设立新的三明市三元区，以原梅列区、三元区的行政区域为新的三元区的行政区域](https://baike.baidu.com/item/梅列区)
 * 浙江 杭州 下城。合并。[2021年3月11日，浙江省人民政府发布《关于调整杭州市部分行政区划的通知》。撤销杭州市下城区、拱墅区，设立新的杭州市拱墅区，以原下城区、拱墅区的行政区域为新的拱墅区的行政区域](https://baike.baidu.com/item/下城区)
 * 浙江 杭州 江干。合并。[2021年3月11日，浙江省人民政府发布《关于调整杭州市部分行政区划的通知》。撤销杭州市上城区、江干区，设立新的杭州市上城区](https://baike.baidu.com/item/江干区)
-* 浙江 杭州 钱塘。分裂。[2021年3月，江干区的下沙街道、白杨街道和萧山区的河庄街道、义蓬街道、新湾街道、临江街道、前进街道划归钱塘区。](https://baike.baidu.com/item/钱塘区)
+* 浙江 杭州 钱塘。分裂。[2021年3月，江干区的下沙街道、白杨街道和萧山区的河庄街道、义蓬街道、新湾街道、临江街道、前进街道划归钱塘区](https://baike.baidu.com/item/钱塘区)
 * 浙江 杭州 临平。分裂。[2021年4月9日，将原杭州市余杭区以运河为界，分设杭州市临平区和新的杭州市余杭区](https://baike.baidu.com/item/临平区)
-* 浙江 温州 龙港。分裂。[2019年8月16日，经国务院批准，撤销龙港镇，设立县级龙港市，龙港市由浙江省直辖，温州市代管。9月25日，龙港市正式挂牌成立。](https://baike.baidu.com/item/龙港市)
+* 浙江 温州 龙港。分裂。[2019年8月16日，经国务院批准，撤销龙港镇，设立县级龙港市，龙港市由浙江省直辖，温州市代管。9月25日，龙港市正式挂牌成立](https://baike.baidu.com/item/龙港市)
 * 江苏 南通 港闸。合并。[2020年，经国务院批准，同意撤销南通市崇川区、港闸区，设立新的南通市崇川区](https://baike.baidu.com/item/港闸区)
 * 河南 洛阳 吉利。合并。[2021年3月，国务院批复同意撤销孟津县、洛阳市吉利区，设立洛阳市孟津区](https://baike.baidu.com/item/吉利区)
