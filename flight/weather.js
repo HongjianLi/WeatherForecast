@@ -2,7 +2,7 @@
 import fs from 'fs/promises';
 import puppeteer from 'puppeteer-core';
 import ProgressBar from 'progress';
-const [ forecastArr, city2code/*, code2city*/ ] = await Promise.all(['../weather/city/forecast.json', 'airportsCityCode.json'/*, 'airportsCodeCity.json'*/].map(p => fs.readFile(p).then(JSON.parse))); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
+const [ forecastArr, city2code/*, code2city*/ ] = await Promise.all(['../weather-forecast/weather/city/forecast.json', 'airportsCityCode.json'/*, 'airportsCodeCity.json'*/].map(p => fs.readFile(p).then(JSON.parse))); // Prefer weather to nmc because weather provides the sky key 晴天预报, which indicates whether 灰霾 occurs.
 const browser = await puppeteer.launch({
 	defaultViewport: { width: 1280, height: 2160 }, // Increase the deviceScaleFactor will increase the resolution of screenshots.
 	executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
@@ -96,4 +96,4 @@ for (const fc of forecastArr) {
 	}
 }
 await browser.close();
-await fs.writeFile('../weather/city/forecast.json', JSON.stringify(forecastArr, null, '	'));
+await fs.writeFile('../weather-forecast/weather/city/forecast.json', JSON.stringify(forecastArr, null, '	'));
