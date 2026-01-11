@@ -1,6 +1,11 @@
 # weather-forecast
 
-* Retrieve 7-day weather forecast for Chinese cities.
+Retrieve 7-day weather forecast for Chinese cities.
+
+Data come from three sources:
+* [nmc](http://www.nmc.cn/) Pros: official, accurate, updated regularly. Cons: IP blacklist enforced, lacking city downtown districts.
+* [weather](http://www.weather.com.cn/) Pros: robot friendly， sky level. Cons: delayed update occasionally, lacking splitted counties.
+* [tianqi](https://www.tianqi.com/) Cons: IP blacklist enforced.
 
 ## Initialization (`init.sh`)
 
